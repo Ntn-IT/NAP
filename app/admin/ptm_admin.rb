@@ -1,5 +1,7 @@
 Trestle.admin(:ptm) do
   menu do
-    item :ptm, icon: "fa fa-infinity"
+    group :applications, priority: :first do
+      item :ptm, icon: "fa fa-infinity"
+    end
   end
 end
