@@ -76,3 +76,5 @@ gem "trestle-auth"
 gem "font-awesome-sass", "~> 6.5.1"
 gem "trestle-sidekiq"
 gem "trestle-search"
+
+gem "sidekiq", "~> 7.2"
