@@ -1,0 +1,7 @@
+- content_for(:title, 'Dashboard')
+= render "header"
+
+.main-content-area
+  .main-content-container
+    .main-content
+      %h3= pluralize(@missing_warhead_count,'Missing Warhead')
