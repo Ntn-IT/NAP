@@ -1,5 +1,5 @@
 # README
 
-Portail d'application pour NTN Transmission Europe.
+Portail applicatif pour NTN Transmission Europe.
 
   
