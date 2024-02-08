@@ -1,0 +1,3 @@
+my_first_job:
+   cron: "*/5 * * * *"
+   class: "WorkerName"

@@ -1,4 +1,5 @@
 Trestle.configure do |config|
+
   # == Customization Options
   #
   # Set the page title shown in the main header within the admin.
