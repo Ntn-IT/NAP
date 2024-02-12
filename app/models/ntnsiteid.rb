@@ -1,0 +1,2 @@
+class Ntnsiteid < ApplicationRecord
+end

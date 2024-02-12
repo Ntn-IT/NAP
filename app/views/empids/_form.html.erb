@@ -1,0 +1,102 @@
+<%= form_with(model: empid) do |form| %>
+  <% if empid.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(empid.errors.count, "error") %> prohibited this empid from being saved:</h2>
+
+      <ul>
+        <% empid.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :emp_id, style: "display: block" %>
+    <%= form.number_field :emp_id %>
+  </div>
+
+  <div>
+    <%= form.label :emp_mat, style: "display: block" %>
+    <%= form.text_area :emp_mat %>
+  </div>
+
+  <div>
+    <%= form.label :emp_mat_hr, style: "display: block" %>
+    <%= form.text_area :emp_mat_hr %>
+  </div>
+
+  <div>
+    <%= form.label :emp_fn, style: "display: block" %>
+    <%= form.text_area :emp_fn %>
+  </div>
+
+  <div>
+    <%= form.label :emp_ln, style: "display: block" %>
+    <%= form.text_area :emp_ln %>
+  </div>
+
+  <div>
+    <%= form.label :emp_cn, style: "display: block" %>
+    <%= form.text_area :emp_cn %>
+  </div>
+
+  <div>
+    <%= form.label :emp_function, style: "display: block" %>
+    <%= form.text_area :emp_function %>
+  </div>
+
+  <div>
+    <%= form.label :emp_status, style: "display: block" %>
+    <%= form.text_area :emp_status %>
+  </div>
+
+  <div>
+    <%= form.label :emp_pole, style: "display: block" %>
+    <%= form.text_area :emp_pole %>
+  </div>
+
+  <div>
+    <%= form.label :emp_service, style: "display: block" %>
+    <%= form.text_area :emp_service %>
+  </div>
+
+  <div>
+    <%= form.label :emp_grp, style: "display: block" %>
+    <%= form.text_area :emp_grp %>
+  </div>
+
+  <div>
+    <%= form.label :emp_pi_id, style: "display: block" %>
+    <%= form.number_field :emp_pi_id %>
+  </div>
+
+  <div>
+    <%= form.label :emp_m1, style: "display: block" %>
+    <%= form.number_field :emp_m1 %>
+  </div>
+
+  <div>
+    <%= form.label :emp_m2, style: "display: block" %>
+    <%= form.number_field :emp_m2 %>
+  </div>
+
+  <div>
+    <%= form.label :emp_m3, style: "display: block" %>
+    <%= form.number_field :emp_m3 %>
+  </div>
+
+  <div>
+    <%= form.label :emp_m4, style: "display: block" %>
+    <%= form.number_field :emp_m4 %>
+  </div>
+
+  <div>
+    <%= form.label :emp_m5, style: "display: block" %>
+    <%= form.number_field :emp_m5 %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

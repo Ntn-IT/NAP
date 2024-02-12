@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Ntnsiteids</h1>
+
+<div id="ntnsiteids">
+  <% @ntnsiteids.each do |ntnsiteid| %>
+    <%= render ntnsiteid %>
+    <p>
+      <%= link_to "Show this ntnsiteid", ntnsiteid %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New ntnsiteid", new_ntnsiteid_path %>

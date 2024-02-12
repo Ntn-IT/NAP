@@ -1,0 +1,39 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  emp_id: 1
+  emp_mat: MyText
+  emp_mat_hr: MyText
+  emp_fn: MyText
+  emp_ln: MyText
+  emp_cn: MyText
+  emp_function: MyText
+  emp_status: MyText
+  emp_pole: MyText
+  emp_service: MyText
+  emp_grp: MyText
+  emp_pi_id: 1
+  emp_m1: 1
+  emp_m2: 1
+  emp_m3: 1
+  emp_m4: 1
+  emp_m5: 1
+
+two:
+  emp_id: 1
+  emp_mat: MyText
+  emp_mat_hr: MyText
+  emp_fn: MyText
+  emp_ln: MyText
+  emp_cn: MyText
+  emp_function: MyText
+  emp_status: MyText
+  emp_pole: MyText
+  emp_service: MyText
+  emp_grp: MyText
+  emp_pi_id: 1
+  emp_m1: 1
+  emp_m2: 1
+  emp_m3: 1
+  emp_m4: 1
+  emp_m5: 1
