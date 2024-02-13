@@ -1,0 +1,52 @@
+<%= form_with(model: siteid) do |form| %>
+  <% if siteid.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(siteid.errors.count, "error") %> prohibited this siteid from being saved:</h2>
+
+      <ul>
+        <% siteid.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :site_ID, style: "display: block" %>
+    <%= form.number_field :site_ID %>
+  </div>
+
+  <div>
+    <%= form.label :site_Region, style: "display: block" %>
+    <%= form.text_area :site_Region %>
+  </div>
+
+  <div>
+    <%= form.label :site_Country, style: "display: block" %>
+    <%= form.text_area :site_Country %>
+  </div>
+
+  <div>
+    <%= form.label :site_Town, style: "display: block" %>
+    <%= form.text_area :site_Town %>
+  </div>
+
+  <div>
+    <%= form.label :site_Street, style: "display: block" %>
+    <%= form.text_area :site_Street %>
+  </div>
+
+  <div>
+    <%= form.label :site_NStreet, style: "display: block" %>
+    <%= form.number_field :site_NStreet %>
+  </div>
+
+  <div>
+    <%= form.label :site_Postal, style: "display: block" %>
+    <%= form.number_field :site_Postal %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

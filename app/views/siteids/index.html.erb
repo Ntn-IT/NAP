@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Siteids</h1>
+
+<div id="siteids">
+  <% @siteids.each do |siteid| %>
+    <%= render siteid %>
+    <p>
+      <%= link_to "Show this siteid", siteid %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New siteid", new_siteid_path %>

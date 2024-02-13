@@ -1,0 +1,2 @@
+class Siteid < ApplicationRecord
+end
