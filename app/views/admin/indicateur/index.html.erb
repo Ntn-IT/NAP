@@ -1,0 +1,15 @@
+<% content_for(:title, "Indicateurs NTN Allonnes") %>
+
+
+<%= render layout: "layout", locals: { wrapper: true, sidebar: false, hide_breadcrumbs: false } do %>
+	<input type="text" id="theinput" name="theinput" />
+<select name="thelist" onChange="combo(this, 'theinput')">
+  <option>global</option>
+  <option>ligne 1</option>
+  <option>ligne 2</option>
+</select> 
+	<iframe src="http://grafana.ntn-snr.com:3000/d-solo/cb94eadd-7fb6-4317-965d-e430727a9c5c/test-bi2?orgId=1&from=1707794337221&to=1707815937221&panelId=1" width="450" height="200" frameborder="0"></iframe>
+  
+<% end %>
+
+

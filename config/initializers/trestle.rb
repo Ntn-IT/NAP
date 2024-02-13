@@ -10,7 +10,7 @@ Trestle.configure do |config|
   # expanded/desktop navigation. These images should be placed within your
   # asset paths, e.g. app/assets/images.
   #
-  #config.site_logo = "Ntn-logo.png"
+  config.site_logo = "Ntn-logo.png"
 
   # Specify a custom image to be used for the collapsed/tablet navigation.
   #
@@ -34,7 +34,7 @@ Trestle.configure do |config|
   #
   # Set the path at which to mount the Trestle admin. Defaults to /admin.
   #
-  # config.path = "/admin"
+ config.path = "/admin"
 
   # Toggle whether Trestle should automatically mount the admin within your
   # Rails application's routes. Defaults to true.
@@ -56,7 +56,7 @@ Trestle.configure do |config|
   # Set the default icon class to use when it is not explicitly provided.
   # Defaults to "fa fa-arrow-circle-o-right".
   #
-  # config.default_navigation_icon = "fa fa-arrow-circle-o-right"
+ config.default_navigation_icon = "fa fa-arrow-circle-o-right"
 
   # Add an explicit menu block to be added to the admin navigation.
   #

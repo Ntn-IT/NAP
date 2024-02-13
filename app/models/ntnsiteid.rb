@@ -1,2 +1,0 @@
-class Ntnsiteid < ApplicationRecord
-end

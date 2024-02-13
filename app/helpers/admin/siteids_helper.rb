@@ -1,0 +1,2 @@
+module Admin::SiteidsHelper
+end

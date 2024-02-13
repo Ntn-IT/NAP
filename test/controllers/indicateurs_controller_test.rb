@@ -1,6 +1,6 @@
 require "test_helper"
 
-class EmpidTest < ActiveSupport::TestCase
+class IndicateursControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

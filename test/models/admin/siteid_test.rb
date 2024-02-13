@@ -1,6 +1,6 @@
 require "test_helper"
 
-class NtnsiteidTest < ActiveSupport::TestCase
+class Admin::SiteidTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
