@@ -1,7 +1,7 @@
 Trestle.resource(:siteids) do
   menu do
     group :configuration, priority: :first do
-      item :siteids, icon: "fa fa-key"
+      item :"NTN Sites Admin", icon: "fa fa-key"
     end
   end
 
