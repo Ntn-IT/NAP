@@ -1,7 +1,7 @@
-Trestle.admin(:api) do
+Trestle.resource(:apis) do
   menu do
     group :applications, priority: :first do
-      item :"NTN Api", icon: "fa fa-address-book"
+      item :"Ntn Api", icon: "fa fa-star"
     end
   end
 end

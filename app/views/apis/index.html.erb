@@ -1,0 +1,21 @@
+<h3>STOCK LIST</h3>   
+      
+
+      
+     <table class="table table-bordered table-striped">   
+       <tr>   
+        <th>Name</th>   
+        <th>emp_ID/th>   
+        <th>emp_M1</th>   
+          
+      </tr>   
+       
+      <% @empids.each do |empid| %>   
+          <tr>   
+            <td><%= empid.emp_CName %></td>   
+            <td><%= empid.emp_PI_ID %></td>   
+            <td><%= empid.emp_M1 %></td> 
+              
+           </tr>   
+      <% end %>   
+    </table>  

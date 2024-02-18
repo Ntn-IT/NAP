@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @empid %>
+
+<div>
+  <%= link_to "Edit this empid", edit_empid_path(@empid) %> |
+  <%= link_to "Back to empids", empids_path %>
+
+  <%= button_to "Destroy this empid", @empid, method: :delete %>
+</div>

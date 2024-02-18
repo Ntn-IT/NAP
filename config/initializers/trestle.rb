@@ -10,11 +10,11 @@ Trestle.configure do |config|
   # expanded/desktop navigation. These images should be placed within your
   # asset paths, e.g. app/assets/images.
   #
-  config.site_logo = "Ntn-logo.png"
+  config.site_logo = "logo_ntn.jpg"
 
   # Specify a custom image to be used for the collapsed/tablet navigation.
   #
-  config.site_logo_small = "Ntn-logo.png"
+  #config.site_logo_small = "logo_ntn.jpg"
 
   # Specify a favicon to be used within the admin.
   #

@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  emp_ID: 1
+  emp_SITEID: 1
+  emp_FName: MyText
+  emp_LName: MyText
+  emp_CName: MyText
+  emp_Mat: MyText
+  emp_MatHR: 1
+  emp_Department: MyText
+  emp_Service: MyText
+  emp_M1: MyText
+  emp_PI_ID: 1
+
+two:
+  emp_ID: 1
+  emp_SITEID: 1
+  emp_FName: MyText
+  emp_LName: MyText
+  emp_CName: MyText
+  emp_Mat: MyText
+  emp_MatHR: 1
+  emp_Department: MyText
+  emp_Service: MyText
+  emp_M1: MyText
+  emp_PI_ID: 1
