@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @api %>
+
+<div>
+  <%= link_to "Edit this api", edit_api_path(@api) %> |
+  <%= link_to "Back to apis", apis_path %>
+
+  <%= button_to "Destroy this api", @api, method: :delete %>
+</div>

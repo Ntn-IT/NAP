@@ -6,10 +6,12 @@ require 'sidekiq/web'
 require 'sidekiq/cron/web'
 
 Rails.application.routes.draw do
+  resources :blogs
+  resources :permissions
   resources :apis
   resources :empids
   resources :siteids
-  root to: 'home#index'
+  root to: 'home#/dashboard#index'
   namespace :admin do
     end
 end

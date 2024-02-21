@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_16_085047) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_21_140026) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,8 +27,21 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_16_085047) do
   end
 
   create_table "apis", force: :cascade do |t|
+    t.integer "api_mat"
+    t.integer "api_M1"
+    t.text "api_Obj1"
+    t.text "api_Obj2"
+    t.text "api_Obj3"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "blogs", force: :cascade do |t|
+    t.text "title"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_blogs_on_user_id"
   end
 
   create_table "empids", force: :cascade do |t|
@@ -45,7 +58,19 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_16_085047) do
     t.text "emp_PI_ID"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "emp_Qualification", null: false
+    t.text "emp_Qualification"
+    t.index ["emp_MatHR"], name: "index_empids_on_emp_MatHR", unique: true
+  end
+
+  create_table "permissions", force: :cascade do |t|
+    t.text "app_name"
+    t.boolean "app_connect"
+    t.boolean "app_listing"
+    t.boolean "app_read"
+    t.boolean "apps_modify"
+    t.text "app_context"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "siteids", force: :cascade do |t|
@@ -69,6 +94,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_16_085047) do
     t.datetime "remember_token_expires_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "mat_snr", null: false
+    t.integer "mat_hr", null: false
   end
 
+  add_foreign_key "blogs", "users"
 end

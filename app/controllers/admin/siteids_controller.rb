@@ -3,6 +3,7 @@ class Admin::SiteidsController < ApplicationController
 
   # GET /admin/siteids or /admin/siteids.json
   def index
+    binding.pry
     @admin_siteids = Admin::Siteid.all
   end
 

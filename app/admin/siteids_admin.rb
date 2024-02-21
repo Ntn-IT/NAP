@@ -1,7 +1,7 @@
 Trestle.resource(:siteids) do
   menu do
-    group :configuration, priority: :first do
-      item :"NTN Sites Admin", icon: "fa fa-key"
+    group :"configuration des apps", priority: :first do
+      item :"Gestion des sites", icon: "fa fa-industry"
     end
   end
 

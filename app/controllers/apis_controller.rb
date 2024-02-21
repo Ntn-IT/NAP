@@ -1,9 +1,9 @@
-class ApisController < ApplicationController
+class Admin::ApisController < ApplicationController
   before_action :set_api, only: %i[ show edit update destroy ]
 
   # GET /apis or /apis.json
   def index
-    @apis = Empid.all
+    @apis = api.all
   end
 
   # GET /apis/1 or /apis/1.json
@@ -12,7 +12,7 @@ class ApisController < ApplicationController
 
   # GET /apis/new
   def new
-    @api = Empid.new
+    @api = api.new
   end
 
   # GET /apis/1/edit
@@ -21,11 +21,12 @@ class ApisController < ApplicationController
 
   # POST /apis or /apis.json
   def create
-    @api = Empid.new(api_params)
+    binding.pry
+    @api = api.new(api_params)
 
     respond_to do |format|
       if @api.save
-        format.html { redirect_to api_url(@api), notice: "Api was successfully created." }
+        format.html { redirect_to api_url(@api), notice: "api was successfully created." }
         format.json { render :show, status: :created, location: @api }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +39,7 @@ class ApisController < ApplicationController
   def update
     respond_to do |format|
       if @api.update(api_params)
-        format.html { redirect_to api_url(@api), notice: "Api was successfully updated." }
+        format.html { redirect_to api_url(@api), notice: "api was successfully updated." }
         format.json { render :show, status: :ok, location: @api }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +53,7 @@ class ApisController < ApplicationController
     @api.destroy
 
     respond_to do |format|
-      format.html { redirect_to apis_url, notice: "Api was successfully destroyed." }
+      format.html { redirect_to apis_url, notice: "api was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -60,11 +61,11 @@ class ApisController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_api
-      @api = Empid.find(params[:id])
+      @api = api.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def api_params
-      params.fetch(:api, {})
+      params.require(:api).permit(:api_mat, :user_id)
     end
 end

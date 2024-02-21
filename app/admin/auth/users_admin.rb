@@ -1,7 +1,7 @@
 Trestle.resource(:users, model: User, scope: Auth) do
   menu do
     group :"Administration du site", priority: :last do
-      item :"Ntn Users", icon: "fas fa-users"
+      item :"Site Users", icon: "fas fa-users"
     end
   end
 
@@ -12,6 +12,8 @@ Trestle.resource(:users, model: User, scope: Auth) do
     column :email, link: true
     column :first_name
     column :last_name
+    column :mat_snr
+    column :mat_hr
     actions do |a|
       a.delete unless a.instance == current_user
     end
@@ -24,7 +26,10 @@ Trestle.resource(:users, model: User, scope: Auth) do
       col(sm: 6) { text_field :first_name }
       col(sm: 6) { text_field :last_name }
     end
-
+    row do
+      col(sm: 6) { text_field :mat_hr }
+      col(sm: 6) { text_field :mat_snr }
+    end
     row do
       col(sm: 6) { password_field :password }
       col(sm: 6) { password_field :password_confirmation }

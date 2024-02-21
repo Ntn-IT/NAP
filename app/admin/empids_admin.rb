@@ -1,37 +1,27 @@
 Trestle.resource(:empids) do
   menu do
-    group :configuration, priority: :first do
-      item :"NTN Employees Admin", icon: "fa fa-key"
+    group :"configuration des apps", priority: :first do
+      item :"Gestion des employés", icon: "fa fa-key"
     end
   end
+  table do
+    column :emp_MatHR
+    column :emp_CName
+    actions
+  end
+  form do |empid|
+    tab :api do
+      text_field :emp_CName
+    end
+    tab :apis, badge: empids.apis.size do
+      table empid.apis, admin: :apis do
+        column :api_M1, link: true
+        column :done, align: :center
+        column :created_at, align: :center
+        actions
+      end
 
-  # Customize the table columns shown on the index view.
-  #
-  # table do
-  #   column :name
-  #   column :created_at, align: :center
-  #   actions
-  # end
-
-  # Customize the form fields shown on the new/edit views.
-  #
-  # form do |empid|
-  #   text_field :name
-  #
-  #   row do
-  #     col { datetime_field :updated_at }
-  #     col { datetime_field :created_at }
-  #   end
-  # end
-
-  # By default, all parameters passed to the update and create actions will be
-  # permitted. If you do not have full trust in your users, you should explicitly
-  # define the list of permitted parameters.
-  #
-  # For further information, see the Rails documentation on Strong Parameters:
-  #   http://guides.rubyonrails.org/action_controller_overview.html#strong-parameters
-  #
-  # params do |params|
-  #   params.require(:empid).permit(:name, ...)
-  # end
+      concat admin_link_to("New Task", admin: :apis, action: :new, params: { empid_id: empid }, class: "btn btn-success")
+    end
+  end
 end

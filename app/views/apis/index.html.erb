@@ -1,21 +1,14 @@
-<h3>STOCK LIST</h3>   
-      
+<p style="color: green"><%= notice %></p>
 
-      
-     <table class="table table-bordered table-striped">   
-       <tr>   
-        <th>Name</th>   
-        <th>emp_ID/th>   
-        <th>emp_M1</th>   
-          
-      </tr>   
-       
-      <% @empids.each do |empid| %>   
-          <tr>   
-            <td><%= empid.emp_CName %></td>   
-            <td><%= empid.emp_PI_ID %></td>   
-            <td><%= empid.emp_M1 %></td> 
-              
-           </tr>   
-      <% end %>   
-    </table>  
+<h1>Apis</h1>
+
+<div id="apis">
+  <% @apis.each do |api| %>
+    <%= render api %>
+    <p>
+      <%= link_to "Show this api", api %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New api", new_api_path %>

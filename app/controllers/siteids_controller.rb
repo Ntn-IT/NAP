@@ -3,6 +3,7 @@ class SiteidsController < ApplicationController
 
   # GET /siteids or /siteids.json
   def index
+    binding.pry
     @siteids = Siteid.all
   end
 
