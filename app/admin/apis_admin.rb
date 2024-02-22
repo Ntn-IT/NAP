@@ -1,26 +1,19 @@
 Trestle.resource(:apis) do
     menu do
       group :applications, priority: :first do
-        item :"Annual Person Interview", icon: "fa fa-handshake"
+        item :"1_Entretien Annuel", icon: "fa fa-handshake"
       end
     end
     form do |empid|
-        text_field :api_M1
-        select :user, User.all
-
-    end  
-    controller do
-      def new
-        
-        super
+      connected_user = current_user.email
+      for line in Empid.where(emp_M1: current_user.mat_hr).select("emp_MatHR").all 
+        a = line.emp_MatHR
+        b = Empid.where(emp_MatHR: a).select("emp_CName").first
+        c = b.emp_CName
+        total = [a,c].join(" ")
+        static_field :"Matricule , Nom/Prénom", total
       end
-      def build_instance
-        binding.pry
-        admin.build_instance({api_M1:User.find_by(mat_hr:4040),user:User.find(1)}, params)
-        self.instance = admin.build_instance(resource_params, params)
-      end
-    end
 
+    end 
   end
-
 
