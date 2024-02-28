@@ -58,7 +58,7 @@ class Admin::ApisController < ApplicationController
     end
   end
 
-  private
+   private
     # Use callbacks to share common setup or constraints between actions.
     def set_api
       @api = api.find(params[:id])

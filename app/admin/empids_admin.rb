@@ -4,14 +4,16 @@ Trestle.resource(:empids) do
       item :"Gestion des employés", icon: "fa fa-key"
     end
   end
-  table do
+  table do |empid|
     column :emp_MatHR
     column :emp_CName
     actions
   end
   form do |empid|
+    concat Trestle::Form::Automatic.new(admin).render(self, empid)
     tab :api do
-      text_field :emp_CName
+      static_field :emp_CName
+      text_field :emp_MatHR
     end
   end
 end
