@@ -1,20 +1,21 @@
-Trestle.configure do |config|
+# frozen_string_literal: true
 
+Trestle.configure do |config|
   # == Customization Options
   #
   # Set the page title shown in the main header within the admin.
   #
-  config.site_title = "Nap (NTN App Portal)"
+  config.site_title = 'Nap (NTN App Portal)'
 
   # Specify a custom image to be used in place of the site title for mobile and
   # expanded/desktop navigation. These images should be placed within your
   # asset paths, e.g. app/assets/images.
   #
-  config.site_logo = "logo_ntn.jpg"
+  config.site_logo = 'logo_ntn.jpg'
 
   # Specify a custom image to be used for the collapsed/tablet navigation.
   #
-  #config.site_logo_small = "logo_ntn.jpg"
+  # config.site_logo_small = "logo_ntn.jpg"
 
   # Specify a favicon to be used within the admin.
   #
@@ -23,7 +24,7 @@ Trestle.configure do |config|
   # Set the text shown in the page footer within the admin.
   # Defaults to 'Powered by Trestle'.
   #
- config.footer = "Powered by NTN-Transmission Europe Allonnes (Manuel CARRILHO)"
+  config.footer = 'Powered by NTN-Transmission Europe Allonnes (Manuel CARRILHO)'
 
   # Sets the default precision for timestamps (either :minutes or :seconds).
   # Defaults to :minutes.
@@ -34,7 +35,7 @@ Trestle.configure do |config|
   #
   # Set the path at which to mount the Trestle admin. Defaults to /admin.
   #
- config.path = "/admin"
+  config.path = '/admin'
 
   # Toggle whether Trestle should automatically mount the admin within your
   # Rails application's routes. Defaults to true.
@@ -56,7 +57,7 @@ Trestle.configure do |config|
   # Set the default icon class to use when it is not explicitly provided.
   # Defaults to "fa fa-arrow-circle-o-right".
   #
- config.default_navigation_icon = "fa fa-arrow-circle-o-right"
+  config.default_navigation_icon = 'fa fa-arrow-circle-o-right'
 
   # Add an explicit menu block to be added to the admin navigation.
   #

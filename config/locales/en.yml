@@ -31,7 +31,7 @@
 
 en:
   admin:
-     empids:
+     personnes:
         breadcrumbs:
           index: "Authority Cards"
         titles:
@@ -39,7 +39,7 @@ en:
         table:
           headers:
             auth: "Authority"
-     apis:
+     entretiens:
         breadcrumbs:
           index: "Entretiens individuels"
         titles:

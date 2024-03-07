@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 Trestle.resource(:siteids) do
   menu do
     group :"configuration des apps", priority: :first do
-      item :"Gestion des sites", icon: "fa fa-industry"
+      item :"Gestion des sites", icon: 'fa fa-industry'
     end
   end
 

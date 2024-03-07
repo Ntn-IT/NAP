@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Trestle.resource(:account, model: User, scope: Auth, singular: true) do
   instance do
     current_user
@@ -5,7 +7,7 @@ Trestle.resource(:account, model: User, scope: Auth, singular: true) do
 
   remove_action :new, :edit, :destroy
 
-  form do |user|
+  form do |_user|
     text_field :email
 
     row do

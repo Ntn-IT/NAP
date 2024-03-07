@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  siteid: 1
+  fname: MyText
+  lname: MyText
+  cname: MyText
+  matsnr: MyText
+  mathr: 1
+  department: MyText
+  service: MyText
+  m1: MyText
+
+two:
+  siteid: 1
+  fname: MyText
+  lname: MyText
+  cname: MyText
+  matsnr: MyText
+  mathr: 1
+  department: MyText
+  service: MyText
+  m1: MyText
