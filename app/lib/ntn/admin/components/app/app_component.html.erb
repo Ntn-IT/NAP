@@ -1,0 +1,80 @@
+<div id="loader" class="hidden">
+  <div class="loader-circle1 loader-child"></div>
+  <div class="loader-circle2 loader-child"></div>
+  <div class="loader-circle3 loader-child"></div>
+  <div class="loader-circle4 loader-child"></div>
+  <div class="loader-circle5 loader-child"></div>
+  <div class="loader-circle6 loader-child"></div>
+  <div class="loader-circle7 loader-child"></div>
+  <div class="loader-circle8 loader-child"></div>
+  <div class="loader-circle9 loader-child"></div>
+  <div class="loader-circle10 loader-child"></div>
+  <div class="loader-circle11 loader-child"></div>
+  <div class="loader-circle12 loader-child"></div>
+</div>
+
+<div <%= build_attributes(css: "app-wrapper") %>>
+  <aside class="app-sidebar navbar-expand-md" id="app-sidebar">
+
+    <header class="app-sidebar-header">
+      <button class="navbar-toggler" type="button" aria-controls="app-sidebar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="app-sidebar-title" href="/admin">
+        <span class="title-large"> <%= title %> </span>
+        <span class="title-small"> <%= env %> </span>
+      </a>
+    </header>
+
+    <div class="app-sidebar-inner">
+      <nav class="app-nav">
+        <%= build_menu %>
+      </nav>
+      <button class="toggle-sidebar">
+        <span class="sr-only"><%= t("Toggle sidebar") %> </span>
+      </button>
+    </div>
+
+  </aside>
+
+  <div class="app-container">
+    <header class="app-header">
+      <div class="userbox dropdown">
+        <a data-toggle="dropdown" href="#">
+          <span class="name dropdown-toggle">
+            <strong>
+              <%= current_user.employee.cname %>
+            </strong>
+          </span>
+          <div class="avatar">
+            <img src="https://www.gravatar.com/avatar/7c4ff521986b4ff8d29440beec01972d.png?d=mp" />
+          </div>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-right">
+          <li>
+            <%= build link(
+              url: user_path(current_user), 
+              text: t("My account"), 
+              css: "dropdown-item"
+            ) %>
+          </li>
+          <li>
+            <%= build link(
+              url: destroy_user_session_path, 
+              text: t("Logout"), 
+              method: :delete,
+              css: "dropdown-item"
+            ) %>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <%= content %>
+
+    <footer class="app-footer"> 
+      Powered with ❤️ by Manuel Carrilho !
+    </footer>
+  </div>
+</div>
+

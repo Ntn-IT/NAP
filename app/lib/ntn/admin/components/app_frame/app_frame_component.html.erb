@@ -1,0 +1,42 @@
+<turbo-frame <%=  build_attributes(
+  id:"app-frame",
+  data: { turbo_action: "advance" }
+) %> >
+  <main class="app-main" data-context="/admin/movies">
+    <header class="content-header">
+
+      <div class="content-header-title">
+        <h1><%= build title %></h1>
+        
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="/admin">Home</a>
+          </li>
+          <li class="breadcrumb-item active">
+            <a href="/admin/movies">Movies</a>
+          </li>
+        </ol> 
+      </div>
+
+      <div class="content-header-toolbars">
+
+        <% actions.each do |action| %>
+          <div class="btn-toolbar secondary-toolbar" role="toolbar">
+            <%= build action  =%>
+          </div>
+        <% end %>
+
+      </div>
+
+    </header>
+
+    <div class="main-content-area">
+      <div class="main-content-container">
+        <div class="main-content">
+          <%= content %>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</turbo-frame>

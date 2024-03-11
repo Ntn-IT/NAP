@@ -1,0 +1,10 @@
+<%= 
+  build app_frame(
+    title: t("Employee"),
+  ) do 
+    build index_grid(
+      self,
+      attributes: employee_context.fetch_attributes
+    )
+  end 
+%>

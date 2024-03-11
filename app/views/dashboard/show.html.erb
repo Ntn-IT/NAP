@@ -1,0 +1,898 @@
+
+<%= build app_frame(
+  title: t("Dashboard"),
+) do %>
+
+  <%= build main_content_header do %>
+    <div class="searchbox">
+      <form action="/admin/movies" accept-charset="UTF-8" method="get">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <icon class="fa fa-search"></icon>
+            </span>
+          </div>
+          <input type="search" name="q" id="q" class="form-control" autocomplete="off" placeholder="Search" />
+        </div>
+      </form>
+    </div>
+  <% end %>
+
+  <div class="table-container">
+    <table class="trestle-table">
+      <thead>
+        <tr>
+          <th class="poster-column text-center"></th>
+          <th class="media-title-column">
+            <a class="sort" href="/admin/movies?order=asc&amp;sort=title">Title</a>
+          </th>
+          <th class="">
+            <a class="sort" href="/admin/movies?order=asc&amp;sort=director">Directors</a>
+          </th>
+          <th class="hidden-xs">Genres</th>
+          <th class="text-center">
+            <a class="sort" href="/admin/movies?order=asc&amp;sort=status">Status</a>
+          </th>
+          <th class="text-center">
+            <a class="sort" href="/admin/movies?order=asc&amp;sort=release_date">Release date</a>
+          </th>
+          <th class="text-center">
+            <a class="sort" href="/admin/movies?order=asc&amp;sort=vote_average">Score</a>
+          </th>
+          <th class="actions"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-url="/admin/movies/1">
+          <td class="poster-column text-center">
+            <a href="/admin/movies/1">
+              <img class="poster" src="https://image.tmdb.org/t/p/w154/7FpGJTN8IL6IBvQMp6YHBFyhO9Z.jpg" />
+            </a>
+          </td>
+          <td class="media-title-column">
+            <a href="/admin/movies/1">
+              <strong>No Way Up</strong>
+              <br />
+              <small class="text-muted hidden-xs">Sophie McIntosh, Will Attenborough, Jeremias Amoore, Manuel Pacific, Grace Nettle</small>
+            </a>
+          </td>
+          <td class="">Claudio Fäh</td>
+          <td class="hidden-xs">
+            <span class="tag">Action</span>
+            <span class="tag">Horror</span>
+            <span class="tag">Thriller</span>
+          </td>
+          <td class="text-center">
+            <span class="badge badge-success">Released</span>
+          </td>
+          <td class="text-center">
+            <time datetime="2024-01-18" class="datestamp">1/18/2024</time>
+          </td>
+          <td class="text-center">59%</td>
+          <td class="actions">
+            <a data-toggle="confirm-delete" data-placement="left" class="btn btn-danger has-icon" rel="nofollow" data-method="delete" href="/admin/movies/1">
+              <i class="fa fa-trash"></i>
+              <span class="btn-label">Delete Movie</span>
+            </a>
+          </td>
+        </tr>
+        <tr data-url="/admin/movies/2">
+          <td class="poster-column text-center">
+            <a href="/admin/movies/2">
+              <img class="poster" src="https://image.tmdb.org/t/p/w154/kCGlIMHnOm8JPXq3rXM6c5wMxcT.jpg" />
+            </a>
+          </td>
+          <td class="media-title-column">
+            <a href="/admin/movies/2">
+              <strong>Poor Things</strong>
+              <br />
+              <small class="text-muted hidden-xs">Emma Stone, Mark Ruffalo, Willem Dafoe, Ramy Youssef, Jerrod Carmichael</small>
+            </a>
+          </td>
+          <td class="">Yorgos Lanthimos</td>
+          <td class="hidden-xs">
+            <span class="tag">Comedy</span>
+            <span class="tag">Romance</span>
+            <span class="tag">Science Fiction</span>
+          </td>
+          <td class="text-center">
+            <span class="badge badge-success">Released</span>
+          </td>
+          <td class="text-center">
+            <time datetime="2023-12-07" class="datestamp">12/7/2023</time>
+          </td>
+          <td class="text-center">80%</td>
+          <td class="actions">
+            <a data-toggle="confirm-delete" data-placement="left" class="btn btn-danger has-icon" rel="nofollow" data-method="delete" href="/admin/movies/2">
+              <i class="fa fa-trash"></i>
+              <span class="btn-label">Delete Movie</span>
+            </a>
+          </td>
+        </tr>
+        <tr data-url="/admin/movies/3">
+          <td class="poster-column text-center">
+            <a href="/admin/movies/3">
+              <img class="poster" src="https://image.tmdb.org/t/p/w154/8b8R8l88Qje9dn9OE8PY05Nxl1X.jpg" />
+            </a>
+          </td>
+          <td class="media-title-column">
+            <a href="/admin/movies/3">
+              <strong>Dune: Part Two</strong>
+              <br />
+              <small class="text-muted hidden-xs">Timothée Chalamet, Zendaya, Rebecca Ferguson, Josh Brolin, Austin Butler</small>
+            </a>
+          </td>
+          <td class="">Denis Villeneuve</td>
+          <td class="hidden-xs">
+            <span class="tag">Action</span>
+            <span class="tag">Adventure</span>
+            <span class="tag">Science Fiction</span>
+          </td>
+          <td class="text-center">
+            <span class="badge badge-success">Released</span>
+          </td>
+          <td class="text-center">
+            <time datetime="2024-02-27" class="datestamp">2/27/2024</time>
+          </td>
+          <td class="text-center">84%</td>
+          <td class="actions">
+            <a data-toggle="confirm-delete" data-placement="left" class="btn btn-danger has-icon" rel="nofollow" data-method="delete" href="/admin/movies/3">
+              <i class="fa fa-trash"></i>
+              <span class="btn-label">Delete Movie</span>
+            </a>
+          </td>
+        </tr>
+        <tr data-url="/admin/movies/4">
+          <td class="poster-column text-center">
+            <a href="/admin/movies/4">
+              <img class="poster" src="https://image.tmdb.org/t/p/w154/h27WHO2czaY5twDmV3Wfx5IdqoE.jpg" />
+            </a>
+          </td>
+          <td class="media-title-column">
+            <a href="/admin/movies/4">
+              <strong>Land of Bad</strong>
+              <br />
+              <small class="text-muted hidden-xs">Liam Hemsworth, Russell Crowe, Luke Hemsworth, Ricky Whittle, Milo Ventimiglia</small>
+            </a>
+          </td>
+          <td class="">William Eubank</td>
+          <td class="hidden-xs">
+            <span class="tag">Action</span>
+            <span class="tag">Thriller</span>
+            <span class="tag">War</span>
+          </td>
+          <td class="text-center">
+            <span class="badge badge-success">Released</span>
+          </td>
+          <td class="text-center">
+            <time datetime="2024-01-25" class="datestamp">1/25/2024</time>
+          </td>
+          <td class="text-center">69%</td>
+          <td class="actions">
+            <a data-toggle="confirm-delete" data-placement="left" class="btn btn-danger has-icon" rel="nofollow" data-method="delete" href="/admin/movies/4">
+              <i class="fa fa-trash"></i>
+              <span class="btn-label">Delete Movie</span>
+            </a>
+          </td>
+        </tr>
+        <tr data-url="/admin/movies/5">
+          <td class="poster-column text-center">
+            <a href="/admin/movies/5">
+              <img class="poster" src="https://image.tmdb.org/t/p/w154/ldfCF9RhR40mppkzmftxapaHeTo.jpg" />
+            </a>
+          </td>
+          <td class="media-title-column">
+            <a href="/admin/movies/5">
+              <strong>Migration</strong>
+              <br />
+              <small class="text-muted hidden-xs">Kumail Nanjiani, Elizabeth Banks, Caspar Jennings, Tresi Gazal, Awkwafina</small>
+            </a>
+          </td>
+          <td class="">Benjamin Renner</td>
+          <td class="hidden-xs">
+            <span class="tag">Action</span>
+            <span class="tag">Adventure</span>
+            <span class="tag">Animation</span>
+            <span class="tag">Comedy</span>
+            <span class="tag">Family</span>
+          </td>
+          <td class="text-center">
+            <span class="badge badge-success">Released</span>
+          </td>
+          <td class="text-center">
+            <time datetime="2023-12-06" class="datestamp">12/6/2023</time>
+          </td>
+          <td class="text-center">76%</td>
+          <td class="actions">
+            <a data-toggle="confirm-delete" data-placement="left" class="btn btn-danger has-icon" rel="nofollow" data-method="delete" href="/admin/movies/5">
+              <i class="fa fa-trash"></i>
+              <span class="btn-label">Delete Movie</span>
+            </a>
+          </td>
+        </tr>
+        <tr data-url="/admin/movies/6">
+          <td class="poster-column text-center">
+            <a href="/admin/movies/6">
+              <img class="poster" src="https://image.tmdb.org/t/p/w154/yRt7MGBElkLQOYRvLTT1b3B1rcp.jpg" />
+            </a>
+          </td>
+          <td class="media-title-column">
+            <a href="/admin/movies/6">
+              <strong>Anyone But You</strong>
+              <br />
+              <small class="text-muted hidden-xs">Sydney Sweeney, Glen Powell, Alexandra Shipp, Michelle Hurd, Bryan Brown</small>
+            </a>
+          </td>
+          <td class="">Will Gluck</td>
+          <td class="hidden-xs">
+            <span class="tag">Comedy</span>
+            <span class="tag">Romance</span>
+          </td>
+          <td class="text-center">
+            <span class="badge badge-success">Released</span>
+          </td>
+          <td class="text-center">
+            <time datetime="2023-12-21" class="datestamp">12/21/2023</time>
+          </td>
+          <td class="text-center">69%</td>
+          <td class="actions">
+            <a data-toggle="confirm-delete" data-placement="left" class="btn btn-danger has-icon" rel="nofollow" data-method="delete" href="/admin/movies/6">
+              <i class="fa fa-trash"></i>
+              <span class="btn-label">Delete Movie</span>
+            </a>
+          </td>
+        </tr>
+        <tr data-url="/admin/movies/13">
+          <td class="poster-column text-center">
+            <a href="/admin/movies/13">
+              <img class="poster" src="https://image.tmdb.org/t/p/w154/1On8iF3AsFIbpyfZg1xiGWMAFBn.jpg" />
+            </a>
+          </td>
+          <td class="media-title-column">
+            <a href="/admin/movies/13">
+              <strong>Skal - Fight for Survival</strong>
+              <br />
+              <small class="text-muted hidden-xs">Evan Marsh, Chris Sandiford, Mariah Inger, Darren Eisenhauer, Olivia Scriven</small>
+            </a>
+          </td>
+          <td class="">Benjamin Cappelletti</td>
+          <td class="hidden-xs">
+            <span class="tag">Action</span>
+            <span class="tag">Comedy</span>
+            <span class="tag">Horror</span>
+            <span class="tag">Thriller</span>
+          </td>
+          <td class="text-center">
+            <span class="badge badge-success">Released</span>
+          </td>
+          <td class="text-center">
+            <time datetime="2023-11-24" class="datestamp">11/24/2023</time>
+          </td>
+          <td class="text-center">55%</td>
+          <td class="actions">
+            <a data-toggle="confirm-delete" data-placement="left" class="btn btn-danger has-icon" rel="nofollow" data-method="delete" href="/admin/movies/13">
+              <i class="fa fa-trash"></i>
+              <span class="btn-label">Delete Movie</span>
+            </a>
+          </td>
+        </tr>
+        <tr data-url="/admin/movies/7">
+          <td class="poster-column text-center">
+            <a href="/admin/movies/7">
+              <img class="poster" src="https://image.tmdb.org/t/p/w154/d5NXSklXo0qyIYkgV94XAgMIckC.jpg" />
+            </a>
+          </td>
+          <td class="media-title-column">
+            <a href="/admin/movies/7">
+              <strong>Dune</strong>
+              <br />
+              <small class="text-muted hidden-xs">Timothée Chalamet, Rebecca Ferguson, Oscar Isaac, Josh Brolin, Stellan Skarsgård</small>
+            </a>
+          </td>
+          <td class="">Denis Villeneuve</td>
+          <td class="hidden-xs">
+            <span class="tag">Adventure</span>
+            <span class="tag">Science Fiction</span>
+          </td>
+          <td class="text-center">
+            <span class="badge badge-success">Released</span>
+          </td>
+          <td class="text-center">
+            <time datetime="2021-09-15" class="datestamp">9/15/2021</time>
+          </td>
+          <td class="text-center">78%</td>
+          <td class="actions">
+            <a data-toggle="confirm-delete" data-placement="left" class="btn btn-danger has-icon" rel="nofollow" data-method="delete" href="/admin/movies/7">
+              <i class="fa fa-trash"></i>
+              <span class="btn-label">Delete Movie</span>
+            </a>
+          </td>
+        </tr>
+        <tr data-url="/admin/movies/8">
+          <td class="poster-column text-center">
+            <a href="/admin/movies/8">
+              <img class="poster" src="https://image.tmdb.org/t/p/w154/w0Fao59IOjgfA9a1BFHG5nECGJg.jpg" />
+            </a>
+          </td>
+          <td class="media-title-column">
+            <a href="/admin/movies/8">
+              <strong>The Adventures</strong>
+              <br />
+              <small class="text-muted hidden-xs">Sunny Suwanmethanon, Matcha Mosimann, Somchai Kemglad, Pongsatorn Jongwilas, Jarnnawut Jarnyaharn</small>
+            </a>
+          </td>
+          <td class="">Ittisak Eusunthornwattana</td>
+          <td class="hidden-xs">
+            <span class="tag">Adventure</span>
+            <span class="tag">Comedy</span>
+            <span class="tag">Romance</span>
+          </td>
+          <td class="text-center">
+            <span class="badge badge-success">Released</span>
+          </td>
+          <td class="text-center">
+            <time datetime="2023-12-22" class="datestamp">12/22/2023</time>
+          </td>
+          <td class="text-center">68%</td>
+          <td class="actions">
+            <a data-toggle="confirm-delete" data-placement="left" class="btn btn-danger has-icon" rel="nofollow" data-method="delete" href="/admin/movies/8">
+              <i class="fa fa-trash"></i>
+              <span class="btn-label">Delete Movie</span>
+            </a>
+          </td>
+        </tr>
+        <tr data-url="/admin/movies/9">
+          <td class="poster-column text-center">
+            <a href="/admin/movies/9">
+              <img class="poster" src="https://image.tmdb.org/t/p/w154/gwpTgtwVAwmvivBN8rAQABpx9Am.jpg" />
+            </a>
+          </td>
+          <td class="media-title-column">
+            <a href="/admin/movies/9">
+              <strong>Through My Window 3: Looking at You</strong>
+              <br />
+              <small class="text-muted hidden-xs">Clara Galle, Julio Peña, Natalia Azahara, Eric Masip, Andrea Chaparro</small>
+            </a>
+          </td>
+          <td class="">Marçal Forés</td>
+          <td class="hidden-xs">
+            <span class="tag">Comedy</span>
+            <span class="tag">Drama</span>
+            <span class="tag">Romance</span>
+          </td>
+          <td class="text-center">
+            <span class="badge badge-success">Released</span>
+          </td>
+          <td class="text-center">
+            <time datetime="2024-02-23" class="datestamp">2/23/2024</time>
+          </td>
+          <td class="text-center">67%</td>
+          <td class="actions">
+            <a data-toggle="confirm-delete" data-placement="left" class="btn btn-danger has-icon" rel="nofollow" data-method="delete" href="/admin/movies/9">
+              <i class="fa fa-trash"></i>
+              <span class="btn-label">Delete Movie</span>
+            </a>
+          </td>
+        </tr>
+        <tr data-url="/admin/movies/10">
+          <td class="poster-column text-center">
+            <a href="/admin/movies/10">
+              <img class="poster" src="https://image.tmdb.org/t/p/w154/usDIBB0hOqLM8wMSGistfqxjukZ.jpg" />
+            </a>
+          </td>
+          <td class="media-title-column">
+            <a href="/admin/movies/10">
+              <strong>Lights Out</strong>
+              <br />
+              <small class="text-muted hidden-xs">Frank Grillo, Mekhi Phifer, Scott Adkins, Dermot Mulroney, Jaime King</small>
+            </a>
+          </td>
+          <td class="">Christian Sesma</td>
+          <td class="hidden-xs">
+            <span class="tag">Action</span>
+            <span class="tag">Thriller</span>
+          </td>
+          <td class="text-center">
+            <span class="badge badge-success">Released</span>
+          </td>
+          <td class="text-center">
+            <time datetime="2024-02-16" class="datestamp">2/16/2024</time>
+          </td>
+          <td class="text-center">69%</td>
+          <td class="actions">
+            <a data-toggle="confirm-delete" data-placement="left" class="btn btn-danger has-icon" rel="nofollow" data-method="delete" href="/admin/movies/10">
+              <i class="fa fa-trash"></i>
+              <span class="btn-label">Delete Movie</span>
+            </a>
+          </td>
+        </tr>
+        <tr data-url="/admin/movies/11">
+          <td class="poster-column text-center">
+            <a href="/admin/movies/11">
+              <img class="poster" src="https://image.tmdb.org/t/p/w154/9GBhzXMFjgcZ3FdR9w3bUMMTps5.jpg" />
+            </a>
+          </td>
+          <td class="media-title-column">
+            <a href="/admin/movies/11">
+              <strong>The Marvels</strong>
+              <br />
+              <small class="text-muted hidden-xs">Brie Larson, Teyonah Parris, Iman Vellani, Zawe Ashton, Samuel L. Jackson</small>
+            </a>
+          </td>
+          <td class="">Nia DaCosta</td>
+          <td class="hidden-xs">
+            <span class="tag">Action</span>
+            <span class="tag">Adventure</span>
+            <span class="tag">Science Fiction</span>
+          </td>
+          <td class="text-center">
+            <span class="badge badge-success">Released</span>
+          </td>
+          <td class="text-center">
+            <time datetime="2023-11-08" class="datestamp">11/8/2023</time>
+          </td>
+          <td class="text-center">62%</td>
+          <td class="actions">
+            <a data-toggle="confirm-delete" data-placement="left" class="btn btn-danger has-icon" rel="nofollow" data-method="delete" href="/admin/movies/11">
+              <i class="fa fa-trash"></i>
+              <span class="btn-label">Delete Movie</span>
+            </a>
+          </td>
+        </tr>
+        <tr data-url="/admin/movies/12">
+          <td class="poster-column text-center">
+            <a href="/admin/movies/12">
+              <img class="poster" src="https://image.tmdb.org/t/p/w154/qhb1qOilapbapxWQn9jtRCMwXJF.jpg" />
+            </a>
+          </td>
+          <td class="media-title-column">
+            <a href="/admin/movies/12">
+              <strong>Wonka</strong>
+              <br />
+              <small class="text-muted hidden-xs">Timothée Chalamet, Calah Lane, Keegan-Michael Key, Hugh Grant, Paterson Joseph</small>
+            </a>
+          </td>
+          <td class="">Paul King</td>
+          <td class="hidden-xs">
+            <span class="tag">Comedy</span>
+            <span class="tag">Family</span>
+            <span class="tag">Fantasy</span>
+          </td>
+          <td class="text-center">
+            <span class="badge badge-success">Released</span>
+          </td>
+          <td class="text-center">
+            <time datetime="2023-12-06" class="datestamp">12/6/2023</time>
+          </td>
+          <td class="text-center">72%</td>
+          <td class="actions">
+            <a data-toggle="confirm-delete" data-placement="left" class="btn btn-danger has-icon" rel="nofollow" data-method="delete" href="/admin/movies/12">
+              <i class="fa fa-trash"></i>
+              <span class="btn-label">Delete Movie</span>
+            </a>
+          </td>
+        </tr>
+        <tr data-url="/admin/movies/14">
+          <td class="poster-column text-center">
+            <a href="/admin/movies/14">
+              <img class="poster" src="https://image.tmdb.org/t/p/w154/sdI9ufheNPAKnWLl2hnsZKVk0EG.jpg" />
+            </a>
+          </td>
+          <td class="media-title-column">
+            <a href="/admin/movies/14">
+              <strong>Badland Hunters</strong>
+              <br />
+              <small class="text-muted hidden-xs">Ma Dong-seok, Lee Hee-jun, Lee Jun-young, Roh Jeong-eui, Ahn Ji-hye</small>
+            </a>
+          </td>
+          <td class="">Heo Myeong-haeng</td>
+          <td class="hidden-xs">
+            <span class="tag">Action</span>
+            <span class="tag">Drama</span>
+            <span class="tag">Science Fiction</span>
+          </td>
+          <td class="text-center">
+            <span class="badge badge-success">Released</span>
+          </td>
+          <td class="text-center">
+            <time datetime="2024-01-25" class="datestamp">1/25/2024</time>
+          </td>
+          <td class="text-center">67%</td>
+          <td class="actions">
+            <a data-toggle="confirm-delete" data-placement="left" class="btn btn-danger has-icon" rel="nofollow" data-method="delete" href="/admin/movies/14">
+              <i class="fa fa-trash"></i>
+              <span class="btn-label">Delete Movie</span>
+            </a>
+          </td>
+        </tr>
+        <tr data-url="/admin/movies/15">
+          <td class="poster-column text-center">
+            <a href="/admin/movies/15">
+              <img class="poster" src="https://image.tmdb.org/t/p/w154/38N7GRJLu7IWyEdil96YobJ5LWM.jpg" />
+            </a>
+          </td>
+          <td class="media-title-column">
+            <a href="/admin/movies/15">
+              <strong>The Voyagers</strong>
+              <br />
+              <small class="text-muted hidden-xs">Matteo Schiavone, Fabio Bizzarro, Andrea Gaia Wlderk, Francesca Alice Antonini, Fabrizio Gifuni</small>
+            </a>
+          </td>
+          <td class="">Ludovico Di Martino</td>
+          <td class="hidden-xs">
+            <span class="tag">Adventure</span>
+            <span class="tag">Fantasy</span>
+            <span class="tag">TV Movie</span>
+          </td>
+          <td class="text-center">
+            <span class="badge badge-success">Released</span>
+          </td>
+          <td class="text-center">
+            <time datetime="2022-11-21" class="datestamp">11/21/2022</time>
+          </td>
+          <td class="text-center">51%</td>
+          <td class="actions">
+            <a data-toggle="confirm-delete" data-placement="left" class="btn btn-danger has-icon" rel="nofollow" data-method="delete" href="/admin/movies/15">
+              <i class="fa fa-trash"></i>
+              <span class="btn-label">Delete Movie</span>
+            </a>
+          </td>
+        </tr>
+        <tr data-url="/admin/movies/16">
+          <td class="poster-column text-center">
+            <a href="/admin/movies/16">
+              <img class="poster" src="https://image.tmdb.org/t/p/w154/AcoVfiv1rrWOmAdpnAMnM56ki19.jpg" />
+            </a>
+          </td>
+          <td class="media-title-column">
+            <a href="/admin/movies/16">
+              <strong>Wish</strong>
+              <br />
+              <small class="text-muted hidden-xs">Ariana DeBose, Chris Pine, Alan Tudyk, Angelique Cabral, Victor Garber</small>
+            </a>
+          </td>
+          <td class="">Chris Buck and Fawn Veerasunthorn</td>
+          <td class="hidden-xs">
+            <span class="tag">Adventure</span>
+            <span class="tag">Animation</span>
+            <span class="tag">Family</span>
+            <span class="tag">Fantasy</span>
+          </td>
+          <td class="text-center">
+            <span class="badge badge-success">Released</span>
+          </td>
+          <td class="text-center">
+            <time datetime="2023-11-13" class="datestamp">11/13/2023</time>
+          </td>
+          <td class="text-center">66%</td>
+          <td class="actions">
+            <a data-toggle="confirm-delete" data-placement="left" class="btn btn-danger has-icon" rel="nofollow" data-method="delete" href="/admin/movies/16">
+              <i class="fa fa-trash"></i>
+              <span class="btn-label">Delete Movie</span>
+            </a>
+          </td>
+        </tr>
+        <tr data-url="/admin/movies/17">
+          <td class="poster-column text-center">
+            <a href="/admin/movies/17">
+              <img class="poster" src="https://image.tmdb.org/t/p/w154/7lTnXOy0iNtBAdRP3TZvaKJ77F6.jpg" />
+            </a>
+          </td>
+          <td class="media-title-column">
+            <a href="/admin/movies/17">
+              <strong>Aquaman and the Lost Kingdom</strong>
+              <br />
+              <small class="text-muted hidden-xs">Jason Momoa, Patrick Wilson, Yahya Abdul-Mateen II, Randall Park, Amber Heard</small>
+            </a>
+          </td>
+          <td class="">James Wan</td>
+          <td class="hidden-xs">
+            <span class="tag">Action</span>
+            <span class="tag">Adventure</span>
+            <span class="tag">Fantasy</span>
+          </td>
+          <td class="text-center">
+            <span class="badge badge-success">Released</span>
+          </td>
+          <td class="text-center">
+            <time datetime="2023-12-20" class="datestamp">12/20/2023</time>
+          </td>
+          <td class="text-center">68%</td>
+          <td class="actions">
+            <a data-toggle="confirm-delete" data-placement="left" class="btn btn-danger has-icon" rel="nofollow" data-method="delete" href="/admin/movies/17">
+              <i class="fa fa-trash"></i>
+              <span class="btn-label">Delete Movie</span>
+            </a>
+          </td>
+        </tr>
+        <tr data-url="/admin/movies/18">
+          <td class="poster-column text-center">
+            <a href="/admin/movies/18">
+              <img class="poster" src="https://image.tmdb.org/t/p/w154/A7EByudX0eOzlkQ2FIbogzyazm2.jpg" />
+            </a>
+          </td>
+          <td class="media-title-column">
+            <a href="/admin/movies/18">
+              <strong>The Beekeeper</strong>
+              <br />
+              <small class="text-muted hidden-xs">Jason Statham, Emmy Raver-Lampman, Bobby Naderi, Josh Hutcherson, Jeremy Irons</small>
+            </a>
+          </td>
+          <td class="">David Ayer</td>
+          <td class="hidden-xs">
+            <span class="tag">Action</span>
+            <span class="tag">Drama</span>
+            <span class="tag">Thriller</span>
+          </td>
+          <td class="text-center">
+            <span class="badge badge-success">Released</span>
+          </td>
+          <td class="text-center">
+            <time datetime="2024-01-10" class="datestamp">1/10/2024</time>
+          </td>
+          <td class="text-center">74%</td>
+          <td class="actions">
+            <a data-toggle="confirm-delete" data-placement="left" class="btn btn-danger has-icon" rel="nofollow" data-method="delete" href="/admin/movies/18">
+              <i class="fa fa-trash"></i>
+              <span class="btn-label">Delete Movie</span>
+            </a>
+          </td>
+        </tr>
+        <tr data-url="/admin/movies/19">
+          <td class="poster-column text-center">
+            <a href="/admin/movies/19">
+              <img class="poster" src="https://image.tmdb.org/t/p/w154/e0ezklncv9ApFVj50FSYJZo08oT.jpg" />
+            </a>
+          </td>
+          <td class="media-title-column">
+            <a href="/admin/movies/19">
+              <strong>Dad or Mom</strong>
+              <br />
+              <small class="text-muted hidden-xs">Mauricio Ochmann, Silvia Navarro, Axel Madrazo, Aranda Sokol, Erick Terroba García</small>
+            </a>
+          </td>
+          <td class="">Ernesto Contreras</td>
+          <td class="hidden-xs">
+            <span class="tag">Comedy</span>
+          </td>
+          <td class="text-center">
+            <span class="badge badge-success">Released</span>
+          </td>
+          <td class="text-center">
+            <time datetime="2023-11-30" class="datestamp">11/30/2023</time>
+          </td>
+          <td class="text-center">73%</td>
+          <td class="actions">
+            <a data-toggle="confirm-delete" data-placement="left" class="btn btn-danger has-icon" rel="nofollow" data-method="delete" href="/admin/movies/19">
+              <i class="fa fa-trash"></i>
+              <span class="btn-label">Delete Movie</span>
+            </a>
+          </td>
+        </tr>
+        <tr data-url="/admin/movies/20">
+          <td class="poster-column text-center">
+            <a href="/admin/movies/20">
+              <img class="poster" src="https://image.tmdb.org/t/p/w154/vfEG79SQIg3p6B8rBLVeIo2BBhb.jpg" />
+            </a>
+          </td>
+          <td class="media-title-column">
+            <a href="/admin/movies/20">
+              <strong>Red Right Hand</strong>
+              <br />
+              <small class="text-muted hidden-xs">Orlando Bloom, Orlando Bloom, Andie MacDowell, Andie MacDowell, Scott Haze</small>
+            </a>
+          </td>
+          <td class="">Eshom Nelms, Eshom Nelms, Ian Nelms, and Ian Nelms</td>
+          <td class="hidden-xs">
+            <span class="tag">Action</span>
+            <span class="tag">Crime</span>
+            <span class="tag">Thriller</span>
+          </td>
+          <td class="text-center">
+            <span class="badge badge-success">Released</span>
+          </td>
+          <td class="text-center">
+            <time datetime="2024-02-22" class="datestamp">2/22/2024</time>
+          </td>
+          <td class="text-center">67%</td>
+          <td class="actions">
+            <a data-toggle="confirm-delete" data-placement="left" class="btn btn-danger has-icon" rel="nofollow" data-method="delete" href="/admin/movies/20">
+              <i class="fa fa-trash"></i>
+              <span class="btn-label">Delete Movie</span>
+            </a>
+          </td>
+        </tr>
+        <tr data-url="/admin/movies/21">
+          <td class="poster-column text-center">
+            <a href="/admin/movies/21">
+              <img class="poster" src="https://image.tmdb.org/t/p/w154/qGz5rffXhegQH5PGUDiObqoOt06.jpg" />
+            </a>
+          </td>
+          <td class="media-title-column">
+            <a href="/admin/movies/21">
+              <strong>The OctoGames</strong>
+              <br />
+              <small class="text-muted hidden-xs">Lacy Hartselle, Cale Adcock, Luv Patel, Henry Haggard, Allison Shrum</small>
+            </a>
+          </td>
+          <td class="">Aaron Mirtes</td>
+          <td class="hidden-xs">
+            <span class="tag">Action</span>
+            <span class="tag">Horror</span>
+            <span class="tag">Thriller</span>
+          </td>
+          <td class="text-center">
+            <span class="badge badge-success">Released</span>
+          </td>
+          <td class="text-center">
+            <time datetime="2022-10-07" class="datestamp">10/7/2022</time>
+          </td>
+          <td class="text-center">58%</td>
+          <td class="actions">
+            <a data-toggle="confirm-delete" data-placement="left" class="btn btn-danger has-icon" rel="nofollow" data-method="delete" href="/admin/movies/21">
+              <i class="fa fa-trash"></i>
+              <span class="btn-label">Delete Movie</span>
+            </a>
+          </td>
+        </tr>
+        <tr data-url="/admin/movies/22">
+          <td class="poster-column text-center">
+            <a href="/admin/movies/22">
+              <img class="poster" src="https://image.tmdb.org/t/p/w154/znbGgoqcQB0pxoTSO5imfALWOk3.jpg" />
+            </a>
+          </td>
+          <td class="media-title-column">
+            <a href="/admin/movies/22">
+              <strong>Trunk - Locked In</strong>
+              <br />
+              <small class="text-muted hidden-xs">Sina Martens, Artjom Gilz, Luise Helm, Poal Cairo, Charles Rettinghaus</small>
+            </a>
+          </td>
+          <td class="">Marc Schießer</td>
+          <td class="hidden-xs">
+            <span class="tag">Action</span>
+            <span class="tag">Drama</span>
+            <span class="tag">Thriller</span>
+          </td>
+          <td class="text-center">
+            <span class="badge badge-success">Released</span>
+          </td>
+          <td class="text-center">
+            <time datetime="2023-11-24" class="datestamp">11/24/2023</time>
+          </td>
+          <td class="text-center">60%</td>
+          <td class="actions">
+            <a data-toggle="confirm-delete" data-placement="left" class="btn btn-danger has-icon" rel="nofollow" data-method="delete" href="/admin/movies/22">
+              <i class="fa fa-trash"></i>
+              <span class="btn-label">Delete Movie</span>
+            </a>
+          </td>
+        </tr>
+        <tr data-url="/admin/movies/23">
+          <td class="poster-column text-center">
+            <a href="/admin/movies/23">
+              <img class="poster" src="https://image.tmdb.org/t/p/w154/fbbj3viSUDEGT1fFFMNpHP1iUjw.jpg" />
+            </a>
+          </td>
+          <td class="media-title-column">
+            <a href="/admin/movies/23">
+              <strong>Mean Girls</strong>
+              <br />
+              <small class="text-muted hidden-xs">Angourie Rice, Reneé Rapp, Auli&#39;i Cravalho, Jaquel Spivey, Avantika</small>
+            </a>
+          </td>
+          <td class="">Arturo Perez Jr. and Samantha Jayne</td>
+          <td class="hidden-xs">
+            <span class="tag">Comedy</span>
+          </td>
+          <td class="text-center">
+            <span class="badge badge-success">Released</span>
+          </td>
+          <td class="text-center">
+            <time datetime="2024-01-10" class="datestamp">1/10/2024</time>
+          </td>
+          <td class="text-center">64%</td>
+          <td class="actions">
+            <a data-toggle="confirm-delete" data-placement="left" class="btn btn-danger has-icon" rel="nofollow" data-method="delete" href="/admin/movies/23">
+              <i class="fa fa-trash"></i>
+              <span class="btn-label">Delete Movie</span>
+            </a>
+          </td>
+        </tr>
+        <tr data-url="/admin/movies/24">
+          <td class="poster-column text-center">
+            <a href="/admin/movies/24">
+              <img class="poster" src="https://image.tmdb.org/t/p/w154/aygFQeDmmtlArzo8epmsOg9mz9f.jpg" />
+            </a>
+          </td>
+          <td class="media-title-column">
+            <a href="/admin/movies/24">
+              <strong>Miller&#39;s Girl</strong>
+              <br />
+              <small class="text-muted hidden-xs">Martin Freeman, Jenna Ortega, Bashir Salahuddin, Gideon Adlon, Dagmara Domińczyk</small>
+            </a>
+          </td>
+          <td class="">Jade Halley Bartlett</td>
+          <td class="hidden-xs">
+            <span class="tag">Drama</span>
+            <span class="tag">Thriller</span>
+          </td>
+          <td class="text-center">
+            <span class="badge badge-success">Released</span>
+          </td>
+          <td class="text-center">
+            <time datetime="2024-01-18" class="datestamp">1/18/2024</time>
+          </td>
+          <td class="text-center">67%</td>
+          <td class="actions">
+            <a data-toggle="confirm-delete" data-placement="left" class="btn btn-danger has-icon" rel="nofollow" data-method="delete" href="/admin/movies/24">
+              <i class="fa fa-trash"></i>
+              <span class="btn-label">Delete Movie</span>
+            </a>
+          </td>
+        </tr>
+        <tr data-url="/admin/movies/25">
+          <td class="poster-column text-center">
+            <a href="/admin/movies/25">
+              <img class="poster" src="https://image.tmdb.org/t/p/w154/uHiXFLMlnl5jBjtfOliapN16yBD.jpg" />
+            </a>
+          </td>
+          <td class="media-title-column">
+            <a href="/admin/movies/25">
+              <strong>Orion and the Dark</strong>
+              <br />
+              <small class="text-muted hidden-xs">Jacob Tremblay, Paul Walter Hauser, Angela Bassett, Colin Hanks, Natasia Demetriou</small>
+            </a>
+          </td>
+          <td class="">Sean Charmatz</td>
+          <td class="hidden-xs">
+            <span class="tag">Animation</span>
+            <span class="tag">Comedy</span>
+            <span class="tag">Family</span>
+            <span class="tag">Fantasy</span>
+          </td>
+          <td class="text-center">
+            <span class="badge badge-success">Released</span>
+          </td>
+          <td class="text-center">
+            <time datetime="2024-02-02" class="datestamp">2/2/2024</time>
+          </td>
+          <td class="text-center">67%</td>
+          <td class="actions">
+            <a data-toggle="confirm-delete" data-placement="left" class="btn btn-danger has-icon" rel="nofollow" data-method="delete" href="/admin/movies/25">
+              <i class="fa fa-trash"></i>
+              <span class="btn-label">Delete Movie</span>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <%= build main_content_footer do %>
+    <nav class="pagination-container">
+      <p>Displaying Movies <strong>1&nbsp;-&nbsp;25</strong> of <b>42</b>
+      <ul class="pagination pagination-sm">
+        <li class="page-item disabled">
+          <span class="page-link">&laquo;</span>
+        </li>
+        <li class="page-item active">
+          <a class="page-link" href="/admin/movies">
+            <span>1</span>
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" rel="next" href="/admin/movies?page=2">
+            <span>2</span>
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="/admin/movies?page=2">
+            <span>&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  <% end %>
+
+<% end %>

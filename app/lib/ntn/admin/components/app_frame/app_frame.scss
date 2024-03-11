@@ -1,0 +1,9 @@
+@import "../component_variables";
+
+.content-header-toolbars {
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  gap: $gap;
+}
