@@ -1,5 +1,12 @@
 <div <%= build_attributes(css: "grid") %>>  
   
+  <header class="main-content-header">
+    <% if form %>
+      <%= build(grid_form(self, layout: form_layout), &form) %>
+    <% end %>
+  </header>
+
+
   <div class="table-container">
     <%= 
       build grid_table(
@@ -8,6 +15,7 @@
         selected_sort_order:,
         rows:,
         attributes:,
+        actions:,
       )  
     %>
   </div>

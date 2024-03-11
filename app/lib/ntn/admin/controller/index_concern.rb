@@ -4,7 +4,6 @@ module Ntn
   module Admin
     module Controller
       module IndexConcern
-
         extend ActiveSupport::Concern
 
         included do |_base|
@@ -12,7 +11,7 @@ module Ntn
             :index_records,
             :index_query_params,
             :index_selected_sort,
-            :index_selected_sort_order,
+            :index_selected_sort_order
           )
         end
 
@@ -30,7 +29,7 @@ module Ntn
         def index_authorize!
           authorize(
             [self.class.controller_name.classify.underscore.to_sym],
-            :index?,
+            :index?
           )
         end
 
@@ -46,11 +45,11 @@ module Ntn
           search_scopes = index_search_scopes
 
           index_search_params.each do |search_key, search_value|
-            next if search_value == ""
+            next if search_value == ''
 
             scope = search_scopes[search_key]
 
-            raise ArgumentError, "Search '#{ search_key }' is not recognized" unless scope
+            raise ArgumentError, "Search '#{search_key}' is not recognized" unless scope
 
             @index_query = scope.call(@index_query, search_value)
           end
@@ -64,7 +63,7 @@ module Ntn
           sort_scopes = index_sort_scopes
           scope = sort_scopes[index_selected_sort]
 
-          raise ArgumentError, "Sort '#{ selected_sort }' is not recognized" unless scope
+          raise ArgumentError, "Sort '#{selected_sort}' is not recognized" unless scope
 
           @index_query = scope.call(@index_query, index_selected_sort_order)
         end
@@ -109,9 +108,8 @@ module Ntn
         end
 
         def index_search_params
-          (request.query_parameters["search"] || {}).symbolize_keys
+          (request.query_parameters['search'] || {}).symbolize_keys
         end
-
       end
     end
   end

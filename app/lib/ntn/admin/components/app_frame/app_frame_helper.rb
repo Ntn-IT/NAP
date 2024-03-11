@@ -5,11 +5,9 @@ module Ntn
     module Components
       module AppFrame
         module AppFrameHelper
-
           def app_frame(**, &yield_block)
             AppFrameComponent.new(**, yield_block:)
           end
-
         end
       end
     end

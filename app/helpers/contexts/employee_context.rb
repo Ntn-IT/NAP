@@ -2,57 +2,65 @@
 
 module Contexts
   class EmployeeContext < Ntn::HelperContext
+    self.context_name = :employee_context
 
-    configure(
-      context_name: :employee_context,
-
-      attributes: {
-        id: {
-          header: t("Mathr"),
-          value: proc { |vc, rec| vc.record_link(rec) },
-        },
-        fname: {
-          header: t("First name"),
-          value: proc { |_vc, rec| rec.fname },
-        },
-        lname: {
-          header: t("Last name"),
-          value: proc { |_vc, rec| rec.lname },
-        },
-        cname: {
-          header: t("Complete name"),
-          value: proc { |_vc, rec| rec.cname },
-        },
-        matsnr: {
-          header: t("Matsnr"),
-          value: proc { |_vc, rec| rec.matsnr },
-        },
-        department: {
-          header: t("Department"),
-          value: proc { |_vc, rec| rec.department },
-        },
-        service: {
-          header: t("Service"),
-          value: proc { |_vc, rec| rec.service },
-        },
-        manager: {
-          header: t("Manager"),
-          value: proc { |vc, rec| vc.record_link(rec.manager, :cname) },
-        },
-        qualification: {
-          header: t("Qualification"),
-          value: proc { |_vc, rec| rec.qualification },
-        },
-        bdate: {
-          header: t("Birthdate"),
-          value: proc { |vc, rec| vc.date_format(rec.bdate) },
-        },
-        status: {
-          header: t("Status"),
-          value: proc { |_vc, rec| rec.status },
-        },
+    attributes(
+      link: {
+        name: t('Employé'),
+        value: proc { |vc, rec| vc.employee_context.build_record_link(rec) }
       },
+      id: {
+        name: t('Mathr'),
+        value: proc { |vc, rec| vc.record_link(rec) }
+      },
+      fname: {
+        name: t('Prénom'),
+        value: proc { |_vc, rec| rec.fname }
+      },
+      lname: {
+        name: t('Nom famille'),
+        value: proc { |_vc, rec| rec.lname }
+      },
+      cname: {
+        name: t('Nom'),
+        value: proc { |_vc, rec| rec.cname }
+      },
+      email: {
+        name: t('Email'),
+        value: proc { |_vc, rec| rec.email }
+      },
+      matsnr: {
+        name: t('Matsnr'),
+        value: proc { |_vc, rec| rec.matsnr }
+      },
+      department: {
+        name: t('Departement'),
+        value: proc { |_vc, rec| rec.department }
+      },
+      service: {
+        name: t('Service'),
+        value: proc { |_vc, rec| rec.service }
+      },
+      qualification: {
+        name: t('Qualification'),
+        value: proc { |_vc, rec| rec.qualification }
+      },
+      manager: {
+        name: t('Manager'),
+        value: proc { |vc, rec| vc.employee_context.build_record_link(rec.manager) }
+      },
+      bdate: {
+        name: t('Date naissance'),
+        value: proc { |vc, rec| vc.date_format(rec.bdate) }
+      },
+      status: {
+        name: t('Statut'),
+        value: proc { |_vc, rec| rec.status }
+      }
     )
 
+    def build_record_link(rec)
+      vc.record_link(rec, text: "#{rec.cname}(#{rec.id})")
+    end
   end
 end

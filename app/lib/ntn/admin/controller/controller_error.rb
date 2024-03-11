@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-module CheerzOnRails
-  module AdminPanel
+module Ntn
+  module Admin
     module Controller
       class ControllerError < StandardError; end
     end

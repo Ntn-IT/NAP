@@ -15,5 +15,11 @@
 
 ## TODO 
 
-- Authentification depuis LDAP
-- Le status des employee est toujours sur Ouvrier ? Pk ?
+- [x] Authentification depuis LDAP
+- [x] Le status des employee est toujours sur Ouvrier ? Pk ?
+- [ ] Message d'erreur dans le formulaire de login
+- [x] Ajouter la colonne email à Employee, la rendre modifiable 
+- [ ] FIl d'ariane
+- [ ] Cron de mise à jour des employés
+- [ ] Il manque des status dans l'import des employés
+- [ ] Formulaire de recherche

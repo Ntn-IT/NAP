@@ -5,11 +5,9 @@ module Ntn
     module Components
       module App
         module AppHelper
-
           def app(**, &yield_block)
             AppComponent.new(**, yield_block:)
           end
-
         end
       end
     end

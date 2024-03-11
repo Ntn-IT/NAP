@@ -5,11 +5,9 @@ module Ntn
     module Components
       module Pagination
         module PaginationHelper
-
           def pagination(**, &)
             PaginationComponent.new(**, &)
           end
-
         end
       end
     end

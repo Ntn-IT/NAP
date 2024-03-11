@@ -5,15 +5,14 @@ module Ntn
     module Components
       module Element
         class ElementComponent < Component
-
           configure(
             type: :div,
+            value: nil
           )
 
           def call
-            tag.send(type, **merge_attributes) { content }
+            tag.send(type, **merge_attributes) { build([value, content]) }
           end
-
         end
       end
     end

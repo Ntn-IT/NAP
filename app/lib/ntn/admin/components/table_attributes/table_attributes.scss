@@ -1,0 +1,20 @@
+@import "../component_variables";
+
+.table-attributes {
+  th {
+    vertical-align: top;
+    background-color: $background-gray;
+    border-right: $border;
+    padding: $padding;
+  }
+
+  td {
+    padding: $padding;
+  }
+
+  ul {
+    list-style-position: inside;
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+}

@@ -1,10 +1,31 @@
+
 <%= 
   build app_frame(
     title: t("Employee"),
+    notice:
   ) do 
-    build index_grid(
-      self,
-      attributes: employee_context.fetch_attributes
-    )
+    build [
+      index_grid(
+        self,
+        attributes: employee_context.table_attributes(
+          :link, 
+          :email,
+          :department,
+          :service,
+          :qualification,
+          :status
+        ),
+        actions: [
+          :edit_record_button
+        ],
+        form_layout: "layout-2-columns",
+        form: proc do |form|
+          build [
+            form.text_field(:lname, label: t("Nom")),
+            form.text_field(:fname, label: t("Prénom"))
+          ]
+        end 
+      )
+    ]
   end 
 %>

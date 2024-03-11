@@ -3,6 +3,7 @@
 /* Components */
 @import "./app_loader/app_loader";
 @import "./app_frame/app_frame.scss";
+@import "./table_attributes/table_attributes.scss";
 
 
 /********* Display ********/  
@@ -49,4 +50,39 @@
 }
 .padding-bottom {
   padding-bottom: $padding;
+}
+
+/********* Layout ********/  
+
+.layout-flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+}
+
+.layout-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.layout-2-columns,
+.layout-3-columns,
+.layout-4-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.layout-2-columns > * {
+  flex-basis: calc(50% - 1em);
+}
+
+.layout-3-columns > * {
+  flex-basis: calc(33% - 2em);
+}
+
+.layout-4-columns > * {
+  flex-basis: calc(25% - 3em);
 }

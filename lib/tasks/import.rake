@@ -1,19 +1,19 @@
 # frozen_string_literal: true
 
-require "csv"
+require 'csv'
 
 def parse_date(date)
-  Date.strptime(date, "%m/%d/%Y")
+  Date.strptime(date, '%m/%d/%Y')
 end
 
 namespace :import do
-  desc "Import employee from csv file"
+  desc 'Import employee from csv file'
   task employee: [:environment] do
     # En dev on utilise un fichier de fixtures
     # TODO: faire le process pour la production
-    file = "lib/tasks/fixtures/employes.csv"
+    file = 'lib/tasks/fixtures/employes.csv'
 
-    CSV.foreach(file, col_sep: ",", headers: true) do |row|
+    CSV.foreach(file, col_sep: ',', headers: true) do |row|
       employee_hash = row.to_hash.symbolize_keys
 
       id = employee_hash[:id] = employee_hash.delete(:mathr)
@@ -27,7 +27,7 @@ namespace :import do
 
       Employee.create!(employee_hash)
 
-      Rails.logger.info("Employee correctly imported")
+      Rails.logger.info('Employee correctly imported')
     end
   rescue StandardError => e
     BugNotifierService.call(e)
