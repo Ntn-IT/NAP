@@ -1,4 +1,4 @@
-<turbo-frame <%=  build_attributes(
+<turbo-frame <%= build_attributes(
   id:"app-frame",
   data: { turbo_action: "advance" }
 ) %> >
@@ -22,7 +22,7 @@
 
         <% actions.each do |action| %>
           <div class="btn-toolbar secondary-toolbar" role="toolbar">
-            <%= build action  =%>
+            <%= build(action, bind_to)  =%>
           </div>
         <% end %>
 
@@ -32,7 +32,12 @@
 
     <div class="main-content-area">
       <div class="main-content-container">
+
         <div class="main-content">
+          <% if notice %>
+            <%= build alert(notice[:message], notice[:status], notice[:backtrace]) %>
+          <% end %>
+          
           <%= content %>
         </div>
       </div>

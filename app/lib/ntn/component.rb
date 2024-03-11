@@ -2,34 +2,41 @@
 
 module Ntn
   class Component < ViewComponent::Base
-
-    include Configurable
+    include Structurable
+    include ViewHelper
+    include Admin::ViewHelper
 
     class ComponentError < StandardError; end
 
-    configure(
-      css: "",
-      data: nil,
-      yield_block: nil,
+    struct(
+      css: Types::String.default { '' },
+      data: Types::Hash.optional,
+      yield_block: Types.Instance(Proc).optional
     )
 
     def self.t(key, *_args, **_kwargs)
       key
     end
 
-    def initialize(**)
-      configure(**)
+    def initialize(**attrs)
+      structure(**attrs)
+      @extra_attributes = attrs.slice(*(attrs.keys - schema.keys))
+
       validate!
     end
 
+    attr_reader :extra_attributes
+
     def validate!; end
 
-    def original_view_context
+    def vc
       @__vc_original_view_context
     end
 
     def render_in(view_context, &block)
-      super(view_context, &block || yield_block)
+      render_block = block || yield_block
+
+      super(view_context, &render_block)
     end
 
     # Hack to passe arguments like nested components to the component block
@@ -50,10 +57,12 @@ module Ntn
 
     def merge_attributes(css: nil, data: {}, **kwargs)
       {
-        class: "#{ css } #{ self.css }".strip || nil,
+        class: "#{css} #{self.css}".strip || nil,
         data: data.merge(self.data || {}),
-        **kwargs,
+        **kwargs
       }
+    rescue StandardError
+      binding.pry
     end
 
     def build_attributes(css: nil, data: {}, **)
@@ -69,13 +78,12 @@ module Ntn
 
     # rubocop:disable Style/MissingRespondToMissing
     def method_missing(name, ...)
-      original_view_context.send(name, ...)
+      vc.send(name, ...)
     end
     # rubocop:enable Style/MissingRespondToMissing
 
     def component?(obj)
       obj.is_a?(Component)
     end
-
   end
 end

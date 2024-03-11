@@ -1,0 +1,48 @@
+
+{
+  "title": "ENTRETIEN ANNUEL D’EVALUATION  > D7",
+  "description": "L’entretien annuel d’évaluation est l’occasion formalisée de se réunir pour faire le point sur le travail et les compétences du collaborateur. Il s’agit d’un moment privilégié de dialogue et de réflexion entre le collaborateur et son responsable, au cours duquel il est important que chacun puisse s’exprimer librement.",
+  "questions_categories": [
+    {
+      "title": "Satisfaction dans l'emploi",
+      "questions": [
+        {
+          "type": "satisfaction_level",
+          "title": "D’une manière générale, êtes-vous satisfait de votre emploi ?"
+        },
+        {
+          "type": "satisfaction_level",
+          "title": "Est-ce que vous vous estimez motivé ?"
+        }
+      ]
+    },
+    {
+      "title": "Bilan periode écoulée",
+      "questions": [
+        {
+          "type": "open_question",
+          "title": "Les faits marquants de l’année passée :",
+          "description": "(Liés à l’environnement de travail, liés au poste ou évènements personnels…) Ils peuvent être classés par éléments moteurs, freins…"
+        }
+      ]
+    },
+    {
+      "title": "Appreciation de la performance individuelle",
+      "description": "Se référer à la grille « Positionnement Professionnel » en Annexe. Ce positionnement est à compléter : cochez 1 des 4 propositions. Indiquer NC si non concerné",
+      "questions": [
+        {
+          "type": "ordered_table",
+          "title": "Rappel et évaluation des objectifs",
+          "lines": 5,
+          "columns": [
+            { "title":  "Objectifs", "type": "text" },
+            { "title":  "Atteint", "type": "checkbox"  },
+            { "title":  "En cours", "type": "checkbox"  },
+            { "title":  "Non atteint", "type": "checkbox"  },
+            { "title":  "Commantaire", "type": "text"  }
+          ]
+        }
+      ]
+    }
+  ]
+}

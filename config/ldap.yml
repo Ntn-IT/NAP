@@ -28,12 +28,12 @@ authorizations: &AUTHORIZATIONS
 ## Environment
 
 development:
-  host: 10.219.6.17
-  port: 389
+  host: localhost
+  port: 3389
   attribute: cn
-  base: ou=Users,ou=Allonnes,ou=France,dc=snr,dc=group
-  admin_user: cn=ALL_LDAP_Reader,ou=Services_Account,ou=Users,ou=Allonnes,ou=France,dc=snr,dc=group
-  admin_password: fZ8MvAnz9A0GRCa
-  ssl: false
+  base: ou=people,dc=test,dc=com
+  admin_user: cn=admin,dc=test,dc=com
+  admin_password: secret
+  ssl: true
   # <<: *AUTHORIZATIONS
 

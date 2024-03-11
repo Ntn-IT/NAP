@@ -3,7 +3,7 @@
   <%= build_attributes(
     css: "form",
     method: method == "get" ? "get" : "post",
-    action:,
+    action: url,
     enctype: form_data? ? "multipart/form-data" : "application/x-www-form-urlencoded"
   ) %>
 >
@@ -13,8 +13,10 @@
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <% end %>
 
-  <%= content  %>
-    
+  <div class="<%= layout%>">
+    <%= content(fieldset)  %>
+  </div>
+
   <% if buttons %>
     <div class="...">
       <%= build buttons %>

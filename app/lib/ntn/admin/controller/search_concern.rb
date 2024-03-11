@@ -4,7 +4,6 @@ module CheerzOnRails
   module AdminPanel
     module Controller
       module SearchConcern
-
         extend ActiveSupport::Concern
 
         included do |_base|
@@ -22,9 +21,9 @@ module CheerzOnRails
 
           return unless search_result
 
-          resource_url_method = :"admin_panel_#{ search_result["resource"] }_path"
+          model_url_method = :"admin_panel_#{search_result['model']}_path"
 
-          redirect_to(send(resource_url_method, id: search_result["id"]))
+          redirect_to(send(model_url_method, id: search_result['id']))
         end
 
         private
@@ -39,18 +38,17 @@ module CheerzOnRails
           return unless scopes
 
           sub_queries =
-            search_scopes.map do |resource, filter_builder|
+            search_scopes.map do |model, filter_builder|
               query = filter_builder.call(search_filter)
               next unless query
 
-              query.select(:id, "'#{ resource }' as resource").to_sql
+              query.select(:id, "'#{model}' as model").to_sql
             end
 
-          sql = "(#{ sub_queries.compact.join(") UNION (") })"
+          sql = "(#{sub_queries.compact.join(') UNION (')})"
 
           @search_result = ActiveRecord::Base.connection.execute(sql).to_a.first
         end
-
       end
     end
   end

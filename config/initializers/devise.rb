@@ -9,14 +9,14 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
-  config.ldap_logger = true 
-  config.ldap_create_user = true 
+  config.ldap_logger = true
+  config.ldap_create_user = true
   config.ldap_update_password = false
   config.ldap_use_admin_to_bind = true
   config.authentication_keys = [:username]
   config.case_insensitive_keys = [:username]
   config.strip_whitespace_keys = [:username]
-  config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
+  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -28,7 +28,7 @@ Devise.setup do |config|
   # Load and configure the ORM. Supports :active_record (default) and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
-  require "devise/orm/active_record"
+  require 'devise/orm/active_record'
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
@@ -302,4 +302,8 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
+
+  config.warden do |manager|
+    manager.default_strategies(scope: :user).unshift :development
+  end
 end

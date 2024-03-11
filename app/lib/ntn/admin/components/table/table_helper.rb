@@ -5,11 +5,9 @@ module Ntn
     module Components
       module Table
         module TableHelper
-
           def table(**, &)
             TableComponent.new(**, &)
           end
-
         end
       end
     end

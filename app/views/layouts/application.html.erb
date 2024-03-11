@@ -14,9 +14,11 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
   </head>
 
   <body>
+
   <%= build app_loader %>
   
   <%= 
@@ -25,28 +27,38 @@
       env: "NTN",
       menu: [
         {
-          group: "Library",
+          group: t("Entretiens"),
           items: [
             {
               url: "/dashboard",
-              icon: "fa fa-dashboard",
-              content: t("Dashboard"),
-            }
+              icon: "fa fa-tachometer",
+              content: t("Liste des entretiens"),
+            },
+            {
+              url: "/dashboard",
+              icon: "fa fa-tachometer",
+              content: t("Modèles d'entretien"),
+            },
+            {
+              url: "/dashboard",
+              icon: "fa fa-tachometer",
+              content: t("Nouvelle session"),
+            },
           ]
         },
         {
-          group: "Configuration",
+          group: t("Configuration"),
           items: [
             {
-              url: build_url(resource: Employee, index: true),
+              url: build_model_url(Employee, index: true),
               icon: "fa fa-key",
-              content: t("Employees"),
+              content: t("Employés"),
             },
             {
-              url: "/admin/auth/administrators",
+              url: build_model_url(User, index: true),
               icon: "fa fa-user-lock",
-              content: "Administrators",
-            }
+              content: t("Administrateurs"),
+            },
           ]
         }
       ],

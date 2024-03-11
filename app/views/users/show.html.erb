@@ -1,28 +1,19 @@
-<%= build app_frame(
-  title: t("User"),
-  actions: [
-    primary_button(url: employee_path(current_user.employee)) { t("Employee profile") },
-  ]
-
-          # TODO: Kind of button 
-          # primary secondary sucess info warning danger light dark default
-) do %>
-
-  <%= build table_attributes(
-    attributes: [
-      { 
-        header: t("Email"),
-        value: proc { current_user.email }
-      },
-      { 
-        header: t("First name"),
-        value: proc { "First name" }
-      },
-      { 
-        header: t("Last name"),
-        value: proc { "Last name" }
-      }
+<%= 
+  build app_frame(
+    title: t("Utilisateur"),
+    notice:,
+    bind_to: @user,
+    actions: [
+      secondary_button(
+        url: build_model_url(Employee, params: current_user.employee), 
+        text: t("Employee")
+      ),
+      :edit_record_button
     ]
-  ) %>
-
-<% end %>
+  ) do 
+    build table_attributes(
+      bind_to: @user,
+      attributes: user_context.table_attributes
+    ) 
+  end 
+%>

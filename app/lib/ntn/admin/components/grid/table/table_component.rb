@@ -6,13 +6,11 @@ module Ntn
       module Grid
         module Table
           class TableComponent < Components::Table::TableComponent
-
             configure(
               grid: nil,
               selected_sort: nil,
-              selected_sort_order: nil,
+              selected_sort_order: nil
             )
-
           end
         end
       end

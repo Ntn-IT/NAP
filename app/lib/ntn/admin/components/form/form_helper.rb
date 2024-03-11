@@ -5,11 +5,18 @@ module Ntn
     module Components
       module Form
         module FormHelper
-
-          def form(**, &yield_block)
-            FormComponent.new(**, yield_block:)
+          def form(**, &)
+            FormComponent.new(**, &)
           end
 
+          def record_form(record, namespace = nil, **, &)
+            FormComponent.new(
+              bind_to: record,
+              namespace: namespace || record.class.name.underscore,
+              **,
+              &
+            )
+          end
         end
       end
     end

@@ -1,0 +1,65 @@
+
+{
+  "title": "ENTRETIEN ANNUEL D’EVALUATION – emplois A2 à C6",
+  "description": "L’entretien annuel d’évaluation est l’occasion formalisée de se réunir pour faire le point sur le travail et les compétences du collaborateur. Il s’agit d’un moment privilégié de dialogue et de réflexion entre le collaborateur et son responsable, au cours duquel il est important que chacun puisse s’exprimer librement.",
+  "questions_categories": [
+    {
+      "title": "Satisfaction dans l'emploi",
+      "questions": [
+        {
+          "type": "satisfaction_level",
+          "title": "D’une manière générale, êtes-vous satisfait de votre emploi ?"
+        },
+        {
+          "type": "satisfaction_level",
+          "title": "Est-ce que vous vous estimez motivé ?"
+        }
+      ]
+    },
+    {
+      "title": "Bilan periode écoulée",
+      "questions": [
+        {
+          "type": "open_question",
+          "title": "Les faits marquants de l’année passée :",
+          "description": "(Liés à l’environnement de travail, liés au poste ou évènements personnels…) Ils peuvent être classés par éléments moteurs, freins…"
+        },
+        {
+          "type": "ordered_table",
+          "title": "Rappel et évaluation des objectifs",
+          "lines": 5,
+          "columns": [
+            { "title":  "Objectifs", "type": "text" },
+            { "title":  "Atteint", "type": "checkbox"  },
+            { "title":  "En cours", "type": "checkbox"  },
+            { "title":  "Non atteint", "type": "checkbox"  },
+            { "title":  "Commantaire", "type": "text"  }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Niveaux de savoirs, savoir faire, savoir être et faire savoir",
+      "description": "Se référer à la grille « Positionnement Professionnel » en Annexe. Ce positionnement est à compléter : cochez 1 des 4 propositions. Indiquer NC si non concerné",
+      "questions": [
+        {
+          "type": "labelled_table",
+          "title": "Rappel et évaluation des objectifs",
+          "columns": [
+            { "title":  "Compétences liées au poste" },
+            { "title":  "Arguments/faits", "type": "text"  },
+            { "title":  "Non dvpée", "type": "checkbox"  },
+            { "title":  "En cours dvpt", "type": "checkbox"  },
+            { "title":  "Dvpée", "type": "checkbox"  },
+            { "title":  "Confirmée", "type": "checkbox" }
+          ],
+          "labels": [
+            "Respect des consignes de sécurité",
+            "Respect des procédures qualité (contrôle, traçabilité…)",
+            "Respect des outils de travail (Rangement, nettoyage…)"
+          ]
+        }
+      ]
+    }
+  ]
+}

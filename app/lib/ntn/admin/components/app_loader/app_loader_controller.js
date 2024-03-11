@@ -11,15 +11,19 @@ export default class extends Controller {
 
   disconnect(event) {
     removeEventListener("turbo:before-fetch-request", this.addLoaderListener);
-    removeEventListener("turbo:before-visit", this.removeLoader);
+    removeEventListener("turbo:before-visit", this.removeLoaderListener);
+    removeEventListener("turbo:frame-missing", this.removeLoaderListener);
+    removeEventListener("turbo:frame-load", this.removeLoaderListener);
   }
 
   addLoaderListeners() {
     this.addLoaderListener = this.addLoader.bind(this);
-    this.removeLoader = this.removeLoader.bind(this);
+    this.removeLoaderListener = this.removeLoader.bind(this);
 
     addEventListener("turbo:before-fetch-request", this.addLoaderListener);
-    addEventListener("turbo:before-visit", this.removeLoader);
+    addEventListener("turbo:before-visit", this.removeLoaderListener);
+    addEventListener("turbo:frame-missing", this.removeLoaderListener);
+    addEventListener("turbo:frame-load", this.removeLoaderListener);
   }
 
   removeLoader() {
