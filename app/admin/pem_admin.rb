@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 Trestle.admin(:pem) do
   menu do
     group :applications, priority: :first do
-      item :pem, icon: "fa fa-key"
+      item :Pem, icon: 'fa fa-key'
     end
   end
 end

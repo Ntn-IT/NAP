@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  app_name: MyText
+  app_connect: false
+  app_listing: false
+  app_read: false
+  apps_modify: false
+  app_context: MyText
+
+two:
+  app_name: MyText
+  app_connect: false
+  app_listing: false
+  app_read: false
+  apps_modify: false
+  app_context: MyText

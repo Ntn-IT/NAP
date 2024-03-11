@@ -1,6 +1,19 @@
-Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+# frozen_string_literal: true
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+require_relative 'boot'
+require 'rails'
+require 'active_model/railtie'
+require 'active_job/railtie'
+require 'sidekiq/web'
+require 'sidekiq/cron/web'
+
+Rails.application.routes.draw do
+  resources :blogs
+  resources :permissions
+  resources :entretiens
+  resources :personnes
+  resources :siteids
+  root to: 'home#/dashboard#index'
+  namespace :admin do
+  end
 end

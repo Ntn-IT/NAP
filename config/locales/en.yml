@@ -30,4 +30,20 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  admin:
+     personnes:
+        breadcrumbs:
+          index: "Authority Cards"
+        titles:
+          index: "List of Authority cards"
+        table:
+          headers:
+            auth: "Authority"
+     entretiens:
+        breadcrumbs:
+          index: "Entretiens individuels"
+        titles:
+          index: "Liste des entretiens individuels"
+        table:
+          headers:
+            auth: "3"

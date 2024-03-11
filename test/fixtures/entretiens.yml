@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  api_mat: 1
+  api_M1: 1
+  api_Obj1: MyText
+  api_Obj2: MyText
+  api_Obj3: MyText
+
+two:
+  api_mat: 1
+  api_M1: 1
+  api_Obj1: MyText
+  api_Obj2: MyText
+  api_Obj3: MyText
