@@ -2,15 +2,14 @@
 
 module Ntn
   class Component < ViewComponent::Base
-
     include Configurable
 
     class ComponentError < StandardError; end
 
     configure(
-      css: "",
+      css: '',
       data: nil,
-      yield_block: nil,
+      yield_block: nil
     )
 
     def self.t(key, *_args, **_kwargs)
@@ -50,9 +49,9 @@ module Ntn
 
     def merge_attributes(css: nil, data: {}, **kwargs)
       {
-        class: "#{ css } #{ self.css }".strip || nil,
+        class: "#{css} #{self.css}".strip || nil,
         data: data.merge(self.data || {}),
-        **kwargs,
+        **kwargs
       }
     end
 
@@ -76,6 +75,5 @@ module Ntn
     def component?(obj)
       obj.is_a?(Component)
     end
-
   end
 end

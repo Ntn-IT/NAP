@@ -6,11 +6,9 @@ module Ntn
       module Grid
         module Table
           module TableHelper
-
             def grid_table(grid, **, &)
               TableComponent.new(grid:, **, &)
             end
-
           end
         end
       end

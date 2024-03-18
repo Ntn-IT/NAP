@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 module Ntn
-
   # Allow to define a default configuration for a class and potentially override it for these instances.
   # Each configuration property is accessible from class and instance methods
   # If the property is a boolean, the methods created will be of the predicate type (ending with a ?)
@@ -15,12 +14,11 @@ module Ntn
   # - A instance method `configure` to override static configuration
   # - A instance method `config` to list instance configuration properties
   module Configurable
-
     extend ActiveSupport::Concern
 
     def configure(**config)
       config_keys.each do |key|
-        instance_variable_set(:"@#{ key }", config[key]) if config.key?(key)
+        instance_variable_set(:"@#{key}", config[key]) if config.key?(key)
       end
 
       self
@@ -61,11 +59,9 @@ module Ntn
         keys
       end
     end
-
   end
 
   class ConfigBuilder
-
     BOOLEANS = [true, false].freeze
 
     def initialize(configurable, config)
@@ -94,7 +90,7 @@ module Ntn
 
         next unless BOOLEANS.include?(value)
 
-        method_name = :"#{ key }?"
+        method_name = :"#{key}?"
         add_class_getter(method_name, value)
         add_instance_getter(key, method_name)
       end
@@ -105,7 +101,7 @@ module Ntn
     end
 
     def add_instance_getter(key, method_name)
-      instance_var = :"@#{ key }"
+      instance_var = :"@#{key}"
 
       configurable.define_method(method_name) do
         return instance_variable_get(instance_var) if instance_variable_defined?(instance_var)
@@ -113,7 +109,5 @@ module Ntn
         self.class.send(method_name)
       end
     end
-
   end
-
 end

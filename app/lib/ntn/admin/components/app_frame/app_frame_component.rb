@@ -5,13 +5,11 @@ module Ntn
     module Components
       module AppFrame
         class AppFrameComponent < Component
-
           configure(
             title: nil,
             actions: [],
-            notice: nil,
+            notice: nil
           )
-
         end
       end
     end

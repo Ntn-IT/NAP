@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class EmployeePolicy < ApplicationPolicy
-
   def show?
     true
   end
@@ -9,5 +8,4 @@ class EmployeePolicy < ApplicationPolicy
   def index?
     true
   end
-
 end

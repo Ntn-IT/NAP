@@ -2,7 +2,6 @@
 
 module Ntn
   module ViewHelper
-
     class BuildError < StandardError; end
 
     def t(key, *_args, **_kwargs)
@@ -21,17 +20,17 @@ module Ntn
     def build_attributes(**kwargs)
       array_attrs =
         format_attributes_rec(kwargs).map do |name, value|
-          "#{ name }=\"#{ value.to_s.gsub('"', '\"') }\""
+          "#{name}=\"#{value.to_s.gsub('"', '\"')}\""
         end
 
-      array_attrs.join(" ").html_safe
+      array_attrs.join(' ').html_safe
     end
 
     # Formatting symbol for html display
     def build_sym(key)
       return unless key
 
-      key.to_s.capitalize.gsub(/_|-/, " ")
+      key.to_s.capitalize.gsub(/_|-/, ' ')
     end
 
     # Returns the url of an action on a resource
@@ -41,8 +40,8 @@ module Ntn
       klass = resource.is_a?(Class) ? resource : resource.class
 
       send(
-        "#{ action ? "#{ action }_" : "" }#{ base ? "#{ base }_" : "" }#{ klass.name.underscore }#{ index ? "s" : "" }_path",
-        params,
+        "#{action ? "#{action}_" : ''}#{base ? "#{base}_" : ''}#{klass.name.underscore}#{index ? 's' : ''}_path",
+        params
       )
     end
 
@@ -54,25 +53,25 @@ module Ntn
         return html_join(
           component.map do |item|
             item.is_a?(ViewComponent::Base) ? render(item, &) : item
-          end,
+          end
         )
       end
 
       component.is_a?(ViewComponent::Base) ? render(component, &) : component
-    # rescue StandardError => e
-    #   raise if e.is_a?(BuildError)
+      # rescue StandardError => e
+      #   raise if e.is_a?(BuildError)
 
-    #   msg =
-    #     "Build error in: '#{ self.class }'\n" \
-    #     "message: #{ e.message }\n" \
-    #     "object: #{ (component || object).inspect.truncate(1_000) }\n" \
-    #     "args: #{ args.inspect.truncate(1_000) }\n" \
-    #     "kwargs: #{ kwargs.inspect.truncate(1_000) }"
+      #   msg =
+      #     "Build error in: '#{ self.class }'\n" \
+      #     "message: #{ e.message }\n" \
+      #     "object: #{ (component || object).inspect.truncate(1_000) }\n" \
+      #     "args: #{ args.inspect.truncate(1_000) }\n" \
+      #     "kwargs: #{ kwargs.inspect.truncate(1_000) }"
 
-    #   err = BuildError.new(msg)
-    #   err.set_backtrace(e.backtrace)
+      #   err = BuildError.new(msg)
+      #   err.set_backtrace(e.backtrace)
 
-    #   raise err
+      #   raise err
     end
 
     # Attempts to build one or more components based on object, kwarg and block data
@@ -88,7 +87,7 @@ module Ntn
       return if object.nil?
       return object if object.is_a?(ViewComponent::Base)
       return object.html_safe if object.is_a?(String)
-      
+
       return object.map { |item| build_object(item, *, **) } if object.is_a?(Array)
       return build_object(object.call(self, *, **), *, **) if object.is_a?(Proc) || object.is_a?(Method)
       return build_object(send(object, *, **), *, **) if object.is_a?(Symbol)
@@ -98,8 +97,8 @@ module Ntn
 
     # rubocop:disable Style/MissingRespondToMissing
     def method_missing(name, ...)
-      if name.to_s.start_with?("build_")
-        method = :"#{ name.to_s.gsub(/^build_/, "") }"
+      if name.to_s.start_with?('build_')
+        method = :"#{name.to_s.gsub(/^build_/, '')}"
 
         return build(send(method, ...))
       end
@@ -114,12 +113,12 @@ module Ntn
       attrs.each do |key, value|
         next if value.nil?
 
-        base_keys << key.to_s.tr("_", "-")
+        base_keys << key.to_s.tr('_', '-')
 
         if value.is_a?(Hash)
           format_attributes_rec(value, formated_attrs, base_keys)
         else
-          formated_attrs[base_keys.join("-")] = value
+          formated_attrs[base_keys.join('-')] = value
         end
 
         base_keys.pop
@@ -127,6 +126,5 @@ module Ntn
 
       formated_attrs
     end
-
   end
 end

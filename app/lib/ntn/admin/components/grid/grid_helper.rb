@@ -5,7 +5,6 @@ module Ntn
     module Components
       module Grid
         module GridHelper
-
           include Table::TableHelper
           include Pagination::PaginationHelper
 
@@ -21,9 +20,9 @@ module Ntn
                 current_page: records.current_page,
                 total_pages: records.is_a?(::Kaminari::PaginatableWithoutCount) ? 10_000 : records.total_pages,
                 total_count: records.is_a?(::Kaminari::PaginatableWithoutCount) ? nil : records.total_count,
-                per_page: records.limit_value,
+                per_page: records.limit_value
               },
-              **,
+              **
             )
           end
 
@@ -33,10 +32,9 @@ module Ntn
               selected_sort: index.index_selected_sort,
               selected_sort_order: index.index_selected_sort_order,
               query_params: index.index_query_params,
-              **,
+              **
             )
           end
-
         end
       end
     end

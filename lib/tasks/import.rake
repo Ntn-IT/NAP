@@ -1,19 +1,20 @@
 # frozen_string_literal: true
 
-require "csv"
+require 'csv'
+require 'json'
 
 def parse_date(date)
-  Date.strptime(date, "%m/%d/%Y")
+  Date.strptime(date, '%m/%d/%Y')
 end
 
 namespace :import do
-  desc "Import employee from csv file"
+  desc 'Import employee from csv file'
   task employee: [:environment] do
     # En dev on utilise un fichier de fixtures
     # TODO: faire le process pour la production
-    file = "lib/tasks/fixtures/employes.csv"
+    csv_file = 'lib/tasks/fixtures/employes.csv'
 
-    CSV.foreach(file, col_sep: ",", headers: true) do |row|
+    CSV.foreach(csv_file, col_sep: ',', headers: true) do |row|
       employee_hash = row.to_hash.symbolize_keys
 
       id = employee_hash[:id] = employee_hash.delete(:mathr)
@@ -27,8 +28,24 @@ namespace :import do
 
       Employee.create!(employee_hash)
 
-      Rails.logger.info("Employee correctly imported")
+      Rails.logger.info('Employee correctly imported')
     end
+  rescue StandardError => e
+    BugNotifierService.call(e)
+
+    raise
+  end
+
+  #---------------------------------------------------------------------------------------------
+
+  desc 'Import de la structures des templates des entretiens'
+  task review_template: [:environment] do
+    json_file = "lib/tasks/fixtures/ouvrier.json"
+    # [ouvrier cadre].each do |status|
+    raw_data = File.read(json_file)
+    parsed_data = JSON.parse(raw_data)
+    puts parsed_data
+
   rescue StandardError => e
     BugNotifierService.call(e)
 

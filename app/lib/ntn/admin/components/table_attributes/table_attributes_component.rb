@@ -5,14 +5,13 @@ module Ntn
     module Components
       module TableAttributes
         class TableAttributesComponent < Component
-
           configure(
             attributes: nil,
-            bind_to: nil,
+            bind_to: nil
           )
 
           def validate!
-            component_error!("Attributes must be a Array") unless attributes.is_a?(Array)
+            component_error!('Attributes must be a Array') unless attributes.is_a?(Array)
 
             attributes.each do |row|
               component_error!("Attribute must define 'header' or a 'key' property") unless row[:header] || row[:key]
@@ -21,19 +20,19 @@ module Ntn
           end
 
           def call
-            tag.table(**merge_attributes(css: "table-attributes")) do
+            tag.table(**merge_attributes(css: 'table-attributes')) do
               tag.tbody do
                 build(
                   attributes.map do |attribute|
                     tag.tr do
                       build(
                         [
-                          tag.th(class: "border-right padding backgroud-gray") { build_header(attribute) },
-                          tag.td(class: "padding") { build_value(attribute) },
-                        ],
+                          tag.th(class: 'border-right padding backgroud-gray') { build_header(attribute) },
+                          tag.td(class: 'padding') { build_value(attribute) }
+                        ]
                       )
                     end
-                  end,
+                  end
                 )
               end
             end
@@ -46,7 +45,6 @@ module Ntn
           def build_value(attribute)
             build(attribute[:value], bind_to)
           end
-
         end
       end
     end

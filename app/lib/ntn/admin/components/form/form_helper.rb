@@ -5,11 +5,9 @@ module Ntn
     module Components
       module Form
         module FormHelper
-
           def form(**, &yield_block)
             FormComponent.new(**, yield_block:)
           end
-
         end
       end
     end

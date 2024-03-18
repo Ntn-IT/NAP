@@ -1,0 +1,70 @@
+[
+   {
+     "title": "APPRECIATION_PERFORMANCE",
+     "questions1": [
+       {
+         "title": "Efficacité",
+         "type": "formation_table"
+       },
+       {
+         "title": "Souhaits_formation",
+         "type": "formation_table"
+       }
+     ],
+     "title1": "REUSSITE_AMELIORATION",
+     "questions": [
+       {
+         "title1": "Efficacité",
+         "type1": "formation_table"
+       },
+       {
+         "title1": "Souhaits_formation",
+         "type1": "formation_table"
+       }
+     ],
+     "title2": "STATISFACTION",
+     "questions2": [
+       {
+         "title2": "Efficacité",
+         "type2": "formation_table"
+       },
+       {
+         "title2": "Souhaits_formation",
+         "type2": "formation_table"
+       }
+     ],
+     "title3": "OBJECTIFS",
+     "questions3": [
+       {
+         "title3": "Efficacité",
+         "type3": "formation_table"
+       },
+       {
+         "title3": "Souhaits_formation",
+         "type3": "formation_table"
+       }
+     ],
+     "title4": "FORMATION",
+     "questions4": [
+       {
+         "title4": "Efficacité",
+         "type4": "formation_table"
+       },
+       {
+         "title4": "Souhaits_formation",
+         "type4": "formation_table"
+       }
+     ],
+     "title5": "SYNTHESE",
+     "questions5": [
+       {
+         "title5": "Efficacité",
+         "type5": "formation_table"
+       },
+       {
+         "title5": "Souhaits_formation",
+         "type5": "formation_table"
+       }
+     ]
+   }
+ ]

@@ -3,7 +3,6 @@
 module Ntn
   module Admin
     module ViewHelper
-
       include Components::Action::ActionHelper
       include Components::App::AppHelper
       include Components::AppFrame::AppFrameHelper
@@ -15,7 +14,6 @@ module Ntn
       include Components::Pagination::PaginationHelper
       include Components::Table::TableHelper
       include Components::TableAttributes::TableAttributesHelper
-
     end
   end
 end

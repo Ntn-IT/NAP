@@ -4,7 +4,6 @@ module Ntn
   module Admin
     module Controller
       module ControllerConcern
-
         extend ActiveSupport::Concern
 
         include ::Pundit::Authorization
@@ -22,7 +21,6 @@ module Ntn
           session[:redirect_url] = request.fullpath
           redirect_to(home_path)
         end
-
       end
     end
   end

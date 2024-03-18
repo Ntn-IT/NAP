@@ -6,15 +6,13 @@ module Ntn
       module Grid
         module Pagination
           class PaginationComponent < Components::Pagination::PaginationComponent
-
             configure(
-              grid: nil,
+              grid: nil
             )
 
             delegate :resource, to: :grid
 
             delegate :query_params, to: :grid
-
           end
         end
       end

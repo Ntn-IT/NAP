@@ -5,7 +5,6 @@ module Ntn
     module Components
       module Grid
         class GridComponent < Component
-
           configure(
             resource: nil,
             rows: nil,
@@ -13,14 +12,14 @@ module Ntn
             pagination: nil,
             query_params: {},
             selected_sort: nil,
-            selected_sort_order: nil,
+            selected_sort_order: nil
           )
 
           def build_url_with_params(except_query_params:, **params)
             build_url(
               resource:,
               index: true,
-              params: { **query_params_except(excepts), **params },
+              params: { **query_params_except(excepts), **params }
             )
           end
 
@@ -30,7 +29,6 @@ module Ntn
 
             params
           end
-
         end
       end
     end

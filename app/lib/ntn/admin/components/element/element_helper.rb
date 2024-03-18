@@ -5,7 +5,6 @@ module Ntn
     module Components
       module Element
         module ElementHelper
-
           def element(**, &)
             ElementComponent.new(**, &)
           end
@@ -15,13 +14,12 @@ module Ntn
           end
 
           def main_content_header(**, &)
-            element(type: :header, css: "main-content-header", **, &)
+            element(type: :header, css: 'main-content-header', **, &)
           end
 
           def main_content_footer(**, &)
-            element(type: :footer, css: "main-content-footer", **, &)
+            element(type: :footer, css: 'main-content-footer', **, &)
           end
-
         end
       end
     end

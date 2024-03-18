@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class RegistrationsController < Devise::RegistrationsController
-
   skip_before_action :authenticate_user!
   skip_after_action :verify_authorized
 
@@ -13,5 +12,4 @@ class RegistrationsController < Devise::RegistrationsController
   def configure_sign_up_params
     devise_parameter_sanitizer.permit(:sign_up, keys: [:employeeid])
   end
-  
 end

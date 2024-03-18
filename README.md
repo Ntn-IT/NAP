@@ -15,5 +15,38 @@
 
 ## TODO 
 
-- Authentification depuis LDAP
-- Le status des employee est toujours sur Ouvrier ? Pk ?
+- Authentification depuis LDAP <---FAIT
+- Le status des employee est toujours sur Ouvrier ? Pk ? <--- En cours>
+- Créer Model review template dans le namespace review (Reviews::ReviewTemplate)
+- Rajouter dans la table review un title et aussi un status (index unique)
+- Créer une tâche pour les créations des reviews templates
+
+ex :
+[{
+  title: "FORMATION",
+  questions: [
+    {
+      title: "Efficacité",
+      type: "formation_table" 
+    },
+        {
+      title: "Souhaits_formation",
+      type: "formation_table" 
+    }
+  ]
+}],
+{
+  title: "FORMATION",
+  questions: [
+    {
+      title: "Efficacité",
+      type: "formation_table" 
+    },
+        {
+      title: "Souhaits_formation",
+      type: "formation_table" 
+    }
+  ]
+}
+
+faire en sorte que la tache soit une mise à jour (prévoir une clés) (le status)

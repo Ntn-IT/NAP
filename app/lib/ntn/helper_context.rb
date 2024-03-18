@@ -2,7 +2,6 @@
 
 module Ntn
   class HelperContext
-
     include Configurable
 
     def self.define_method_context(helper_module)
@@ -24,7 +23,7 @@ module Ntn
 
     configure(
       context_name: nil,
-      attributes: nil,
+      attributes: nil
     )
 
     def initialize(view_context)
@@ -40,6 +39,5 @@ module Ntn
 
       attributes.fetch_values(*keys)
     end
-
   end
 end
