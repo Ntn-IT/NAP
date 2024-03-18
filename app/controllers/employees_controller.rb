@@ -23,7 +23,6 @@ class EmployeesController < ApplicationController
   def show
     authorize(@employee)
   end
-
   private
 
   def define_employee

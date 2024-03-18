@@ -1,17 +1,18 @@
-# frozen_string_literal: true
+Rails.application.routes.draw do  
+  get 'home', to: 'static_pages#home'
 
-Rails.application.routes.draw do
-  root "dashboard#show"
-
-  devise_for :users,
-    controllers: {
-      registrations: "registrations",
-      sessions: "sessions",
-    }
-
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
+  devise_scope :user do
+    root to: 'users/sessions#new'
+    get 'sign_in', to: 'users/sessions#new'
+    get '/users/sign_out', to: 'users/sessions#destroy'
+  end
   resource :home, to: "home#show"
   resource :dashboard, to: "dashboard#show"
 
   resources :users, only: %i[show]
   resources :employees, only: %i[index show]
+
 end

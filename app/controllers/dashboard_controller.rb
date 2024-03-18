@@ -2,8 +2,4 @@
 
 class DashboardController < ApplicationController
 
-  def show
-    authorize(self)
-  end
-
 end

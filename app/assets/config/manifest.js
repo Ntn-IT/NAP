@@ -7,3 +7,4 @@
 //= link_tree ../../lib/ntn/admin/components .css
 //= link_tree ../../lib/ntn/admin/components .png
 //= link_tree ../../lib/ntn/admin/components .jpg
+ //= link trestle/theme.css
