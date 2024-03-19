@@ -38,9 +38,22 @@ namespace :import do
 
   #---------------------------------------------------------------------------------------------
 
-  desc 'Import de la structures des templates des entretiens'
-  task review_template: [:environment] do
+  desc 'Import de la structures des templates des entretiens pour les Ouvriers'
+  task review_template_ouvrier: [:environment] do
     json_file = "lib/tasks/fixtures/ouvrier.json"
+    # [ouvrier cadre].each do |status|
+    raw_data = File.read(json_file)
+    parsed_data = JSON.parse(raw_data)
+    puts parsed_data
+
+  rescue StandardError => e
+    BugNotifierService.call(e)
+
+    raise
+  end
+  desc 'Import de la structures des templates des entretiens pour les Cadres'
+  task review_template_cadre: [:environment] do
+    json_file = "lib/tasks/fixtures/cadre.json"
     # [ouvrier cadre].each do |status|
     raw_data = File.read(json_file)
     parsed_data = JSON.parse(raw_data)
