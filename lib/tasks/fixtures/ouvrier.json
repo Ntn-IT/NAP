@@ -1,69 +1,395 @@
 [
    {
-     "title": "APPRECIATION_PERFORMANCE",
-     "questions1": [
-       {
-         "title": "Efficacité",
-         "type": "formation_table"
-       },
-       {
-         "title": "Souhaits_formation",
-         "type": "formation_table"
-       }
-     ],
-     "title1": "REUSSITE_AMELIORATION",
+     "title": "SATISFACTION ",
      "questions": [
        {
-         "title1": "Efficacité",
-         "type1": "formation_table"
+         "title": "Satisfait_radio",
+         "type": "radio"
        },
        {
-         "title1": "Souhaits_formation",
-         "type1": "formation_table"
+        "title": "Satisfait_textfield",
+        "type": "textfield"
+      },
+      {
+        "title": "Motive_radio",
+        "type": "radio"
+      },
+      {
+       "title": "Motive_textfield",
+       "type": "textfield"
+      }
+     ],
+
+     "title": "BILAN",
+     "questions": [
+       {
+         "title": "Bilan_textfield",
+         "type": "textfield"
+       },
+       {
+         "title": "Objectifs_1_textfield",
+         "type": "textfield"
+       },
+       {
+         "title": "Objectifs_1_radio",
+         "type": "radio"
+       },
+       {
+         "title": "Objectifs_1_commentaire",
+         "type": "textfield"
+       },
+       {
+         "title": "Objectifs_2_textfield",
+         "type": "textfield"
+       },
+       {
+         "title": "Objectifs_2_radio",
+         "type": "radio"
+       },
+       {
+         "title": "Objectifs_2_commentaire",
+         "type": "textfield"
+       },
+       {
+         "title": "Objectifs_3_textfield",
+         "type": "textfield"
+       },
+       {
+         "title": "Objectifs_3_radio",
+         "type": "radio"
+       },
+       {
+         "title": "Objectifs_3_commentaire",
+         "type": "textfield"
+       },
+       {
+         "title": "Objectifs_4_textfield",
+         "type": "textfield"
+       },
+       {
+         "title": "Objectifs_4_radio",
+         "type": "radio"
+       },
+       {
+         "title": "Objectifs_4_commentaire",
+         "type": "textfield"
+       },
+       {
+         "title": "Objectifs_5_textfield",
+         "type": "textfield"
+       },
+       {
+         "title": "Objectifs_5_radio",
+         "type": "radio"
+       },
+       {
+         "title": "Objectifs_5_commentaire",
+         "type": "textfield"
        }
      ],
-     "title2": "STATISFACTION",
-     "questions2": [
+
+     "title": "NIVEAUX",
+     "questions": [
+      {
+        "title": "Respect_1_textfield",
+        "type": "textfield"
+      },
+      {
+        "title": "Respect_1_radio",
+        "type": "radio"
+      },
+      {
+        "title": "Respect_2_textfield",
+        "type": "textfield"
+      },
+      {
+        "title": "Respect_2_radio",
+        "type": "radio"
+      },
+      {
+        "title": "Respect_3_textfield",
+        "type": "textfield"
+      },
+      {
+        "title": "Respect_3_radio",
+        "type": "radio"
+      },
+      {
+        "title": "Qualite_textfield",
+        "type": "textfield"
+      },
+      {
+        "title": "Qualite_radio",
+        "type": "radio"
+      },
+      {
+        "title": "Rigueur_textfield",
+        "type": "textfield"
+      },
+      {
+        "title": "Rigueur_radio",
+        "type": "radio"
+      },
+      {
+        "title": "Comportement_textfield",
+        "type": "textfield"
+      },
+      {
+        "title": "Comportement_radio",
+        "type": "radio"
+      },
+      {
+        "title": "Transmettre_textfield",
+        "type": "textfield"
+      },
+      {
+        "title": "Transmettre_radio",
+        "type": "radio"
+      },
+      {
+        "title": "Autonomie_textfield",
+        "type": "textfield"
+      },
+      {
+        "title": "Autonomie_radio",
+        "type": "radio"
+      },
+      {
+        "title": "Relationnel_textfield",
+        "type": "textfield"
+      },
+      {
+        "title": "Relationnel_radio",
+        "type": "radio"
+      },
+      {
+        "title": "Mobiliser_textfield",
+        "type": "textfield"
+      },
+      {
+        "title": "Mobiliser_radio",
+        "type": "radio"
+      },
+      {
+        "title": "Equipe_textfield",
+        "type": "textfield"
+      },
+      {
+        "title": "Equipe_radio",
+        "type": "radio"
+      },
+      {
+        "title": "Proposition_textfield",
+        "type": "textfield"
+      },
+      {
+        "title": "Proposition_radio",
+        "type": "radio"
+      },
+      {
+        "title": "Changement_textfield",
+        "type": "textfield"
+      },
+      {
+        "title": "Changement_radio",
+        "type": "radio"
+      },
+      {
+        "title": "Disponibilite_textfield",
+        "type": "textfield"
+      },
+      {
+        "title": "Disponibilite_radio",
+        "type": "radio"
+      },
+      {
+        "title": "Ponctualite_textfield",
+        "type": "textfield"
+      },
+      {
+        "title": "Ponctualite_radio",
+        "type": "radio"
+      }
+     ],
+
+     "title": "PLAN_DE_PROGRESSION",
+     "questions": [
        {
-         "title2": "Efficacité",
-         "type2": "formation_table"
+         "title": "Objectif_Competences_1",
+         "type": "textfield"
        },
        {
-         "title2": "Souhaits_formation",
-         "type2": "formation_table"
+         "title": "Objectif_Competences_Delais_1",
+         "type": "textfield"
+       },
+       {
+        "title": "Objectif_Competences_2",
+        "type": "textfield"
+      },
+      {
+        "title": "Objectif_Competences_Delais_2",
+        "type": "textfield"
+      },
+      {
+        "title": "Objectif_Competences_3",
+        "type": "textfield"
+      },
+      {
+        "title": "Objectif_Competences_Delais_3",
+        "type": "textfield"
+      },
+      {
+        "title": "Objectif_Developpement_1",
+        "type": "textfield"
+      },
+      {
+        "title": "Objectif_Developpement_Delais_1",
+        "type": "textfield"
+      },
+      {
+        "title": "Objectif_Developpement_2",
+        "type": "textfield"
+      },
+      {
+        "title": "Objectif_Developpement_Delais_2",
+        "type": "textfield"
+      },
+      {
+        "title": "Objectif_Developpement_3",
+        "type": "textfield"
+      },
+      {
+        "title": "Objectif_Developpement_Delais_3",
+        "type": "textfield"
+      },
+      {
+        "title": "Objectif_Projet_1",
+        "type": "textfield"
+      },
+      {
+        "title": "Objectif_Projet_Delais_1",
+        "type": "textfield"
+      },
+      {
+        "title": "Objectif_Projet_2",
+        "type": "textfield"
+      },
+      {
+        "title": "Objectif_Projet_Delais_2",
+        "type": "textfield"
+      }
+
+     ],
+     "title": "FORMATION",
+     "questions": [
+      {
+        "title": "Recap_Formation_1_text",
+        "type": "textfield"
+      },
+      {
+        "title": "Recap_Formation_1_combo",
+        "type": "combobox"
+      },
+      {
+        "title": "Recap_Formation_1_commentaire",
+        "type": "tetxfield"
+      },
+      {
+        "title": "Recap_Formation_2_text",
+        "type": "textfield"
+      },
+      {
+        "title": "Recap_Formation_2_combo",
+        "type": "combobox"
+      },
+      {
+        "title": "Recap_Formation_2_commentaire",
+        "type": "tetxfield"
+      },
+      {
+        "title": "Recap_Formation_3_text",
+        "type": "textfield"
+      },
+      {
+        "title": "Recap_Formation_3_combo",
+        "type": "combobox"
+      },
+      {
+        "title": "Recap_Formation_3_commentaire",
+        "type": "tetxfield"
+      }
+     ],
+     "title": "DEMANDE_FORMATION",
+     "questions": [
+      {
+        "title": "Initiative_Demande_Formation_1_text",
+        "type": "textfield"
+      },
+      {
+        "title": "Quelle_Demande_Formation_1_text",
+        "type": "textfield"
+      },
+      {
+        "title": "Objectif_Demande_Formation_1_text",
+        "type": "textfield"
+      },
+      {
+        "title": "Initiative_Demande_Formation_2_text",
+        "type": "textfield"
+      },
+      {
+        "title": "Quelle_Demande_Formation_2_text",
+        "type": "textfield"
+      },
+      {
+        "title": "Objectif_Demande_Formation_2_text",
+        "type": "textfield"
+      },
+      {
+        "title": "Initiative_Demande_Formation_3_text",
+        "type": "textfield"
+      },
+      {
+        "title": "Quelle_Demande_Formation_3_text",
+        "type": "textfield"
+      },
+      {
+        "title": "Objectif_Demande_Formation_3_text",
+        "type": "textfield"
+      },
+      {
+        "title": "Initiative_Demande_Formation_4_text",
+        "type": "textfield"
+      },
+      {
+        "title": "Quelle_Demande_Formation_4_text",
+        "type": "textfield"
+      },
+      {
+        "title": "Objectif_Demande_Formation_4_text",
+        "type": "textfield"
+      }
+     ],
+     "title": "SYNTHESE",
+     "questions": [
+       {
+         "title": "Synthese_Salarie_text",
+         "type": "textfield"
+       },
+       {
+         "title": "Synthese_Manager_text",
+         "type": "textfield"
        }
      ],
-     "title3": "OBJECTIFS",
-     "questions3": [
+     "title": "SIGNATURE",
+     "questions": [
        {
-         "title3": "Efficacité",
-         "type3": "formation_table"
+         "title": "Signature_Salarie",
+         "type": "radio"
        },
        {
-         "title3": "Souhaits_formation",
-         "type3": "formation_table"
-       }
-     ],
-     "title4": "FORMATION",
-     "questions4": [
-       {
-         "title4": "Efficacité",
-         "type4": "formation_table"
-       },
-       {
-         "title4": "Souhaits_formation",
-         "type4": "formation_table"
-       }
-     ],
-     "title5": "SYNTHESE",
-     "questions5": [
-       {
-         "title5": "Efficacité",
-         "type5": "formation_table"
-       },
-       {
-         "title5": "Souhaits_formation",
-         "type5": "formation_table"
+        "title": "Signature_Manager",
+        "type": "radio"
        }
      ]
    }
