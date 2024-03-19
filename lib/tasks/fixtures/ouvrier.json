@@ -23,7 +23,7 @@
      "title": "BILAN",
      "questions": [
        {
-         "title": "Bilan_textfield",
+         "title": "Faits_textfield",
          "type": "textfield"
        },
        {

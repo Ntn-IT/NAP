@@ -8,7 +8,7 @@ def parse_date(date)
 end
 
 namespace :import do
-  desc 'Import employee from csv file'
+  desc 'Importer employees depuis un csv'
   task employee: [:environment] do
     # En dev on utilise un fichier de fixtures
     # TODO: faire le process pour la production
@@ -23,10 +23,10 @@ namespace :import do
       employee_hash[:updated_at] = parse_date(employee_hash[:updated_at])
 
       employee = Employee.find_by(id:)
-
+      puts employee_hash
       next employee.update!(employee_hash) if employee
-
-      Employee.create!(employee_hash)
+      
+      #Employee.create!(employee_hash)
 
       Rails.logger.info('Employee correctly imported')
     end
@@ -43,7 +43,7 @@ namespace :import do
     json_file = "lib/tasks/fixtures/ouvrier.json"
     # [ouvrier cadre].each do |status|
     raw_data = File.read(json_file)
-    parsed_data = JSON.parse(raw_data)
+    parsed_data = JSON.parse(raw_data, symbolize_names: true)
     puts parsed_data
 
   rescue StandardError => e
@@ -51,12 +51,13 @@ namespace :import do
 
     raise
   end
+  
   desc 'Import de la structures des templates des entretiens pour les Cadres'
   task review_template_cadre: [:environment] do
     json_file = "lib/tasks/fixtures/cadre.json"
     # [ouvrier cadre].each do |status|
     raw_data = File.read(json_file)
-    parsed_data = JSON.parse(raw_data)
+    parsed_data = JSON.parse(raw_data, symbolize_names: true)
     puts parsed_data
 
   rescue StandardError => e

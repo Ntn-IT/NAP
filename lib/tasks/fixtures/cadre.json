@@ -23,261 +23,192 @@
       "title": "BILAN",
       "questions": [
         {
-          "title": "Bilan_textfield",
-          "type": "textfield"
-        },
-        {
-          "title": "Objectifs_1_textfield",
-          "type": "textfield"
-        },
-        {
-          "title": "Objectifs_1_radio",
-          "type": "radio"
-        },
-        {
-          "title": "Objectifs_1_commentaire",
-          "type": "textfield"
-        },
-        {
-          "title": "Objectifs_2_textfield",
-          "type": "textfield"
-        },
-        {
-          "title": "Objectifs_2_radio",
-          "type": "radio"
-        },
-        {
-          "title": "Objectifs_2_commentaire",
-          "type": "textfield"
-        },
-        {
-          "title": "Objectifs_3_textfield",
-          "type": "textfield"
-        },
-        {
-          "title": "Objectifs_3_radio",
-          "type": "radio"
-        },
-        {
-          "title": "Objectifs_3_commentaire",
-          "type": "textfield"
-        },
-        {
-          "title": "Objectifs_4_textfield",
-          "type": "textfield"
-        },
-        {
-          "title": "Objectifs_4_radio",
-          "type": "radio"
-        },
-        {
-          "title": "Objectifs_4_commentaire",
-          "type": "textfield"
-        },
-        {
-          "title": "Objectifs_5_textfield",
-          "type": "textfield"
-        },
-        {
-          "title": "Objectifs_5_radio",
-          "type": "radio"
-        },
-        {
-          "title": "Objectifs_5_commentaire",
+          "title": "Faits_textfield",
           "type": "textfield"
         }
       ],
+      "title": "PERFORMANCE",
+        "questions": [
+        {
+          "title": "Objectif_1_textfield",
+          "type": "textfield"
+        },
+        {
+          "title": "Commentaire_1_textfield",
+          "type": "textfield"
+        },
+        {
+          "title": "Taux_1_combo",
+          "type": "combobox"
+        },
+        {
+          "title": "Objectif_2_textfield",
+          "type": "textfield"
+        },
+        {
+          "title": "Commentaire_2_textfield",
+          "type": "textfield"
+        },
+        {
+          "title": "Taux_2_combo",
+          "type": "combobox"
+        },
+        {
+          "title": "Objectif_1_textfield",
+          "type": "textfield"
+        },
+        {
+          "title": "Commentaire_1_textfield",
+          "type": "textfield"
+        },
+        {
+          "title": "Taux_1_combo",
+          "type": "combobox"
+        },
+        {
+          "title": "Objectif_2_textfield",
+          "type": "textfield"
+        },
+        {
+          "title": "Commentaire_2_textfield",
+          "type": "textfield"
+        },
+        {
+          "title": "Taux_2_combo",
+          "type": "combobox"
+        },
+        {
+            "title": "Objectif_3_textfield",
+            "type": "textfield"
+          },
+          {
+            "title": "Commentaire_3_textfield",
+            "type": "textfield"
+          },
+          {
+            "title": "Taux_3_combo",
+            "type": "combobox"
+          },
+          {
+            "title": "Objectif_4_textfield",
+            "type": "textfield"
+          },
+          {
+            "title": "Commentaire_4_textfield",
+            "type": "textfield"
+          },
+          {
+            "title": "Taux_4_combo",
+            "type": "combobox"
+          },
+          {
+            "title": "Objectif_5_textfield",
+            "type": "textfield"
+          },
+          {
+            "title": "Commentaire_5_textfield",
+            "type": "textfield"
+          },
+          {
+            "title": "Taux_5_combo",
+            "type": "combobox"
+          },
+          {
+            "title": "Taux_final_combo",
+            "type": "combobox"
+          }
+      ],
  
-      "title": "NIVEAUX",
+      "title": "REUSSITE",
       "questions": [
        {
-         "title": "Respect_1_textfield",
+         "title": "Technique_Reussite_textfield",
          "type": "textfield"
        },
        {
-         "title": "Respect_1_radio",
-         "type": "radio"
-       },
-       {
-         "title": "Respect_2_textfield",
+         "title": "Technique_Amelioration_textfield",
          "type": "textfield"
        },
        {
-         "title": "Respect_2_radio",
-         "type": "radio"
+        "title": "Relationnelle_Reussite_textfield",
+        "type": "textfield"
        },
        {
-         "title": "Respect_3_textfield",
-         "type": "textfield"
+        "title": "Relationnelle_Amelioration_textfield",
+        "type": "textfield"
        },
        {
-         "title": "Respect_3_radio",
-         "type": "radio"
+        "title": "Manageriale_Reussite_textfield",
+        "type": "textfield"
        },
        {
-         "title": "Qualite_textfield",
-         "type": "textfield"
-       },
-       {
-         "title": "Qualite_radio",
-         "type": "radio"
-       },
-       {
-         "title": "Rigueur_textfield",
-         "type": "textfield"
-       },
-       {
-         "title": "Rigueur_radio",
-         "type": "radio"
-       },
-       {
-         "title": "Comportement_textfield",
-         "type": "textfield"
-       },
-       {
-         "title": "Comportement_radio",
-         "type": "radio"
-       },
-       {
-         "title": "Transmettre_textfield",
-         "type": "textfield"
-       },
-       {
-         "title": "Transmettre_radio",
-         "type": "radio"
-       },
-       {
-         "title": "Autonomie_textfield",
-         "type": "textfield"
-       },
-       {
-         "title": "Autonomie_radio",
-         "type": "radio"
-       },
-       {
-         "title": "Relationnel_textfield",
-         "type": "textfield"
-       },
-       {
-         "title": "Relationnel_radio",
-         "type": "radio"
-       },
-       {
-         "title": "Mobiliser_textfield",
-         "type": "textfield"
-       },
-       {
-         "title": "Mobiliser_radio",
-         "type": "radio"
-       },
-       {
-         "title": "Equipe_textfield",
-         "type": "textfield"
-       },
-       {
-         "title": "Equipe_radio",
-         "type": "radio"
-       },
-       {
-         "title": "Proposition_textfield",
-         "type": "textfield"
-       },
-       {
-         "title": "Proposition_radio",
-         "type": "radio"
-       },
-       {
-         "title": "Changement_textfield",
-         "type": "textfield"
-       },
-       {
-         "title": "Changement_radio",
-         "type": "radio"
-       },
-       {
-         "title": "Disponibilite_textfield",
-         "type": "textfield"
-       },
-       {
-         "title": "Disponibilite_radio",
-         "type": "radio"
-       },
-       {
-         "title": "Ponctualite_textfield",
-         "type": "textfield"
-       },
-       {
-         "title": "Ponctualite_radio",
-         "type": "radio"
+        "title": "Manageriale_Amelioration_textfield",
+        "type": "textfield"
        }
       ],
  
-      "title": "PLAN_DE_PROGRESSION",
+      "title": "OBJECTIFS",
       "questions": [
         {
-          "title": "Objectif_Competences_1",
+          "title": "Objectif_Objectif_1",
           "type": "textfield"
         },
         {
-          "title": "Objectif_Competences_Delais_1",
+          "title": "Objectif_Delais_1",
           "type": "textfield"
         },
         {
-         "title": "Objectif_Competences_2",
+         "title": "Objectif_Delais_2",
          "type": "textfield"
        },
        {
-         "title": "Objectif_Competences_Delais_2",
-         "type": "textfield"
-       },
-       {
-         "title": "Objectif_Competences_3",
-         "type": "textfield"
-       },
-       {
-         "title": "Objectif_Competences_Delais_3",
-         "type": "textfield"
-       },
-       {
-         "title": "Objectif_Developpement_1",
-         "type": "textfield"
-       },
-       {
-         "title": "Objectif_Developpement_Delais_1",
-         "type": "textfield"
-       },
-       {
-         "title": "Objectif_Developpement_2",
-         "type": "textfield"
-       },
-       {
-         "title": "Objectif_Developpement_Delais_2",
-         "type": "textfield"
-       },
-       {
-         "title": "Objectif_Developpement_3",
-         "type": "textfield"
-       },
-       {
-         "title": "Objectif_Developpement_Delais_3",
-         "type": "textfield"
-       },
-       {
-         "title": "Objectif_Projet_1",
-         "type": "textfield"
-       },
-       {
-         "title": "Objectif_Projet_Delais_1",
-         "type": "textfield"
-       },
-       {
-         "title": "Objectif_Projet_2",
-         "type": "textfield"
-       },
-       {
-         "title": "Objectif_Projet_Delais_2",
-         "type": "textfield"
-       }
+        "title": "Objectif_Objectif_2",
+        "type": "textfield"
+      },
+      {
+        "title": "Objectif_Delais_2",
+        "type": "textfield"
+      },
+      {
+       "title": "Objectif_Delais_2",
+       "type": "textfield"
+     },
+     {
+        "title": "Objectif_Objectif_3",
+        "type": "textfield"
+      },
+      {
+        "title": "Objectif_Delais_3",
+        "type": "textfield"
+      },
+      {
+       "title": "Objectif_Delais_3",
+       "type": "textfield"
+     },
+     {
+        "title": "Objectif_Objectif_4",
+        "type": "textfield"
+      },
+      {
+        "title": "Objectif_Delais_4",
+        "type": "textfield"
+      },
+      {
+       "title": "Objectif_Delais_4",
+       "type": "textfield"
+     },
+     {
+        "title": "Objectif_Objectif_5",
+        "type": "textfield"
+      },
+      {
+        "title": "Objectif_Delais_5",
+        "type": "textfield"
+      },
+      {
+       "title": "Objectif_Delais_5",
+       "type": "textfield"
+     }
  
       ],
       "title": "FORMATION",

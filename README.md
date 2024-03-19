@@ -17,10 +17,10 @@ Portail applicatif NTN-TE Europe (Allonnes)
 
 - Authentification depuis LDAP <--- Fait
 - Le status des employee est toujours sur Ouvrier ? Pk ? <--- Fait
-- Créer Model review template dans le namespace review (Reviews::ReviewTemplate) <--- En cours
-  -JSON Ouvrier (A2-C6) Fait
-  -JSON Cadre (D7>) En cours
-- Rajouter dans la table review un title et aussi un status (index unique) <--- En cours
+- Créer Model review template dans le namespace review (Reviews::ReviewTemplate) <--- Fait
+  -JSON Ouvrier (A2-C6) <--- Fait
+  -JSON Cadre (D7>) <--- Fait
+- Rajouter dans la table review un title et aussi un status (index unique) <--- Fait
 - Créer une tâche pour les créations des reviews templates <--- En cours
 
 faire en sorte que la tache soit une mise à jour (prévoir une clés) (le status)
