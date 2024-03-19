@@ -23,10 +23,9 @@ namespace :import do
       employee_hash[:updated_at] = parse_date(employee_hash[:updated_at])
 
       employee = Employee.find_by(id:)
-      puts employee_hash
       next employee.update!(employee_hash) if employee
       
-      #Employee.create!(employee_hash)
+      Employee.create!(employee_hash)
 
       Rails.logger.info('Employee correctly imported')
     end
@@ -43,8 +42,9 @@ namespace :import do
     json_file = "lib/tasks/fixtures/ouvrier.json"
     # [ouvrier cadre].each do |status|
     raw_data = File.read(json_file)
-    parsed_data = JSON.parse(raw_data, symbolize_names: true)
-    puts parsed_data
+    parsed_data = JSON.parse(raw_data)
+    json_data = JSON.generate(parsed_data)
+    puts json_data
 
   rescue StandardError => e
     BugNotifierService.call(e)

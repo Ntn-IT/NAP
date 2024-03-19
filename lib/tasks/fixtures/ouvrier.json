@@ -1,7 +1,7 @@
 [
    {
-     "title": "SATISFACTION ",
-     "questions": [
+     "title_1": "SATISFACTION ",
+     "questions_1_1": [
        {
          "title": "Satisfait_radio",
          "type": "radio"
@@ -20,8 +20,8 @@
       }
      ],
 
-     "title": "BILAN",
-     "questions": [
+     "title_2": "BILAN",
+     "questions_2_1": [
        {
          "title": "Faits_textfield",
          "type": "textfield"
@@ -88,8 +88,8 @@
        }
      ],
 
-     "title": "NIVEAUX",
-     "questions": [
+     "title_3": "NIVEAUX",
+     "questions_3_1": [
       {
         "title": "Respect_1_textfield",
         "type": "textfield"
@@ -212,8 +212,8 @@
       }
      ],
 
-     "title": "PLAN_DE_PROGRESSION",
-     "questions": [
+     "title_4": "PLAN_DE_PROGRESSION",
+     "questions_4_1": [
        {
          "title": "Objectif_Competences_1",
          "type": "textfield"
@@ -280,8 +280,8 @@
       }
 
      ],
-     "title": "FORMATION",
-     "questions": [
+     "title_5": "FORMATION",
+     "questions_5_1": [
       {
         "title": "Recap_Formation_1_text",
         "type": "textfield"
@@ -319,8 +319,8 @@
         "type": "tetxfield"
       }
      ],
-     "title": "DEMANDE_FORMATION",
-     "questions": [
+     "title_6": "DEMANDE_FORMATION",
+     "questions_6_1": [
       {
         "title": "Initiative_Demande_Formation_1_text",
         "type": "textfield"
@@ -370,8 +370,8 @@
         "type": "textfield"
       }
      ],
-     "title": "SYNTHESE",
-     "questions": [
+     "title_7": "SYNTHESE",
+     "questions_7_1": [
        {
          "title": "Synthese_Salarie_text",
          "type": "textfield"
@@ -381,8 +381,8 @@
          "type": "textfield"
        }
      ],
-     "title": "SIGNATURE",
-     "questions": [
+     "title_8": "SIGNATURE",
+     "questions_8_1": [
        {
          "title": "Signature_Salarie",
          "type": "radio"
