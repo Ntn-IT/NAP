@@ -1,0 +1,28 @@
+<%= build app_frame(
+  title: t("User"),
+  actions: [
+    primary_button(url: employee_path(current_user.employee)) { t("Employee profile") },
+  ]
+
+          # TODO: Kind of button 
+          # primary secondary sucess info warning danger light dark default
+) do %>
+
+  <%= build table_attributes(
+    attributes: [
+      { 
+        header: t("Email"),
+        value: proc { current_user.email }
+      },
+      { 
+        header: t("First name"),
+        value: proc { "First name" }
+      },
+      { 
+        header: t("Last name"),
+        value: proc { "Last name" }
+      }
+    ]
+  ) %>
+
+<% end %>

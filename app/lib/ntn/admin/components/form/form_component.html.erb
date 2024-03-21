@@ -1,0 +1,24 @@
+
+<form 
+  <%= build_attributes(
+    css: "form",
+    method: method == "get" ? "get" : "post",
+    action:,
+    enctype: form_data? ? "multipart/form-data" : "application/x-www-form-urlencoded"
+  ) %>
+>
+  <input type="hidden" name="_method" value="<%= method %>">
+
+  <% if with_token? %>
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <% end %>
+
+  <%= content  %>
+    
+  <% if buttons %>
+    <div class="...">
+      <%= build buttons %>
+    </div>
+  <% end %>
+
+</form>

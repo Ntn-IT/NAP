@@ -28,7 +28,7 @@ development:
   pool: 10
   username: postgres
   password: ntntepcxxx
-  host: <%= ENV.fetch("DB_HOST", "10.219.5.85") %> 
+  host: localhost #<%= ENV.fetch("DB_HOST", "localhost") %> 
   port: 5432 #  password: ntntepcxxx
 
 production:
@@ -38,7 +38,7 @@ production:
   pool: 10
   username: postgres
   password: ntntepcxxx
-  host: 10.219.5.85
+  host: localhost
   port: 5432
 
 #development:

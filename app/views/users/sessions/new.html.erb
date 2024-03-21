@@ -1,0 +1,19 @@
+<%= stylesheet_link_tag "trestle/theme" %>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+  <div class="login">
+	<h1>NTN-AP</h1>
+    <form method="post">
+      <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+      <%= f.password_field :password, autocomplete: "current-password" %>
+        <div style="padding-top: 20px;"></div>
+        <div class="actions">
+        <%= f.submit "Connexion" %>
+    </form>
+</div>
+
+<% end %>
+
+
+<%= render "devise/shared/links" %>

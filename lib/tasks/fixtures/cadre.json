@@ -1,0 +1,327 @@
+[
+    {
+      "title_1": "SATISFACTION ",
+      "questions_1_2": [
+        {
+          "title": "Satisfait_radio",
+          "type": "radio"
+        },
+        {
+         "title": "Satisfait_textfield",
+         "type": "textfield"
+       },
+       {
+         "title": "Motive_radio",
+         "type": "radio"
+       },
+       {
+        "title": "Motive_textfield",
+        "type": "textfield"
+       }
+      ],
+ 
+      "title_2": "BILAN",
+      "questions_2_1": [
+        {
+          "title": "Faits_textfield",
+          "type": "textfield"
+        }
+      ],
+      "title_3": "PERFORMANCE",
+        "questions_3_1": [
+        {
+          "title": "Objectif_1_textfield",
+          "type": "textfield"
+        },
+        {
+          "title": "Commentaire_1_textfield",
+          "type": "textfield"
+        },
+        {
+          "title": "Taux_1_combo",
+          "type": "combobox"
+        },
+        {
+          "title": "Objectif_2_textfield",
+          "type": "textfield"
+        },
+        {
+          "title": "Commentaire_2_textfield",
+          "type": "textfield"
+        },
+        {
+          "title": "Taux_2_combo",
+          "type": "combobox"
+        },
+        {
+          "title": "Objectif_1_textfield",
+          "type": "textfield"
+        },
+        {
+          "title": "Commentaire_1_textfield",
+          "type": "textfield"
+        },
+        {
+          "title": "Taux_1_combo",
+          "type": "combobox"
+        },
+        {
+          "title": "Objectif_2_textfield",
+          "type": "textfield"
+        },
+        {
+          "title": "Commentaire_2_textfield",
+          "type": "textfield"
+        },
+        {
+          "title": "Taux_2_combo",
+          "type": "combobox"
+        },
+        {
+          "title": "Objectif_3_textfield",
+          "type": "textfield"
+        },
+        {
+          "title": "Commentaire_3_textfield",
+          "type": "textfield"
+        },
+        {
+          "title": "Taux_3_combo",
+          "type": "combobox"
+        },
+        {
+          "title": "Objectif_4_textfield",
+          "type": "textfield"
+        },
+        {
+          "title": "Commentaire_4_textfield",
+          "type": "textfield"
+        },
+        {
+          "title": "Taux_4_combo",
+          "type": "combobox"
+        },
+        {
+          "title": "Objectif_5_textfield",
+          "type": "textfield"
+        },
+        {
+          "title": "Commentaire_5_textfield",
+          "type": "textfield"
+        },
+        {
+          "title": "Taux_5_combo",
+          "type": "combobox"
+        },
+        {
+          "title": "Taux_final_combo",
+          "type": "combobox"
+        }
+      ],
+ 
+      "title_4": "REUSSITE",
+      "questions_4_1": [
+       {
+         "title": "Technique_Reussite_textfield",
+         "type": "textfield"
+       },
+       {
+         "title": "Technique_Amelioration_textfield",
+         "type": "textfield"
+       },
+       {
+        "title": "Relationnelle_Reussite_textfield",
+        "type": "textfield"
+       },
+       {
+        "title": "Relationnelle_Amelioration_textfield",
+        "type": "textfield"
+       },
+       {
+        "title": "Manageriale_Reussite_textfield",
+        "type": "textfield"
+       },
+       {
+        "title": "Manageriale_Amelioration_textfield",
+        "type": "textfield"
+       }
+      ],
+ 
+      "title_5": "OBJECTIFS",
+      "questions_5_1": [
+      {
+        "title": "Objectif_Objectif_1",
+        "type": "textfield"
+      },
+      {
+        "title": "Objectif_Delais_1",
+        "type": "textfield"
+      },
+      {
+       "title": "Objectif_Delais_2",
+       "type": "textfield"
+      },
+      {
+        "title": "Objectif_Objectif_2",
+        "type": "textfield"
+      },
+      {
+        "title": "Objectif_Delais_2",
+        "type": "textfield"
+      },
+      {
+       "title": "Objectif_Delais_2",
+       "type": "textfield"
+     },
+     {
+        "title": "Objectif_Objectif_3",
+        "type": "textfield"
+      },
+      {
+        "title": "Objectif_Delais_3",
+        "type": "textfield"
+      },
+      {
+       "title": "Objectif_Delais_3",
+       "type": "textfield"
+     },
+     {
+        "title": "Objectif_Objectif_4",
+        "type": "textfield"
+      },
+      {
+        "title": "Objectif_Delais_4",
+        "type": "textfield"
+      },
+      {
+       "title": "Objectif_Delais_4",
+       "type": "textfield"
+     },
+     {
+        "title": "Objectif_Objectif_5",
+        "type": "textfield"
+      },
+      {
+        "title": "Objectif_Delais_5",
+        "type": "textfield"
+      },
+      {
+       "title": "Objectif_Delais_5",
+       "type": "textfield"
+     }
+ 
+      ],
+      "title_6": "FORMATION",
+      "questions_6_1": [
+       {
+         "title": "Recap_Formation_1_text",
+         "type": "textfield"
+       },
+       {
+         "title": "Recap_Formation_1_combo",
+         "type": "combobox"
+       },
+       {
+         "title": "Recap_Formation_1_commentaire",
+         "type": "tetxfield"
+       },
+       {
+         "title": "Recap_Formation_2_text",
+         "type": "textfield"
+       },
+       {
+         "title": "Recap_Formation_2_combo",
+         "type": "combobox"
+       },
+       {
+         "title": "Recap_Formation_2_commentaire",
+         "type": "tetxfield"
+       },
+       {
+         "title": "Recap_Formation_3_text",
+         "type": "textfield"
+       },
+       {
+         "title": "Recap_Formation_3_combo",
+         "type": "combobox"
+       },
+       {
+         "title": "Recap_Formation_3_commentaire",
+         "type": "tetxfield"
+       }
+      ],
+      "title_7": "DEMANDE_FORMATION",
+      "questions_7_1": [
+       {
+         "title": "Initiative_Demande_Formation_1_text",
+         "type": "textfield"
+       },
+       {
+         "title": "Quelle_Demande_Formation_1_text",
+         "type": "textfield"
+       },
+       {
+         "title": "Objectif_Demande_Formation_1_text",
+         "type": "textfield"
+       },
+       {
+         "title": "Initiative_Demande_Formation_2_text",
+         "type": "textfield"
+       },
+       {
+         "title": "Quelle_Demande_Formation_2_text",
+         "type": "textfield"
+       },
+       {
+         "title": "Objectif_Demande_Formation_2_text",
+         "type": "textfield"
+       },
+       {
+         "title": "Initiative_Demande_Formation_3_text",
+         "type": "textfield"
+       },
+       {
+         "title": "Quelle_Demande_Formation_3_text",
+         "type": "textfield"
+       },
+       {
+         "title": "Objectif_Demande_Formation_3_text",
+         "type": "textfield"
+       },
+       {
+         "title": "Initiative_Demande_Formation_4_text",
+         "type": "textfield"
+       },
+       {
+         "title": "Quelle_Demande_Formation_4_text",
+         "type": "textfield"
+       },
+       {
+         "title": "Objectif_Demande_Formation_4_text",
+         "type": "textfield"
+       }
+      ],
+      "title_8": "SYNTHESE",
+      "questions_8_1": [
+        {
+          "title": "Synthese_Salarie_text",
+          "type": "textfield"
+        },
+        {
+          "title": "Synthese_Manager_text",
+          "type": "textfield"
+        }
+      ],
+      "title_9": "SIGNATURE",
+      "questions_9_1": [
+        {
+          "title": "Signature_Salarie",
+          "type": "radio"
+        },
+        {
+         "title": "Signature_Manager",
+         "type": "radio"
+        }
+      ]
+    }
+  ]

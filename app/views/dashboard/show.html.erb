@@ -1,0 +1,76 @@
+
+<%= build app_frame(
+  title: t("Dashboard"),
+) do %>
+
+  <%= build main_content_header do %>
+    <div class="searchbox">
+      <form action="/admin/movies" accept-charset="UTF-8" method="get">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <icon class="fa fa-search"></icon>
+            </span>
+          </div>
+          <input type="search" name="q" id="q" class="form-control" autocomplete="off" placeholder="Search" />
+        </div>
+      </form>
+    </div>
+  <% end %>
+
+  <div class="table-container">
+    <table class="trestle-table">
+      <thead>
+        <tr>
+          <th class="poster-column text-center"></th>
+          <th class="media-title-column">
+            <a class="sort" href="/admin/movies?order=asc&amp;sort=title">Title</a>
+          </th>
+          <th class="">
+            <a class="sort" href="/admin/movies?order=asc&amp;sort=director">Directors</a>
+          </th>
+          <th class="hidden-xs">Genres</th>
+          <th class="text-center">
+            <a class="sort" href="/admin/movies?order=asc&amp;sort=status">Status</a>
+          </th>
+          <th class="text-center">
+            <a class="sort" href="/admin/movies?order=asc&amp;sort=release_date">Release date</a>
+          </th>
+          <th class="text-center">
+            <a class="sort" href="/admin/movies?order=asc&amp;sort=vote_average">Score</a>
+          </th>
+          <th class="actions"></th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+  
+  <%= build main_content_footer do %>
+    <nav class="pagination-container">
+      <p>Displaying Movies <strong>1&nbsp;-&nbsp;25</strong> of <b>42</b>
+      <ul class="pagination pagination-sm">
+        <li class="page-item disabled">
+          <span class="page-link">&laquo;</span>
+        </li>
+        <li class="page-item active">
+          <a class="page-link" href="/admin/movies">
+            <span>1</span>
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" rel="next" href="/admin/movies?page=2">
+            <span>2</span>
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="/admin/movies?page=2">
+            <span>&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  <% end %>
+
+<% end %>

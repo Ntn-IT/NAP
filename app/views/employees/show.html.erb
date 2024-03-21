@@ -1,0 +1,10 @@
+<%= 
+  build app_frame(
+    title: t("Employee"),
+  ) do 
+    build table_attributes(
+      bind_to: @employee,
+      attributes: employee_context.fetch_attributes
+    ) 
+  end 
+%>

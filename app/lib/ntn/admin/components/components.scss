@@ -1,0 +1,52 @@
+@import "./component_variables";
+
+/* Components */
+@import "./app_loader/app_loader";
+@import "./app_frame/app_frame.scss";
+
+
+/********* Display ********/  
+
+.hidden {
+  display: none;
+}
+
+.backgroud-gray {
+  background-color: $background-gray;
+}
+
+/********* Border ********/  
+
+.border {
+  border-left: $border;
+}
+.border-left {
+  border-left: $border;
+}
+.border-right {
+  border-right: $border;
+}
+.border-top {
+  border-top: $border;
+}
+.border-bottom {
+  border-bottom: $border;
+}
+
+/********* Padding ********/  
+
+.padding {
+  padding: $padding;
+}
+.padding-left {
+  padding-left: $padding;
+}
+.padding-right {
+  padding-right: $padding;
+}
+.padding-top {
+  padding-top: $padding;
+}
+.padding-bottom {
+  padding-bottom: $padding;
+}

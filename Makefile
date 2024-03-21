@@ -1,3 +1,5 @@
+sidekiq:
+	bundle exec sidekiq
 
 # Pousse les dernière modiifcation sur git avec un message
 # Ex: make commit msg a définir

@@ -1,17 +1,59 @@
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title>NAP</title>
+    <title>NTN - Admin</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="view-transition" content="same-origin" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    
+    <link rel='stylesheet' url='https://css.gg/css'>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload","bootstrap_min","style" %>
+    <meta name="turbo-prefetch" content="false">
 
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= yield %>
+  <%= build app_loader %>
+  
+  <%= 
+    build app(
+      title: "NTN - Admin",
+      env: "NTN",
+      menu: [
+        {
+          group: "Library",
+          items: [
+            {
+              url: "/dashboard",
+              icon: "fa fa-dashboard",
+              content: t("Dashboard"),
+            }
+          ]
+        },
+        {
+          group: "Configuration",
+          items: [
+            {
+              url: build_url(resource: Employee, index: true),
+              icon: "fa fa-key",
+              content: t("Employees"),
+            },
+            {
+              url: "/admin/auth/administrators",
+              icon: "fa fa-user-lock",
+              content: "Administrators",
+            }
+          ]
+        }
+      ],
+    ) do 
+      yield 
+    end
+  %>
+  
   </body>
 </html>

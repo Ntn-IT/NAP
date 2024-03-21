@@ -1,0 +1,23 @@
+<div <%= build_attributes(css: "grid") %>>  
+  
+  <div class="table-container">
+    <%= 
+      build grid_table(
+        self, 
+        selected_sort:,
+        selected_sort_order:,
+        rows:,
+        attributes:,
+      )  
+    %>
+  </div>
+
+  <% if rows.present? && pagination %>
+
+    <footer class="main-content-footer">
+      <%= build grid_pagination(self, **pagination)  %>
+    </footer>
+
+  <% end %>
+
+</div>
