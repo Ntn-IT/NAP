@@ -31,9 +31,8 @@ ActiveRecord::Schema[7.1].define(version: 2024190320241637) do
   end
 
   create_table "review_templates", force: :cascade do |t|
-    t.json "template", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.json "template"
+    t.string "status"
   end
 
   create_table "users", force: :cascade do |t|

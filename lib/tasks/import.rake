@@ -41,28 +41,30 @@ namespace :import do
   task review_template_ouvrier: [:environment] do
     json_file = "lib/tasks/fixtures/ouvrier.json"
     # [ouvrier cadre].each do |status|
-    raw_data = File.read(json_file)
-    parsed_data = JSON.parse(raw_data)
-    json_data = JSON.generate(parsed_data)
-    puts json_data
+    raw_data = JSON.parse(File.read("lib/tasks/fixtures/ouvrier.json"))
+    ReviewTemplate.create!(status: 'ouvrier',template: raw_data)
+
 
   rescue StandardError => e
     BugNotifierService.call(e)
 
     raise
   end
-  
+
   desc 'Import de la structures des templates des entretiens pour les Cadres'
   task review_template_cadre: [:environment] do
     json_file = "lib/tasks/fixtures/cadre.json"
     # [ouvrier cadre].each do |status|
-    raw_data = File.read(json_file)
-    parsed_data = JSON.parse(raw_data, symbolize_names: true)
-    puts parsed_data
+    raw_data = JSON.parse(File.read("lib/tasks/fixtures/cadre.json"))
+    ReviewTemplate.create!(status: 'cadre',template: raw_data)
+
 
   rescue StandardError => e
     BugNotifierService.call(e)
 
     raise
   end
+
+
+
 end
