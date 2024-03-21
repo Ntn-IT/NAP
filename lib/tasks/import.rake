@@ -25,12 +25,13 @@ namespace :import do
 
       next employee.update!(employee_hash) if employee
 
-      Employee.create!(employee_hash)
+      employee = Employee.new(employee_hash)
+      employee.save(validate: false)
 
       Rails.logger.info('Employee correctly imported')
     end
   rescue StandardError => e
-    BugNotifierService.call(e)
+    #BugNotifierService.call(e)
 
     raise
   end

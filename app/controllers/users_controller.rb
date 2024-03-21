@@ -2,6 +2,7 @@
 
 class UsersController < ApplicationController
   before_action :define_user, only: %i[show edit update destroy]
+  
 
   def index_init_query
     User.joins(:employee)

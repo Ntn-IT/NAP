@@ -24,7 +24,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: DB_NAP_DEV
+  database: DB_NAP_DEV_REVIEW
   pool: 10
   username: postgres
   password: ntntepcxxx

@@ -35,7 +35,7 @@
 
         <div class="main-content">
           <% if notice %>
-            <%= build alert(notice[:message], notice[:status], notice[:backtrace]) %>
+          <%= build alert(notice[:message], notice[:status], notice[:backtrace]) %>
           <% end %>
           
           <%= content %>
