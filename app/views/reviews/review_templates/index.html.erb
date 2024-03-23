@@ -1,0 +1,15 @@
+
+<%= 
+  build app_frame(
+    title: t("Modèles d'entretien"),
+    notice:,
+    actions: []
+  ) do 
+    build [
+      index_grid(
+        self,
+        attributes: reviews.review_template_context.table_attributes,
+      )
+    ]
+  end 
+%>

@@ -1,0 +1,14 @@
+<%= 
+  build app_frame(
+    title: t("Campagne d'entretien"),
+    notice:,
+    bind_to: @review_period,
+    actions: [
+    ]
+  ) do 
+    build table_attributes(
+      bind_to: @review_period,
+      attributes: reviews.review_period_context.table_attributes
+    ) 
+  end 
+%>

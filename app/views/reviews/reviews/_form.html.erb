@@ -1,0 +1,15 @@
+
+<%= 
+  build record_form(
+    @review, 
+    url:, 
+    method: method,
+    buttons: [reset_button, save_button]
+  ) do |form| %>
+    <%= 
+      build [
+        #form.text_field(:id, disabled: true),
+      ] 
+    %>
+  <% end 
+%>

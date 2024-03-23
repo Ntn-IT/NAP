@@ -67,8 +67,6 @@ module Ntn
               css: "page-item#{selected ? ' active' : ''}#{disabled ? ' disabled' : ''}",
               value: link(url:, text:, css: 'page-link')
             }
-          rescue StandardError
-            binding.pry
           end
         end
       end

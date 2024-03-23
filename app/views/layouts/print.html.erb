@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> &nbsp;</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="view-transition" content="same-origin" />
+    
+    <link rel='stylesheet' url='https://css.gg/css'>
+    <meta name="turbo-prefetch" content="false">
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
+    <script>
+      function print_specific_div_content(){
+          var win = window.open('','','left=0,top=0,width=552,height=477,toolbar=0,scrollbars=0,status =0');
+
+          var content = "<html>";
+          content += "<body onload=\"window.print(); window.close();\">";
+          content += document.body.innerHTML ;
+          content += "</body>";
+          content += "</html>";
+          win.document.write(content);
+          win.document.close();
+      }
+
+      //addEventListener("DOMContentLoaded", event => print_specific_div_content());
+      addEventListener("DOMContentLoaded", event => window.print());
+    </script>
+
+    <style>
+      body {
+        background: white !important;
+      }
+    </style>
+  </head>
+
+  <body>
+
+  <%= yield %>
+  
+  </body>
+</html>

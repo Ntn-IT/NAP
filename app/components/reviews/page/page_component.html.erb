@@ -1,0 +1,42 @@
+
+<div class="review-page">
+  
+  <table style="width: 100%">
+    <tr>
+      <td>
+        <img src="/assets/ntn_logo.jpeg" style="width:100px;"/>
+      </td>
+      <td style="vertical-align: bottom;text-align: center;">
+        <h1>
+          <%= document.title %>
+        </h1>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="2" style="padding-top: 1em;font-style: italic;">
+        <div><%= document.description %></div>
+        <br>
+        <div>Date d'entretien: <%= review.date %> </div>
+        <div>Date d'entretien: <%= review.date %> </div>
+      </td>
+    </tr>
+  </table>
+
+ 
+
+  <%= review.date %>
+
+  <%= review.employee_lname %>
+  <%= review.employee_fname %>
+  <%= review.employee_id %>
+  <%= review.employee_qualification %>
+  <%= review.employee_seniority %>
+
+  <%= review.manager_lname %>
+  <%= review.manager_fname %>
+  <%= review.manager_id %>
+
+
+
+</div>

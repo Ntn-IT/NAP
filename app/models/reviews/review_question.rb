@@ -2,5 +2,7 @@
 
 module Reviews
   class ReviewQuestion
+    include ActiveModel::API
+    
   end
 end

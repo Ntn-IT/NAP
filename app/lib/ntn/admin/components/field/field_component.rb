@@ -16,12 +16,12 @@ module Ntn
           )
 
           def call
-            tag.div(class: "form-group#{errors.present? ? ' has-error' : nil}") do
+            tag.div(class: "#{field_css}#{errors.present? ? ' has-error' : nil}") do
               build([
-                      build_label,
-                      build_input,
-                      build_error
-                    ])
+                label_first? ? build_label : build_input,
+                label_first? ? build_input : build_label,
+                build_error
+              ])
             end
           end
 
@@ -76,6 +76,21 @@ module Ntn
           def bound_attribute
             @bound_attribute ||= @name
           end
+
+          private 
+
+          def checkbox_like?
+            type.to_s == "checkbox"
+          end
+
+          def field_css
+            checkbox_like? ? "form-check" : "form-group" 
+          end
+
+          def label_first?
+            !checkbox_like? 
+          end
+
         end
       end
     end

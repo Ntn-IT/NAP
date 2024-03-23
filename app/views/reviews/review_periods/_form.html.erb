@@ -1,0 +1,14 @@
+
+<%= 
+  # binding.pry
+  build record_form(
+    @review_period, 
+    url:, 
+    method: method,
+    buttons: [reset_button, save_button]
+  ) do |form| %>
+    <%= 
+      build reviews.review_period_context.form_fields(form, :title)
+    %>
+  <% end 
+%>

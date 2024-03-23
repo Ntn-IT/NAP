@@ -12,7 +12,7 @@ module Ntn
           def record_form(record, namespace = nil, **, &)
             FormComponent.new(
               bind_to: record,
-              namespace: namespace || record.class.name.underscore,
+              namespace: namespace || record.class.name.demodulize.underscore,
               **,
               &
             )

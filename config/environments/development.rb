@@ -78,4 +78,6 @@ Rails.application.configure do
 
   config.importmap.cache_sweepers << Rails.root.join('app/lib/components')
   config.assets.debug = true
+
+  # config.action_view.preload_links_header = false
 end

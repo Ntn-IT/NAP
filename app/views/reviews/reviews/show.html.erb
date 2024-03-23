@@ -1,0 +1,27 @@
+<%= 
+  build app_frame(
+    title: t("Entretien"),
+    notice:,
+    bind_to: @review,
+    actions: [
+      :edit_record_button,
+      primary_button(
+        url: build_model_url(Reviews::Review, action: :print, params: @review), 
+        text: t("Imprimer"),
+        turbo: false,
+        target: "_blank"
+      ),
+    ],
+  ) do 
+    build(
+      [
+        table_attributes(
+          bind_to: @review,
+          attributes: reviews.review_context.table_attributes(),
+        ),
+        tag.hr,
+        review_page(@review)
+      ]
+    )
+  end 
+%>

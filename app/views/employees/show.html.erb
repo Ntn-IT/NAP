@@ -7,10 +7,13 @@
       :edit_record_button
     ],
   ) do 
-    build table_attributes(
-      bind_to: @employee,
-      attributes: employee_context.table_attributes(except: %i[link cname]),
-      
-    ) 
+    build(
+      [
+        table_attributes(
+          bind_to: @employee,
+          attributes: employee_context.table_attributes(except: %i[link cname]),
+        )
+      ]
+    )
   end 
 %>

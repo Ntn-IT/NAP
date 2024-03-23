@@ -37,15 +37,20 @@ module Ntn
       nil
     end
 
+    # FIXME a dégager
     # Returns the url of an action based on a resource model
     def build_model_url(model, base_resource: self.base_resource, index: false, action: nil, params: nil)
       return unless model
 
       klass = model.is_a?(Class) ? model : model.class
+      # FIXME
+      prefix_action = action&.to_sym == :new || action&.to_sym == :edit
+      str_action = action ? "#{action}_" : ''
 
       send(
-        "#{action ? "#{action}_" : ''}#{base_resource ? "#{base_resource}_" : ''}" \
-        "#{klass.name.underscore}#{index ? 's' : ''}_path",
+        "#{prefix_action ? str_action : ''}#{base_resource ? "#{base_resource}_" : ''}" \
+        "#{klass.name.underscore.gsub("/", "_")}#{index ? 's' : ''}_" \
+        "#{!prefix_action ? str_action : ''}path",
         params
       )
     end

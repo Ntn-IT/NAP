@@ -1,9 +1,6 @@
 # frozen_string_literal: true
 
-class BugNotifierService
-  def self.call
-    # TODO, envoir au moins un mail
-  end
-
+class BugNotifierService < Service
+    # TODO, envoyer au moins un mail
   def call; end
 end

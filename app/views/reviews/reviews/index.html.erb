@@ -1,0 +1,22 @@
+
+<%= 
+  build app_frame(
+    title: t("Liste des entretiens"),
+    notice:,
+    actions: []
+  ) do 
+    build [
+      index_grid(
+        self,
+        attributes: reviews.review_context.table_attributes,
+        form_layout: "layout-3-columns",
+        form: proc do |form|
+          build [
+            form.text_field(:employee_names_mathrs, label: t("Employé: Nom - Prénom - Mathr")),
+            form.text_field(:manager_names_mathrs, label: t("Manager: Nom - Prénom - Mathr")),
+          ]
+        end 
+      )
+    ]
+  end 
+%>

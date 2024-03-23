@@ -38,7 +38,7 @@ module Ntn
           end
 
           def checkbox_field(name = nil, **, &)
-            field('checkbox', name, **, &)
+            field('checkbox', name, css: "form-check", **, &)
           end
 
           def search_field(name = nil, **, &)

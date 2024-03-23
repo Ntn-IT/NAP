@@ -5,12 +5,14 @@
     <title>NTN - Admin</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="view-transition" content="same-origin" />
+    <meta name="turbo-prefetch" content="false">
+    <meta name="turbo-cache-control" content="no-cache">
+    
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     
     <link rel='stylesheet' url='https://css.gg/css'>
 
-    <meta name="turbo-prefetch" content="false">
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
@@ -30,19 +32,19 @@
           group: t("Entretiens"),
           items: [
             {
-              url: "/dashboard",
+              url: build_model_url(Reviews::Review, index: true),
               icon: "fa fa-tachometer",
-              content: t("Liste des entretiens"),
+              content: t("Entretiens"),
             },
             {
-              url: "/dashboard",
+              url: build_model_url(Reviews::ReviewTemplate, index: true),
               icon: "fa fa-tachometer",
               content: t("Modèles d'entretien"),
             },
             {
-              url: "/dashboard",
+              url: build_model_url(Reviews::ReviewPeriod, index: true),
               icon: "fa fa-tachometer",
-              content: t("Nouvelle session"),
+              content: t("Campagne d'entretien"),
             },
           ]
         },
@@ -57,7 +59,7 @@
             {
               url: build_model_url(User, index: true),
               icon: "fa fa-user-lock",
-              content: t("Administrateurs"),
+              content: t("Utilisateurs"),
             },
           ]
         }

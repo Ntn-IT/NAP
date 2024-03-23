@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_09_143228) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_09_143231) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,11 +31,38 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_09_143228) do
     t.string "email"
   end
 
-  create_table "review_templates", force: :cascade do |t|
-    t.json "template", null: false
+  create_table "review_periods", force: :cascade do |t|
+    t.string "status", default: "in_progress", null: false
+    t.string "title", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "status"
+  end
+
+  create_table "review_templates", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "status", null: false
+    t.string "title", null: false
+    t.json "json_document", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "status", default: "in_progress", null: false
+    t.integer "review_period_id", null: false
+    t.datetime "date", precision: nil
+    t.string "employee_id", null: false
+    t.string "employee_fname", null: false
+    t.string "employee_lname", null: false
+    t.string "employee_qualification", null: false
+    t.integer "employee_seniority", null: false
+    t.string "manager_id", null: false
+    t.string "manager_fname", null: false
+    t.string "manager_lname", null: false
+    t.string "manager_qualification", null: false
+    t.json "json_document", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["review_period_id", "employee_id"], name: "index_reviews_on_review_period_id_and_employee_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|

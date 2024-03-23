@@ -3,7 +3,7 @@
 module Ntn
   class HelperContext
 
-    TABLE_ATTRIBUTE_KEYS = %i[key label value]
+    TABLE_ATTRIBUTE_KEYS = %i[key name value]
     FIELD_ATTRIBUTE_KEYS = %i[key label field]
 
     class_attribute :context_name
@@ -22,7 +22,9 @@ module Ntn
 
         return context if context
 
-        @__instance_contexts[context_class] = context_class.new(self)
+        @__instance_contexts[context_class] = context_class.new(
+          is_a?(HelperContext) ? view_context : self
+        )
       end
     end
 
@@ -47,8 +49,8 @@ module Ntn
       end
     end
 
-    def self.bind_attribute(key, &)
-      config = context_attributes[key].dup
+    def self.bind_attribute(key, **override, &)
+      config = context_attributes[key].dup.merge(**override)
 
       init_value = config[:value]
       init_field = config[:field]
@@ -100,9 +102,14 @@ module Ntn
           context_attributes.except(*except).values
         end
 
-      attrs.map { |att| proc{ |vc| att[:field].call(vc, form) } }
+      attrs.map do |att| 
+        proc do |vc| 
+          field = att[:field].call(vc, form) 
+          field.label = att[:name]
+          field
+        end
+      end
     end
-
 
     private
 

@@ -1,19 +1,5 @@
-<div id="loader" class="hidden">
-  <div class="loader-circle1 loader-child"></div>
-  <div class="loader-circle2 loader-child"></div>
-  <div class="loader-circle3 loader-child"></div>
-  <div class="loader-circle4 loader-child"></div>
-  <div class="loader-circle5 loader-child"></div>
-  <div class="loader-circle6 loader-child"></div>
-  <div class="loader-circle7 loader-child"></div>
-  <div class="loader-circle8 loader-child"></div>
-  <div class="loader-circle9 loader-child"></div>
-  <div class="loader-circle10 loader-child"></div>
-  <div class="loader-circle11 loader-child"></div>
-  <div class="loader-circle12 loader-child"></div>
-</div>
 
-<div <%= build_attributes(css: "app-wrapper") %>>
+<div <%= build_attributes(css: "app-wrapper", data: { controller: "app" }) %>>
   <aside class="app-sidebar navbar-expand-md" id="app-sidebar">
 
     <header class="app-sidebar-header">

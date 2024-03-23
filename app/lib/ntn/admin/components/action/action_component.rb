@@ -10,6 +10,7 @@ module Ntn
             icon: nil,
             url: nil,
             type: nil,
+            target: nil,
             method: nil,
             confirm: false,
             confirm_text: t('Confirm operation ?'),
@@ -23,6 +24,7 @@ module Ntn
               href: url,
               **merge_attributes(
                 css: icon ? 'has-icon' : nil,
+                target:,
                 data: {
                   controller: 'action',
                   type:,

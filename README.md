@@ -23,3 +23,7 @@
 - [ ] Cron de mise à jour des employés
 - [ ] Il manque des status dans l'import des employés
 - [ ] Formulaire de recherche
+- [ ] Dossier app/tasks avec les classes des tasks
+- [ ] Ajouter propriété cycle de vie dans ReviewPeriod (créé, terminé) 
+- [ ] Récupérer la date d'embauche dans le fichier empoyee pour calculer la seniority dans les Reviews
+- [ ] Route show des campagnes

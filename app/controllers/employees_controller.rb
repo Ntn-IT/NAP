@@ -9,8 +9,12 @@ class EmployeesController < ApplicationController
 
   def index_search_scopes
     {
-      fname: ->(query, value) { query.where('fname ILIKE ?', "%#{sanitize_sql_like(value)}%") },
-      lname: ->(query, value) { query.where('lname ILIKE ?', "%#{sanitize_sql_like(value)}%") },
+      names_mathrs: proc do |query, value| 
+        query.where(
+          "(fname ILIKE :search OR lname ILIKE :search OR id ILIKE :search)", 
+          search: "%#{ sanitize_sql_like(value) }%"
+        ) 
+      end,
     }
   end
 

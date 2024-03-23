@@ -9,6 +9,10 @@ module Ntn
             ElementComponent.new(**, &)
           end
 
+          def divider(**kwargs)
+            element(type: :span, css: "divider", **kwargs)
+          end
+
           def icon(ico, **, &yield_block)
             element(type: :i, css: ico, **, &yield_block)
           end

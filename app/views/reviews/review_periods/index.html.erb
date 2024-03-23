@@ -1,0 +1,30 @@
+
+<%= 
+  build app_frame(
+    title: t("Campagnes d'entretien"),
+    notice:,
+    actions: [
+      new_record_button(Reviews::ReviewPeriod)
+    ]
+  ) do 
+    build [
+      index_grid(
+        self,
+        attributes: reviews.review_period_context.table_attributes,
+        actions: [
+          proc do |vc, record| 
+            vc.secondary_button(
+              text: t("Cloturer"),
+              method: :put,
+              url: build_model_url(
+                Reviews::ReviewPeriod,
+                action: :finish, 
+                params: record.id,
+              )
+            )
+          end
+        ]
+      )
+    ]
+  end 
+%>

@@ -24,33 +24,36 @@ module Ntn
 
         private
 
-        def handle_redirect_error(
+        def handle_with_redirect_error(
           redirect:, error_action:, redirect_record:, redirect_message: nil,
           error_message: nil, rescuable_errors: []
         )
-          record = yield
+          ActiveRecord::Base.transaction do
+            record = yield
 
-          return unless redirect
+            return unless redirect
 
-          if redirect_record && !record.is_a?(ActiveRecord::Base)
-            raise ArgumentError,
-                  'with_record_error_handler block must return a ActiveRecord::Base object ' \
-                  'when redirect_record set to true'
-          end
+            if redirect_record && !record.is_a?(ActiveRecord::Base)
+              raise ArgumentError,
+                    'with_record_error_handler block must return a ActiveRecord::Base object ' \
+                    'when redirect_record set to true'
+            end
 
-          id = redirect_record ? record.id : nil
+            id = redirect_record ? record.id : nil
 
-          unless redirect.is_a?(Symbol)
-            return redirect_to(
-              redirect,
+            unless redirect.is_a?(Symbol)
+              return redirect_to(
+                redirect,
+                notice: notice_success(message: redirect_message)
+              )
+            end
+
+            redirect_to(
+              { action: redirect, id: },
               notice: notice_success(message: redirect_message)
             )
+              
           end
-
-          redirect_to(
-            { action: redirect, id: },
-            notice: notice_success(message: redirect_message)
-          )
         rescue StandardError => e
           rescuable = rescuable_errors.one? { |res| e.is_a?(res) } ||
                       e.is_a?(ActiveRecord::RecordInvalid) ||
@@ -70,7 +73,7 @@ module Ntn
           **kwargs,
           &block
         )
-          handle_redirect_error(
+           handle_with_redirect_error(
             redirect:,
             error_action:,
             redirect_record:,
@@ -85,7 +88,7 @@ module Ntn
           redirect_record: true,
           **kwargs, &block
         )
-          handle_redirect_error(
+           handle_with_redirect_error(
             redirect:,
             error_action:,
             redirect_record:,
@@ -100,7 +103,7 @@ module Ntn
           redirect_record: false,
           **kwargs, &block
         )
-          handle_redirect_error(
+           handle_with_redirect_error(
             redirect:,
             error_action:,
             redirect_record:,
@@ -113,7 +116,7 @@ module Ntn
           redirect: :show, error_action: :show, redirect_record: true,
           **kwargs, &block
         )
-          handle_redirect_error(
+           handle_with_redirect_error(
             redirect:,
             error_action:,
             redirect_record:,
@@ -124,13 +127,14 @@ module Ntn
 
         def whitelisted_params(instance_or_class)
           klass = instance_or_class.is_a?(Class) ? instance_or_class : instance_or_class.class
-          namespace = klass.name.underscore.to_sym
+          namespace = klass.name.demodulize.underscore.to_sym
+          policy_class_path = klass.name.underscore.to_sym
 
           return ActionController::Parameters.new unless params[namespace]
 
           params
             .require(namespace)
-            .permit(*policy([namespace]).permitted_attributes)
+            .permit(*policy([policy_class_path]).permitted_attributes)
         end
 
         def user_not_authorized

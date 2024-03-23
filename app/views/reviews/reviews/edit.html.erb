@@ -1,0 +1,8 @@
+<%= 
+  build app_frame(
+    title: t("Modifier l'entretien"),
+    notice:
+  ) do 
+    render(partial: 'form', locals: { method: :put, url: build_model_url(Reviews::Review, params: @review) })
+  end
+%>

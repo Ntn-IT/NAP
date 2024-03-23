@@ -7,7 +7,7 @@ class Employee < ApplicationRecord
 
   validates_format_of :email, :with => Devise::email_regexp
 
-  enum status: %i[ouvrier cadre]
+  enum status: { ouvrier: "ouvrier", cadre: "cadre" }
 
   def mathr
     id

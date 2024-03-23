@@ -14,8 +14,7 @@ module Ntn
               build(
                 [
                   items.map do |item|
-                    next tag.li { build item } if item.is_a?(String) || item.is_a?(Symbol)
-                    next build(item) unless item.is_a?(Hash)
+                    next tag.li { build item } unless item.is_a?(Hash)
 
                     tag.li(css: item[:css]) { build item[:value] }
                   end
