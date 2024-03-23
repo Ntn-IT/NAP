@@ -1,0 +1,21 @@
+<div style="width: 100%" <%= build_attributes(css: "grid-form") %>>  
+  <%= 
+    build form(
+      with_token: false,
+      method: "get",
+      namespace: "search",
+      url: grid.build_model_url_with_params(except: [:page]),
+      bind_to: grid.query_params[:search],
+      layout: grid.form_layout,
+      buttons: [
+        secondary_button(
+          text: "Reset",
+          url: grid.build_model_url_with_params(except: [:search, :page])
+        ),
+        submit_button(text: "Search")
+      ]
+    ) do |fiedset|
+      content(fiedset) 
+    end 
+  %>
+</div>

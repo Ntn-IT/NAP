@@ -1,0 +1,25 @@
+
+<%= 
+  build app_frame(
+    title: t("Subordonnées"),
+    notice:
+  ) do 
+    build [
+      grid(
+        model: Employee,
+        rows: current_user.employee.subordinates,
+        attributes: employee_context.table_attributes(
+          :link, 
+          :email,
+          :department,
+          :service,
+          :qualification,
+          :status
+        ),
+        actions: [
+          :edit_record_button
+        ]
+      )
+    ]
+  end 
+%>

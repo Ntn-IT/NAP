@@ -1,0 +1,23 @@
+
+<%= 
+  build record_form(
+    @employee, 
+    url:, 
+    method: method,
+    buttons: [reset_button, save_button]
+  ) do |form| %>
+    <%= 
+      build [
+        form.text_field(:id, disabled: true),
+        form.text_field(:fname, disabled: true),
+        form.text_field(:lname, disabled: true),
+        form.text_field(:email),
+        form.text_field(:manager, value: employee_context.link.value.call(self, @employee), disabled: true),
+        form.text_field(:department, disabled: true),
+        form.text_field(:service, disabled: true),
+        form.text_field(:bdate, disabled: true),
+        form.text_field(:status, disabled: true),
+      ] 
+    %>
+  <% end 
+%>

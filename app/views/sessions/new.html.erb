@@ -1,0 +1,15 @@
+<div class="login">
+	<h1>NTN-AP</h1>
+  <%= build record_form(resource, url: session_path(resource_name)) do |f| %>
+
+    <%= build f.text_field :username, autofocus: true, autocomplete: "username" %>
+    <%= build f.password_field :password, autocomplete: "current-password" %>
+    <div style="padding-top: 10px;"></div>
+
+    <div>
+      <%= build submit_button(text: "Connexion", turbo: false) %>
+    </div>
+
+  <% end %>
+</div>
+

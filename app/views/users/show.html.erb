@@ -1,0 +1,19 @@
+<%= 
+  build app_frame(
+    title: t("Utilisateur"),
+    notice:,
+    bind_to: @user,
+    actions: [
+      secondary_button(
+        url: build_model_url(Employee, params: current_user.employee), 
+        text: t("Employee")
+      ),
+      :edit_record_button
+    ]
+  ) do 
+    build table_attributes(
+      bind_to: @user,
+      attributes: user_context.table_attributes
+    ) 
+  end 
+%>

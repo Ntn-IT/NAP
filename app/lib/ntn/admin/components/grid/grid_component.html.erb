@@ -1,0 +1,31 @@
+<div <%= build_attributes(css: "grid") %>>  
+  
+  <header class="main-content-header">
+    <% if form %>
+      <%= build(grid_form(self, layout: form_layout), &form) %>
+    <% end %>
+  </header>
+
+
+  <div class="table-container">
+    <%= 
+      build grid_table(
+        self, 
+        selected_sort:,
+        selected_sort_order:,
+        rows:,
+        attributes:,
+        actions:,
+      )  
+    %>
+  </div>
+
+  <% if rows.present? && pagination %>
+
+    <footer class="main-content-footer">
+      <%= build grid_pagination(self, **pagination)  %>
+    </footer>
+
+  <% end %>
+
+</div>

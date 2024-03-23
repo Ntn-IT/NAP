@@ -1,14 +1,0 @@
---2024-02-02 10:20:16--  https://www.google.com/imgres?imgurl=https%3A%2F%2Fmedia.licdn.com%2Fdms%2Fimage%2FC4D0BAQEmu2CFUCsAAQ%2Fcompany-logo_200_200%2F0%2F1640185698996%3Fe%3D2147483647%26v%3Dbeta%26t%3DTFW_U_iXLr2RAAxkJt3FkKLYDAioi-MjvFXPIdI5FE8
-Connexion à 192.168.90.5:3128… connecté.
-requête Proxy transmise, en attente de la réponse… 301 Moved Permanently
-Emplacement : https://www.google.com/imghp [suivant]
---2024-02-02 10:20:16--  https://www.google.com/imghp
-Réutilisation de la connexion existante à www.google.com:443.
-requête Proxy transmise, en attente de la réponse… 200 OK
-Taille : non indiqué [text/html]
-Sauvegarde en : « imgres?imgurl=https:%2F%2Fmedia.licdn.com%2Fdms%2Fimage%2FC4D0BAQEmu2CFUCsAAQ%2Fcompany-logo_200_200%2F0%2F1640185698996?e=2147483647&v=beta&t=TFW_U_iXLr2RAAxkJt3FkKLYDAioi-MjvFXPIdI5FE8 »
-
-                          imgres?imgurl=https:%2F%2F     [<=>                                                                                                                 ]       0  --.-KB/s               imgres?imgurl=https:%2F%2Fmedia.licdn.com%2Fdms%2Fim     [ <=>                                                                                                                ]  17,61K  --.-KB/s    ds 0,03s   
-
-2024-02-02 10:20:16 (654 KB/s) - « imgres?imgurl=https:%2F%2Fmedia.licdn.com%2Fdms%2Fimage%2FC4D0BAQEmu2CFUCsAAQ%2Fcompany-logo_200_200%2F0%2F1640185698996?e=2147483647&v=beta&t=TFW_U_iXLr2RAAxkJt3FkKLYDAioi-MjvFXPIdI5FE8 » sauvegardé [18032]
-

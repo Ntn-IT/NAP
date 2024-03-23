@@ -1,0 +1,8 @@
+<div <%= build_attributes(css: "alert alert-#{status} alert-dismissible", data: { controller: "alert" }) %> role="alert">
+  <%= content || build(message) %>
+
+  <button type="button" class="close" data-action="click->alert#close">
+    <span aria-hidden="true">×</span>
+  </button>
+
+</div>

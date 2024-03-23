@@ -1,0 +1,24 @@
+
+<%= 
+  build app_frame(
+    title: t("Utilisateurs"),
+    notice:
+  ) do 
+    build [
+      index_grid(
+        self,
+        attributes: user_context.table_attributes,
+        actions: [
+          :edit_record_button
+        ],
+        form_layout: "layout-2-columns",
+        form: proc do |form|
+          build [
+            form.text_field(:lname, label: t("Nom")),
+            form.text_field(:fname, label: t("Prénom"))
+          ]
+        end 
+      )
+    ]
+  end 
+%>

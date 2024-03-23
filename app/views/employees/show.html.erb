@@ -1,0 +1,16 @@
+<%= 
+  build app_frame(
+    title: t("Employee"),
+    notice:,
+    bind_to: @employee,
+    actions: [
+      :edit_record_button
+    ],
+  ) do 
+    build table_attributes(
+      bind_to: @employee,
+      attributes: employee_context.table_attributes(except: %i[link cname]),
+      
+    ) 
+  end 
+%>
