@@ -4,20 +4,36 @@
   "description": "L’entretien annuel d’évaluation est l’occasion formalisée de se réunir pour faire le point sur le travail et les compétences du collaborateur. Il s’agit d’un moment privilégié de dialogue et de réflexion entre le collaborateur et son responsable, au cours duquel il est important que chacun puisse s’exprimer librement.",
   "questions_categories": [
     {
-      "title": "Satisfaction dans l'emploi",
+      "title": "I. SATISFACTION DANS L’EMPLOI",
       "questions": [
         {
           "type": "satisfaction_level",
-          "title": "D’une manière générale, êtes-vous satisfait de votre emploi ?"
+          "title": "Comment caractérisez-vous le contenu de votre emploi ? (Adéquation emploi et attentes)"
         },
         {
           "type": "satisfaction_level",
           "title": "Est-ce que vous vous estimez motivé ?"
+        },        
+        {
+          "type": "satisfaction_level",
+          "title": "Vous sentez-vous reconnu ?"
+        },
+        {
+          "type": "satisfaction_level",
+          "title": "Etes-vous satisfait de vos relations internes (collègues, hiérarchie…) ?"
+        },
+        {
+          "type": "satisfaction_level",
+          "title": "Etes-vous satisfait de l’articulation entre votre vie privée et votre vie professionnelle ?"
+        },
+        {
+          "type": "satisfaction_level",
+          "title": "Comment caractériseriez-vous la communication interne (flash info, ilot…) ?"
         }
       ]
     },
     {
-      "title": "Bilan periode écoulée",
+      "title": "II. BILAN PERIODE ECOULEE",
       "questions": [
         {
           "type": "open_question",
@@ -39,7 +55,7 @@
       ]
     },
     {
-      "title": "Niveaux de savoirs, savoir faire, savoir être et faire savoir",
+      "title": "III. NIVEAUX DE SAVOIRS, SAVOIR FAIRE, SAVOIR ETRE ET FAIRE SAVOIR",
       "description": "Se référer à la grille « Positionnement Professionnel » en Annexe. Ce positionnement est à compléter : cochez 1 des 4 propositions. Indiquer NC si non concerné",
       "questions": [
         {
@@ -56,10 +72,106 @@
           "labels": [
             "Respect des consignes de sécurité",
             "Respect des procédures qualité (contrôle, traçabilité…)",
-            "Respect des outils de travail (Rangement, nettoyage…)"
+            "Respect des outils de travail (Rangement, nettoyage…)",
+	          "Qualité du travail",
+            "Rigueur /sens de l’organisation",
+	          "Comportement individuel face à un problème rencontré",
+            "Aptitude à transmettre",
+            "Autonomie / Prise d’initiative",
+            "Relationnel",
+            "Capacité à mobiliser",
+            "Esprit d’équipe",
+            "Force de proposition",
+	          "Capacité à s’adapter au changement",
+            "Disponibilité",
+            "Ponctualité"
           ]
         }
       ]
+    },
+    {
+      "title": "IV. PLAN DE PROGRES POUR LA PERIODE A VENIR ",
+      "description": "Se référer à la grille « Positionnement Professionnel » en Annexe. Ce positionnement est à compléter : cochez 1 des 4 propositions. Indiquer NC si non concerné",
+      "questions": [
+        {
+          "type": "ordered_table",
+          "title": "Objectifs liés aux compétences professionnelles sur le poste",
+          "lines": 3,
+          "columns": [
+            { "title":  "Objectifs", "type": "text" },
+            { "title":  "Délais", "type": "text"  }
+          ]
+        },
+        {
+          "type": "ordered_table",
+          "title": "Objectifs liés au développement personnel",
+          "lines": 3,
+          "columns": [
+            { "title":  "Objectifs", "type": "text" },
+            { "title":  "Délais", "type": "text"  }
+          ]
+        },
+        {
+          "type": "ordered_table",
+          "title": "Actions et/ou projets",
+          "lines": 2,
+          "columns": [
+            { "title":  "Objectifs", "type": "text" },
+            { "title":  "Délais", "type": "text"  }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "V. FORMATION ",
+      "description": "Efficacité des formations réalisées depuis le dernier entretien",
+      "questions": [
+         {
+          "type": "ordered_table",
+          "title": "Récapitulatif des formations effectuées",
+          "lines": 3,
+          "columns": [
+            { "title":  "Récapitulatif des formations effectuées", "type": "text" },
+            { "title":  "Evaluation de leur efficacité", "type": "combobox"  },
+            { "title":  "Commentaires", "type": "text"  }
+          ]
+        },
+	{
+          "type": "ordered_table",
+          "title": "Souhaits de formations pour maintenir, renforcer et développer les compétences du salarié au sein de sa mission",
+          "lines": 3,
+          "columns": [
+            { "title":  "Initiative", "type": "text" },
+            { "title":  "Lesquels", "type": "combobox"  },
+            { "title":  "Pour quels objectifs ?", "type": "text"  }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "VI. SYNTHESE DE L'ENTRETIEN",
+      "description": "Efficacité des formations réalisées depuis le dernier entretien",
+      "questions": [
+         {
+          "type": "open_question",
+          "title": "Commentaire du salarié :",
+          "description": "Commentaire du salarié"
+        },
+	{
+          "type": "open_question",
+          "title": "Commentaire N+1 :",
+          "description": "Commentaire du manager"
+	}
+      ]
+    },
+    {
+          "type": "ordered_table",
+          "title": "Signatures",
+          "lines": 3,
+          "columns": [
+            { "title":  "Signature Salarié", "type": "text" },
+            { "title":  "Signature N+1", "type": "text"  }
+          ]
     }
   ]
 }

@@ -1,3 +1,6 @@
+require 'sidekiq/web'
+require 'sidekiq/cron/web'
+
 Rails.application.routes.draw do
   devise_for :users, controllers: {
     sessions: 'sessions'
@@ -10,7 +13,7 @@ Rails.application.routes.draw do
   end
 
   resource :dashboard, to: 'dashboard#show'
-
+  mount Sidekiq::Web => '/sidekiq'
   resources :users, only: %i[index show edit update]
   resources :employees, only: %i[index show edit update]
 

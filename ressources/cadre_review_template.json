@@ -1,10 +1,9 @@
-
 {
-  "title": "ENTRETIEN ANNUEL D’EVALUATION  > D7",
+  "title": "ENTRETIEN ANNUEL D’EVALUATION – emplois > D7",
   "description": "L’entretien annuel d’évaluation est l’occasion formalisée de se réunir pour faire le point sur le travail et les compétences du collaborateur. Il s’agit d’un moment privilégié de dialogue et de réflexion entre le collaborateur et son responsable, au cours duquel il est important que chacun puisse s’exprimer librement.",
   "questions_categories": [
     {
-      "title": "Satisfaction dans l'emploi",
+      "title": "I. SATISFACTION DANS L’EMPLOI",
       "questions": [
         {
           "type": "satisfaction_level",
@@ -13,36 +12,128 @@
         {
           "type": "satisfaction_level",
           "title": "Est-ce que vous vous estimez motivé ?"
-        }
-      ]
-    },
-    {
-      "title": "Bilan periode écoulée",
-      "questions": [
+        },
         {
-          "type": "open_question",
-          "title": "Les faits marquants de l’année passée :",
-          "description": "(Liés à l’environnement de travail, liés au poste ou évènements personnels…) Ils peuvent être classés par éléments moteurs, freins…"
+          "type": "satisfaction_level",
+          "title": "Vous sentez-vous reconnu ?"
+        },
+        {
+          "type": "satisfaction_level",
+          "title": "Etes-vous satisfait de vos relations internes (collègues, hiérarchie…) ?"
+        },
+        {
+          "type": "satisfaction_level",
+          "title": "Etes-vous satisfait de l’articulation entre votre vie privée et votre vie professionnelle ?"
+        },
+        {
+          "type": "satisfaction_level",
+          "title": "Comment caractériseriez-vous la communication interne (flash info, ilot…) ?"
         }
       ]
-    },
-    {
-      "title": "Appreciation de la performance individuelle",
+   },
+   {
+      "title": "II. BILAN PERIODE ECOULEE",
+      "questions": [
+      {
+      "type": "open_question",
+      "title": "Les faits marquants de l’année passée :",
+      "description": "(Liés à l’environnement de travail, liés au poste ou évènements personnels…) Ils peuvent être classés par éléments moteurs, freins…"
+       }
+      ]
+   },
+   {
+      "title": "III. APPRECIATION DE LA PERFORMANCE INDIVIDUELLE",
+      "description": "APPRECIATION DE LA PERFORMANCE INDIVIDUELLE",
+      "questions": [
+      {
+      "type": "ordered_table",
+      "title": "Rappel et évaluation des objectifs",
+      "lines": 5,
+      "columns": [
+        { "title":  "Objectifs", "type": "text" },
+        { "title":  "Commantaire", "type": "text"  },
+        { "title":  "Taux atteint", "type": "checkbox"  }
+      ]
+      }
+      ]
+   },
+   {
+      "title": "IV. POINTS DE REUSSITE ET AXES D’AMELIORATION",
       "description": "Se référer à la grille « Positionnement Professionnel » en Annexe. Ce positionnement est à compléter : cochez 1 des 4 propositions. Indiquer NC si non concerné",
       "questions": [
-        {
-          "type": "ordered_table",
-          "title": "Rappel et évaluation des objectifs",
-          "lines": 5,
-          "columns": [
-            { "title":  "Objectifs", "type": "text" },
-            { "title":  "Atteint", "type": "checkbox"  },
-            { "title":  "En cours", "type": "checkbox"  },
-            { "title":  "Non atteint", "type": "checkbox"  },
-            { "title":  "Commantaire", "type": "text"  }
+      {
+      "type": "labelled_table",
+       "title": "Reussite et axes d'amélioration",
+       "columns": [
+        { "title":  "Champs de compétences"},
+        { "title":  "Clés de réussite", "type": "text"  },
+        { "title":  "Axes d’amélioration", "type": "text"  }
+        ],
+        "labels": [
+        "Techniques et professionnelles",
+        "Relationnelles et comportemental",
+        "Managériales (si le salarié est en position de management)"
+        ]
+      }
+    ]
+   },
+   {
+      "title": "V. OBJECTIFS POUR LA PERIODE A VENIR",
+      "description": "OBJECTIFS POUR LA PERIODE A VENIR",
+      "questions": [
+     {
+      "type": "ordered_table",
+      "title": "Récapitulatif des formations effectuées",
+      "lines": 5,
+      "columns": [
+        { "title":  "N°", "type": "text" },
+        { "title":  "Objectifs", "type": "text" },
+        { "title":  "Indicateurs et  actions", "type": "text"},
+        { "title":  "Délais", "type": "text"  }
+        ]
+     }
+     ]
+   },
+   {
+  "title": "VI. FORMATION ",
+  "description": "Efficacité des formations réalisées depuis le dernier entretien",
+  "questions": [
+     {
+        "type": "ordered_table",
+        "title": "Récapitulatif des formations effectuées",
+        "lines": 3,
+        "columns": [
+           { "title":  "Récapitulatif des formations effectuées", "type": "text" },
+           { "title":  "Evaluation de leur efficacité", "type": "combobox"  },
+           { "title":  "Commentaires", "type": "text"  }
           ]
-        }
+     }
+     ]     
+   },
+   {
+      "title": "VI. SYNTHESE DE L'ENTRETIEN",
+      "description": "",
+      "questions": [
+         {
+          "type": "open_question",
+          "title": "Commentaire du salarié :",
+          "description": "Commentaire du salarié"
+        },
+	{
+          "type": "open_question",
+          "title": "Commentaire N+1 :",
+          "description": "Commentaire du manager"
+	}
       ]
+    },
+    {
+          "type": "ordered_table",
+          "title": "Signatures",
+          "lines": 3,
+          "columns": [
+            { "title":  "Signature Salarié", "type": "text" },
+            { "title":  "Signature N+1", "type": "text"  }
+          ]
     }
   ]
 }

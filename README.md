@@ -16,14 +16,13 @@
 ## TODO 
 
 - [x] Authentification depuis LDAP
-- [x] Le status des employee est toujours sur Ouvrier ? Pk ?
 - [ ] Message d'erreur dans le formulaire de login
 - [x] Ajouter la colonne email à Employee, la rendre modifiable 
 - [ ] FIl d'ariane
 - [ ] Cron de mise à jour des employés
-- [ ] Il manque des status dans l'import des employés
-- [ ] Formulaire de recherche
-- [ ] Dossier app/tasks avec les classes des tasks
+- [x] Il manque des status dans l'import des employés
+- [x] Formulaire de recherche
+- [x] Dossier app/tasks avec les classes des tasks
 - [ ] Ajouter propriété cycle de vie dans ReviewPeriod (créé, terminé) 
-- [ ] Récupérer la date d'embauche dans le fichier empoyee pour calculer la seniority dans les Reviews
+- [ ] Récupérer la date de naissance dans le fichier employee pour calculer la seniority dans les Reviews
 - [ ] Route show des campagnes
