@@ -11,7 +11,8 @@ module Ntn
     struct(
       css: Types::String.default { '' },
       data: Types::Hash.optional,
-      yield_block: Types.Instance(Proc).optional
+      yield_block: Types.Instance(Proc).optional,
+      policy: nil
     )
 
     def self.t(key, *_args, **_kwargs)
@@ -31,6 +32,18 @@ module Ntn
 
     def vc
       @__vc_original_view_context
+    end
+
+    def render?
+      return true unless policy
+
+      return policy.call(self) if policy.is_a?(Proc)
+
+      resource, method = policy
+
+      return false unless resource
+
+      vc.policy(resource).send(method)
     end
 
     def render_in(view_context, &block)

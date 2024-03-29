@@ -16,9 +16,7 @@ module Ntn
 
             attributes.each do |column|
               component_error!('Attribute must be an Hash') unless column.is_a?(Hash)
-              unless column[:name] || column[:key]
-                component_error!("Attribute must define 'name' or a 'key' property")
-              end
+              component_error!("Attribute must define 'name' or a 'key' property") unless column[:name] || column[:key]
               component_error!("Attribute must define 'value' attribute") unless column[:value]
             end
           end
@@ -26,7 +24,7 @@ module Ntn
           def call
             return build_no_result unless rows.present?
 
-            tag.table(**merge_attributes(css: 'trestle-table')) do
+            tag.table(**merge_attributes(css: 'trestle-table table')) do
               build(
                 [
                   build_headers,
@@ -92,7 +90,7 @@ module Ntn
 
           def build_cell_actions(row)
             tag.td(class: 'action') do
-              tag.div(class: 'flex-row') do
+              tag.div(class: 'layout-flex-row') do
                 build(actions, row)
               end
             end

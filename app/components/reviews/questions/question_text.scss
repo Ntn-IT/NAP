@@ -1,0 +1,14 @@
+@import "../variables";
+
+.question-text {
+  border: $border; 
+  width: calc(100% - 2em);
+
+  td {
+    padding: $padding;
+  }
+
+  .answer-line {
+    border-top: $border;
+  }
+}

@@ -18,6 +18,4 @@ namespace :import do
   task review_templates: [:environment] do
     Reviews::ImportReviewTemplatesService.call
   end
-
 end
-

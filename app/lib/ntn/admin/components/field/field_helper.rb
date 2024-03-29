@@ -21,6 +21,10 @@ module Ntn
             field('datetime-local', name, **, &)
           end
 
+          def date_field(name = nil, **, &)
+            field('date', name, **, &)
+          end
+
           def textarea_field(name = nil, **, &)
             field('textarea', name, **, &)
           end
@@ -38,7 +42,7 @@ module Ntn
           end
 
           def checkbox_field(name = nil, **, &)
-            field('checkbox', name, css: "form-check", **, &)
+            field('checkbox', name, css: 'form-check', **, &)
           end
 
           def search_field(name = nil, **, &)

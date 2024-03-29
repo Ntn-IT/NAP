@@ -5,22 +5,25 @@
     bind_to: @review,
     actions: [
       :edit_record_button,
-      primary_button(
-        url: build_model_url(Reviews::Review, action: :print, params: @review), 
-        text: t("Imprimer"),
-        turbo: false,
-        target: "_blank"
-      ),
+      reviews.review_context.finish_button(@review),
+      reviews.review_context.print_button(@review)
     ],
   ) do 
     build(
       [
         table_attributes(
           bind_to: @review,
-          attributes: reviews.review_context.table_attributes(),
+          attributes: reviews.review_context.table_attributes,
         ),
-        tag.hr,
-        review_page(@review)
+        tag.div(style: "box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);margin-top: 1em; padding: 1.5em;") do
+          build record_form(
+            @review, 
+            url: nil, 
+            method: nil
+          ) do |form|
+            build review_page(@review, form)
+          end 
+        end
       ]
     )
   end 

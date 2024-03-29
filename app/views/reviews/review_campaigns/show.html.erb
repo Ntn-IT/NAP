@@ -1,0 +1,18 @@
+<%= 
+  build app_frame(
+    title: t("Campagne d'entretien"),
+    notice:,
+    bind_to: @review_campaign,
+    actions: [
+      :edit_record_button,
+      reviews.review_campaign_context.start_button(@review_campaign),
+      reviews.review_campaign_context.finish_button(@review_campaign),
+      reviews.review_campaign_context.destroy_button(@review_campaign),
+    ]
+  ) do 
+    build table_attributes(
+      bind_to: @review_campaign,
+      attributes: reviews.review_campaign_context.table_attributes
+    ) 
+  end 
+%>

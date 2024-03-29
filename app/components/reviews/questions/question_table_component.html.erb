@@ -1,0 +1,48 @@
+<table class="question question-table">
+
+  <tr class="line-title">
+    <td colspan="<%= question.columns.size %>">
+      <div class="title"><%= question.title %></div>
+
+      <% if question.description %>
+        <div class="description"><%= question.description %></div>
+      <% end %>
+    </td>
+  <tr>
+
+  <tr>
+    <% question.columns.each do |column| %>
+      <td class="column-title" style="width:<%= column.width %>">
+        <%= column.title %>
+      </td>
+    <% end %>
+  <tr>
+
+  <% question.rows.each_with_index do |row, i| 
+    form.scope(row, "rows", i) do |row_form|
+      %>
+      <tr>
+        <% question.columns.each_with_index do |column, j| %>
+          <% if labeled_table? && j.zero? %>
+            <td class="row-title">
+              <%= question.labels[i]  %>
+            </td>
+          <% else %>
+            <td style="width:<%= column.width %>">
+              <%= 
+                build row_form.send(
+                  :"#{column.input.to_sym}_input", 
+                  labeled_table? ? j - 1 : j, 
+                  disabled:, 
+                  options: [],
+                  **column.input_options
+                ) 
+              %>
+            </td>
+          <% end %>
+        <% end %>
+      <tr>
+    <% end 
+  end %>
+
+</table>

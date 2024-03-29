@@ -17,6 +17,11 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
+    <style>
+      body {
+        /*background: white !important;*/
+      }
+    </style>
   </head>
 
   <body>
@@ -42,7 +47,7 @@
               content: t("Modèles d'entretien"),
             },
             {
-              url: build_model_url(Reviews::ReviewPeriod, index: true),
+              url: build_model_url(Reviews::ReviewCampaign, index: true),
               icon: "fa fa-tachometer",
               content: t("Campagne d'entretien"),
             },

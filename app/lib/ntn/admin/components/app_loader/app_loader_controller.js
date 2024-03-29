@@ -29,7 +29,7 @@ export default class extends Controller {
     //     console.log(ev)
     //   })
     // })
-    
+
     this.addLoaderListeners();
   }
 
@@ -37,6 +37,7 @@ export default class extends Controller {
     removeEventListener("turbo:before-fetch-request", this.addLoaderListener);
     removeEventListener("turbo:before-visit", this.removeLoaderListener);
     removeEventListener("turbo:before-cache", this.removeLoaderListener);
+    removeEventListener("turbo:frame-load", this.removeLoaderListener);
   }
 
   addLoaderListeners() {
@@ -46,15 +47,16 @@ export default class extends Controller {
     addEventListener("turbo:before-fetch-request", this.addLoaderListener);
     addEventListener("turbo:before-visit", this.removeLoaderListener);
     addEventListener("turbo:before-cache", this.removeLoaderListener);
+    addEventListener("turbo:frame-load", this.removeLoaderListener);
   }
 
   removeLoader() {
-    console.log("evremoveLoader")
+    console.log("evremoveLoader");
     this.loaderClassList.add("hidden");
   }
 
   addLoader() {
-    console.log("addLoader")
+    console.log("addLoader");
     this.loaderClassList.remove("hidden");
   }
 }

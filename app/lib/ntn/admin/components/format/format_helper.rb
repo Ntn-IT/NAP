@@ -11,7 +11,14 @@ module Ntn
 
           def date_format(date, **)
             format(
-              text: date ? date.strftime('%Y/%m/%d %H:%M:%S') : nil,
+              text: date ? date.strftime('%d/%m/%Y') : nil,
+              **
+            )
+          end
+
+          def datetime_format(date, **)
+            format(
+              text: date ? date.strftime('%d/%m/%Y %H:%M:%S') : nil,
               **
             )
           end

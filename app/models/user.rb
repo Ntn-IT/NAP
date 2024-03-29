@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  ROLES = %w[admin editor viewer]
+  ROLES = %w[admin editor viewer admin_rh rh]
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -18,11 +18,19 @@ class User < ApplicationRecord
   end
 
   def editor?
-    roles.include?('editor')
+    admin? || roles.include?('editor')
   end
 
   def viewer?
-    roles.include?('viewer')
+    admin? || roles.include?('viewer')
+  end
+
+  def rh?
+    admin? || admin_rh? || roles.include?('rh')
+  end
+
+  def admin_rh?
+    admin? || roles.include?('admin_rh') 
   end
 
   private

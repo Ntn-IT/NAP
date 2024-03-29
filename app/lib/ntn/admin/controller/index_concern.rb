@@ -27,9 +27,9 @@ module Ntn
         private
 
         def index_authorize!
-          #x [self.class.controller_name.classify.underscore.to_sym],
+          # x [self.class.controller_name.classify.underscore.to_sym],
           authorize(
-            [self.class.name.gsub(/Controller$/, "").classify.underscore.to_sym],
+            [self.class.name.gsub(/Controller$/, '').classify.underscore.to_sym],
             :index?
           )
         end
@@ -62,7 +62,7 @@ module Ntn
           return unless index_selected_sort || index_selected_sort_order
 
           sort_scopes = index_sort_scopes
-          
+
           scope = sort_scopes[index_selected_sort]
 
           raise ArgumentError, "Sort '#{selected_sort}' is not recognized" unless scope

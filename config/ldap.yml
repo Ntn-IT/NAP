@@ -36,4 +36,3 @@ development:
   admin_password: secret
   ssl: true
   # <<: *AUTHORIZATIONS
-

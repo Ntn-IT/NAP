@@ -4,7 +4,7 @@ export default class extends Controller {
   static targets = [];
 
   connect() {
-    this.popstateChangedListener = this.popstateChanged.bind(this)
+    this.popstateChangedListener = this.popstateChanged.bind(this);
 
     addEventListener("popstate", this.popstateChangedListener);
   }
@@ -14,6 +14,9 @@ export default class extends Controller {
   }
 
   popstateChanged() {
-    Turbo.visit(window.location.href, { action: "replace", frame: "app-frame" });
+    Turbo.visit(window.location.href, {
+      action: "replace",
+      frame: "app-frame",
+    });
   }
 }

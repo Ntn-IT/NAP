@@ -52,7 +52,6 @@ module Ntn
               { action: redirect, id: },
               notice: notice_success(message: redirect_message)
             )
-              
           end
         rescue StandardError => e
           rescuable = rescuable_errors.one? { |res| e.is_a?(res) } ||
@@ -73,12 +72,12 @@ module Ntn
           **kwargs,
           &block
         )
-           handle_with_redirect_error(
+          handle_with_redirect_error(
             redirect:,
             error_action:,
             redirect_record:,
             **kwargs,
-            &block
+           &block
           )
         end
 
@@ -88,12 +87,12 @@ module Ntn
           redirect_record: true,
           **kwargs, &block
         )
-           handle_with_redirect_error(
+          handle_with_redirect_error(
             redirect:,
             error_action:,
             redirect_record:,
             **kwargs,
-            &block
+           &block
           )
         end
 
@@ -103,12 +102,12 @@ module Ntn
           redirect_record: false,
           **kwargs, &block
         )
-           handle_with_redirect_error(
+          handle_with_redirect_error(
             redirect:,
             error_action:,
             redirect_record:,
             **kwargs,
-            &block
+           &block
           )
         end
 
@@ -116,12 +115,12 @@ module Ntn
           redirect: :show, error_action: :show, redirect_record: true,
           **kwargs, &block
         )
-           handle_with_redirect_error(
+          handle_with_redirect_error(
             redirect:,
             error_action:,
             redirect_record:,
             **kwargs,
-            &block
+           &block
           )
         end
 

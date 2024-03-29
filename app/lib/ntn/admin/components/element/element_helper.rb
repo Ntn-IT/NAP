@@ -10,7 +10,7 @@ module Ntn
           end
 
           def divider(**kwargs)
-            element(type: :span, css: "divider", **kwargs)
+            element(type: :span, css: 'divider', **kwargs)
           end
 
           def icon(ico, **, &yield_block)

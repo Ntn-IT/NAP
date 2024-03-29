@@ -1,0 +1,23 @@
+
+<%= 
+  build app_frame(
+    title: t("Campagnes d'entretien"),
+    notice:,
+    actions: [
+      new_record_button(Reviews::ReviewCampaign)
+    ]
+  ) do 
+    build [
+      index_grid(
+        self,
+        attributes: reviews.review_campaign_context.table_attributes(:title, :period, :review_templates, :status),
+        actions: [
+          :edit_record_button,
+          proc { |vc, record| vc.reviews.review_campaign_context.start_button(record) },
+          proc { |vc, record| vc.reviews.review_campaign_context.finish_button(record) },
+          proc { |vc, record| vc.reviews.review_campaign_context.destroy_button(record) },
+        ]
+      )
+    ]
+  end 
+%>

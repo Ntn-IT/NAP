@@ -1,0 +1,74 @@
+
+<div class="review review-<%= page? ? "page" : "form" %>">
+  <header>
+    <img src="/assets/ntn_logo.jpeg" class="logo" />
+
+    <h2 class="title"><%= document.title %></h2>
+
+    <div class="description">
+      <%= document.description %>
+    </div>
+
+    <div class="date">
+      <table style="width: 100%">
+        <td>
+          <span class="label">DATE D'ENTRETIEN:</span>
+          <%= 
+            build form.date_input(
+              :date, 
+              disabled:, 
+              value: form? ? (review.date || Time.now) : review.date
+            ) 
+          %>
+        </td>
+        <td>
+          <span class="label">PÉRIODE D'ÉVALUATION:</span>
+          Du <%= build form.date_input(:from_date, disabled:) %>
+          Au <%= build form.date_input(:to_date, disabled:) %>
+        </td>
+      </table>
+    </div>
+
+    <div class="box">
+
+      <div class="title">Salarié</div>
+      <div class="body">
+        <div>Nom: <%= review.employee_lname %></div>
+        <div>Prénom: <%= review.employee_fname %></div>
+        <div>Matricule: <%= review.employee_id %></div>
+        <div>Emploi: <%= review.employee_qualification %></div>
+        <div>Ancienneté /emploi : <%= review.employee_seniority %></div>
+      </div>
+
+      <div class="title" style="margin-bottom: 0">N+1</div>
+      <div class="body">
+        <div>Nom: <%= review.manager_lname %></div>
+        <div>Prénom: <%= review.manager_fname %></div>
+        <div>Emploi: <%= review.manager_qualification %></div>
+      </div>
+    </div>
+
+  </header>
+
+  <main>
+    <% document.categories.each_with_index do |category, i|  
+      form.scope(category, "categories", i) do |category_form|
+      %>
+        <div class="box">
+          <div class="title"><%= category.title %></div>
+          <div class="body">
+            <% category.questions.each_with_index do |question, y| %>
+              <%= 
+                category_form.scope(question, "questions", y) do |question_form|
+                  build review_question(question, question_form) 
+                end
+              %>
+            <% end %>
+          </div>
+        </div>
+      <% end
+    end %>
+  </main>
+
+
+</div>

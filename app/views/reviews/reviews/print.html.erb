@@ -1,1 +1,9 @@
-<%= build review_page(@review) %>
+<%= 
+  build record_form(
+    @review, 
+    url: nil, 
+    method: nil
+  ) do |form|
+    build review_page(@review, form)
+  end 
+%>

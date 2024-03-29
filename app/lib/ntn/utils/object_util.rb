@@ -30,6 +30,9 @@ module Ntn
         return object[property] if object.respond_to?(:[])
 
         nil
+      rescue StandardError
+        binding.pry
+        raise
       end
     end
   end

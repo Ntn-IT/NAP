@@ -1,0 +1,38 @@
+@import "../variables";
+
+.question-table {
+  border: $border; 
+  width: calc(100% - 2em);
+
+  td {
+    border: $border;
+    border-collapse: collapse;
+  }
+
+  .line-title {
+    background: $bg-gray;
+    td {
+      text-align: center;
+    }
+  }
+  
+  .column-title, .row-title {     
+    text-align: center;
+    font-style: italic;
+    &.row-title {
+      white-space: nowrap;
+    }
+  }
+
+  td {
+    padding: $padding;
+    position: relative;
+    text-align: center;
+  }
+
+  .form-check-input {
+    margin-left: 0;
+    margin-top: 0;
+    position: initial;
+  }
+}

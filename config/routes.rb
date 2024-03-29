@@ -18,14 +18,15 @@ Rails.application.routes.draw do
   resources :employees, only: %i[index show edit update]
 
   namespace :reviews do
-    resources :reviews, only: %i[index show edit update] do 
-      get :print, to: "reviews#print"
+    resources :reviews, only: %i[index show edit update] do
+      get :print, to: 'reviews#print'
+      put :finish, to: 'reviews#finish'
     end
 
-    resources :review_templates, only: %i[index]
-    resources :review_periods, only: %i[index show new create] do
-      put :finish, to: "review_periods#finish"
+    resources :review_templates, only: %i[index show new create edit update]
+    resources :review_campaigns, only: %i[index show new create edit update destroy] do
+      put :finish, to: 'review_campaigns#finish'
+      put :start, to: 'review_campaigns#start'
     end
   end
-
 end

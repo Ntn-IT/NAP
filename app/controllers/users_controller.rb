@@ -9,12 +9,12 @@ class UsersController < ApplicationController
 
   def index_search_scopes
     {
-      names_mathrs: proc do |query, value| 
+      names_mathrs: proc do |query, value|
         query.where(
-          "(employees.fname ILIKE :search OR employees.lname ILIKE :search OR employees.id ILIKE :search)", 
-          search: "%#{ sanitize_sql_like(value) }%"
-        ) 
-      end,
+          '(employees.fname ILIKE :search OR employees.lname ILIKE :search OR employees.id ILIKE :search)',
+          search: "%#{sanitize_sql_like(value)}%"
+        )
+      end
     }
   end
 

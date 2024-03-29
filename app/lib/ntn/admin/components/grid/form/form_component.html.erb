@@ -9,10 +9,10 @@
       layout: grid.form_layout,
       buttons: [
         secondary_button(
-          text: "Reset",
+          text: "Annuler",
           url: grid.build_model_url_with_params(except: [:search, :page])
         ),
-        submit_button(text: "Search")
+        submit_button(text: "Rechercher")
       ]
     ) do |fiedset|
       content(fiedset) 

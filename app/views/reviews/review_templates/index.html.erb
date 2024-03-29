@@ -3,12 +3,17 @@
   build app_frame(
     title: t("Modèles d'entretien"),
     notice:,
-    actions: []
+    actions: [
+      new_record_button(Reviews::ReviewTemplate)
+    ]
   ) do 
     build [
       index_grid(
         self,
-        attributes: reviews.review_template_context.table_attributes,
+        attributes: reviews.review_template_context.table_attributes(except: [:json_document]),
+        actions: [
+          :edit_record_button
+        ]
       )
     ]
   end 

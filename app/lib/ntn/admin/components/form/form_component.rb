@@ -5,6 +5,8 @@ module Ntn
     module Components
       module Form
         class FormComponent < Component
+          DELEGATED_METHOD_SUFFIXES = %w[input field].freeze
+
           configure(
             method: :post,
             url: nil,
@@ -16,8 +18,8 @@ module Ntn
             namespace: nil
           )
 
-          def fieldset
-            Fieldset.new(self, bind_to, namespace)
+          def initial_scope
+            Scope.new(self, bind_to, namespace)
           end
         end
       end

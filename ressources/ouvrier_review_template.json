@@ -1,33 +1,32 @@
-
 {
   "title": "ENTRETIEN ANNUEL D’EVALUATION – emplois A2 à C6",
   "description": "L’entretien annuel d’évaluation est l’occasion formalisée de se réunir pour faire le point sur le travail et les compétences du collaborateur. Il s’agit d’un moment privilégié de dialogue et de réflexion entre le collaborateur et son responsable, au cours duquel il est important que chacun puisse s’exprimer librement.",
-  "questions_categories": [
+  "categories": [
     {
       "title": "I. SATISFACTION DANS L’EMPLOI",
       "questions": [
         {
-          "type": "satisfaction_level",
+          "type": "notation",
           "title": "Comment caractérisez-vous le contenu de votre emploi ? (Adéquation emploi et attentes)"
         },
         {
-          "type": "satisfaction_level",
+          "type": "notation",
           "title": "Est-ce que vous vous estimez motivé ?"
-        },        
+        },
         {
-          "type": "satisfaction_level",
+          "type": "notation",
           "title": "Vous sentez-vous reconnu ?"
         },
         {
-          "type": "satisfaction_level",
+          "type": "notation",
           "title": "Etes-vous satisfait de vos relations internes (collègues, hiérarchie…) ?"
         },
         {
-          "type": "satisfaction_level",
+          "type": "notation",
           "title": "Etes-vous satisfait de l’articulation entre votre vie privée et votre vie professionnelle ?"
         },
         {
-          "type": "satisfaction_level",
+          "type": "notation",
           "title": "Comment caractériseriez-vous la communication interne (flash info, ilot…) ?"
         }
       ]
@@ -36,20 +35,21 @@
       "title": "II. BILAN PERIODE ECOULEE",
       "questions": [
         {
-          "type": "open_question",
+          "type": "text",
+          "lines": 5,
           "title": "Les faits marquants de l’année passée :",
           "description": "(Liés à l’environnement de travail, liés au poste ou évènements personnels…) Ils peuvent être classés par éléments moteurs, freins…"
         },
         {
-          "type": "ordered_table",
+          "type": "table",
           "title": "Rappel et évaluation des objectifs",
           "lines": 5,
-          "columns": [
-            { "title":  "Objectifs", "type": "text" },
-            { "title":  "Atteint", "type": "checkbox"  },
-            { "title":  "En cours", "type": "checkbox"  },
-            { "title":  "Non atteint", "type": "checkbox"  },
-            { "title":  "Commantaire", "type": "text"  }
+          "questions": [
+            { "title": "Objectifs", "type": "text_input" },
+            { "title": "Atteint", "type": "checkbox_input" },
+            { "title": "En cours", "type": "checkbox_input" },
+            { "title": "Non atteint", "type": "checkbox_input" },
+            { "title": "Commantaire", "type": "text_input" }
           ]
         }
       ]
@@ -59,30 +59,30 @@
       "description": "Se référer à la grille « Positionnement Professionnel » en Annexe. Ce positionnement est à compléter : cochez 1 des 4 propositions. Indiquer NC si non concerné",
       "questions": [
         {
-          "type": "labelled_table",
+          "type": "table",
           "title": "Rappel et évaluation des objectifs",
-          "columns": [
-            { "title":  "Compétences liées au poste" },
-            { "title":  "Arguments/faits", "type": "text"  },
-            { "title":  "Non dvpée", "type": "checkbox"  },
-            { "title":  "En cours dvpt", "type": "checkbox"  },
-            { "title":  "Dvpée", "type": "checkbox"  },
-            { "title":  "Confirmée", "type": "checkbox" }
+          "line_title": "Compétences liées au poste",
+          "questions": [
+            { "title": "Arguments/faits", "type": "text_input" },
+            { "title": "Non dvpée", "type": "checkbox_input" },
+            { "title": "En cours dvpt", "type": "checkbox_input" },
+            { "title": "Dvpée", "type": "checkbox_input" },
+            { "title": "Confirmée", "type": "checkbox_input" }
           ],
           "labels": [
             "Respect des consignes de sécurité",
             "Respect des procédures qualité (contrôle, traçabilité…)",
             "Respect des outils de travail (Rangement, nettoyage…)",
-	          "Qualité du travail",
+            "Qualité du travail",
             "Rigueur /sens de l’organisation",
-	          "Comportement individuel face à un problème rencontré",
+            "Comportement individuel face à un problème rencontré",
             "Aptitude à transmettre",
             "Autonomie / Prise d’initiative",
             "Relationnel",
             "Capacité à mobiliser",
             "Esprit d’équipe",
             "Force de proposition",
-	          "Capacité à s’adapter au changement",
+            "Capacité à s’adapter au changement",
             "Disponibilité",
             "Ponctualité"
           ]
@@ -94,30 +94,30 @@
       "description": "Se référer à la grille « Positionnement Professionnel » en Annexe. Ce positionnement est à compléter : cochez 1 des 4 propositions. Indiquer NC si non concerné",
       "questions": [
         {
-          "type": "ordered_table",
+          "type": "table",
           "title": "Objectifs liés aux compétences professionnelles sur le poste",
           "lines": 3,
-          "columns": [
-            { "title":  "Objectifs", "type": "text" },
-            { "title":  "Délais", "type": "text"  }
+          "questions": [
+            { "title": "Objectifs", "type": "text_input" },
+            { "title": "Délais", "type": "text_input" }
           ]
         },
         {
-          "type": "ordered_table",
+          "type": "table",
           "title": "Objectifs liés au développement personnel",
           "lines": 3,
-          "columns": [
-            { "title":  "Objectifs", "type": "text" },
-            { "title":  "Délais", "type": "text"  }
+          "questions": [
+            { "title": "Objectifs", "type": "text_input" },
+            { "title": "Délais", "type": "text_input" }
           ]
         },
         {
-          "type": "ordered_table",
+          "type": "table",
           "title": "Actions et/ou projets",
           "lines": 2,
-          "columns": [
-            { "title":  "Objectifs", "type": "text" },
-            { "title":  "Délais", "type": "text"  }
+          "questions": [
+            { "title": "Objectifs", "type": "text_input" },
+            { "title": "Délais", "type": "text_input" }
           ]
         }
       ]
@@ -126,24 +126,27 @@
       "title": "V. FORMATION ",
       "description": "Efficacité des formations réalisées depuis le dernier entretien",
       "questions": [
-         {
-          "type": "ordered_table",
+        {
+          "type": "table",
           "title": "Récapitulatif des formations effectuées",
           "lines": 3,
-          "columns": [
-            { "title":  "Récapitulatif des formations effectuées", "type": "text" },
-            { "title":  "Evaluation de leur efficacité", "type": "combobox"  },
-            { "title":  "Commentaires", "type": "text"  }
+          "questions": [
+            {
+              "title": "Récapitulatif des formations effectuées",
+              "type": "text_input"
+            },
+            { "title": "Evaluation de leur efficacité", "type": "select_input" },
+            { "title": "Commentaires", "type": "text_input" }
           ]
         },
-	{
-          "type": "ordered_table",
+        {
+          "type": "table",
           "title": "Souhaits de formations pour maintenir, renforcer et développer les compétences du salarié au sein de sa mission",
           "lines": 3,
-          "columns": [
-            { "title":  "Initiative", "type": "text" },
-            { "title":  "Lesquels", "type": "combobox"  },
-            { "title":  "Pour quels objectifs ?", "type": "text"  }
+          "questions": [
+            { "title": "Initiative", "type": "text_input" },
+            { "title": "Lesquels", "type": "select_input" },
+            { "title": "Pour quels objectifs ?", "type": "text_input" }
           ]
         }
       ]
@@ -152,26 +155,19 @@
       "title": "VI. SYNTHESE DE L'ENTRETIEN",
       "description": "Efficacité des formations réalisées depuis le dernier entretien",
       "questions": [
-         {
-          "type": "open_question",
+        {
+          "type": "text",
+          "lines": 5,
           "title": "Commentaire du salarié :",
           "description": "Commentaire du salarié"
         },
-	{
-          "type": "open_question",
+        {
+          "type": "text",
+          "lines": 5,
           "title": "Commentaire N+1 :",
           "description": "Commentaire du manager"
-	}
+        }
       ]
-    },
-    {
-          "type": "ordered_table",
-          "title": "Signatures",
-          "lines": 3,
-          "columns": [
-            { "title":  "Signature Salarié", "type": "text" },
-            { "title":  "Signature N+1", "type": "text"  }
-          ]
     }
   ]
 }

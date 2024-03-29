@@ -14,11 +14,11 @@
   <% end %>
 
   <div class="<%= layout%>">
-    <%= content(fieldset)  %>
+    <%= content(initial_scope)  %>
   </div>
 
   <% if buttons %>
-    <div class="...">
+    <div class="layout-flex-row">
       <%= build buttons %>
     </div>
   <% end %>

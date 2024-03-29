@@ -12,7 +12,7 @@ class EmployeePolicy < ApplicationPolicy
   def index?
     true
   end
-  
+
   def edit?
     true
   end

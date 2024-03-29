@@ -5,7 +5,6 @@ module Ntn
     module Components
       module Alert
         class AlertComponent < Component
-
           configure(
             message: nil,
             status: nil,

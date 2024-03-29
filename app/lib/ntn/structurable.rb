@@ -67,9 +67,9 @@ module Ntn
             value.is_a?(FalseClass) ||
             (dry_type && value.inspect.match?(/TrueClass|FalseClass/))
           )
-        # rescue StandardError
-        #   binding.pry
-        #   raise
+          # rescue StandardError
+          #   binding.pry
+          #   raise
         end
 
         schema.compile_methods!
@@ -82,14 +82,14 @@ module Ntn
       def build_accessor(name, dry_type, predicate)
         raise NameError.new('invalid schema attribute name') unless /\A[_A-Za-z]\w*\z/.match?(name)
 
-        class_eval(<<~RUBY, __FILE__, __LINE__)
+        class_eval(<<~RUBY, __FILE__, __LINE__ + 1)
           def #{name}
             return @#{name} if defined?(@#{name})
             schema.#{name}#{dry_type ? '[]' : ''}
           end
         RUBY
 
-        class_eval(<<~RUBY, __FILE__, __LINE__)
+        class_eval(<<~RUBY, __FILE__, __LINE__ + 1)
           def #{name}=(value)
             @#{name} = #{dry_type ? "schema.#{name}[value]" : 'value'}
           end

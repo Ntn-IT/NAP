@@ -3,10 +3,10 @@
 /* Components */
 @import "./app_loader/app_loader";
 @import "./app_frame/app_frame.scss";
+@import "./table/table.scss";
 @import "./table_attributes/table_attributes.scss";
 
-
-/********* Display ********/  
+/********* Display ********/
 
 .hidden {
   display: none;
@@ -16,7 +16,7 @@
   background-color: $background-gray;
 }
 
-/********* Border ********/  
+/********* Border ********/
 
 .border {
   border-left: $border;
@@ -34,7 +34,7 @@
   border-bottom: $border;
 }
 
-/********* Padding ********/  
+/********* Padding ********/
 
 .padding {
   padding: $padding;
@@ -52,13 +52,13 @@
   padding-bottom: $padding;
 }
 
-/********* Layout ********/  
+/********* Layout ********/
 
 .layout-flex-row {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 1em;
+  gap: 0.5em;
 }
 
 .layout-columns {
@@ -87,7 +87,19 @@
   flex-basis: calc(25% - 3em);
 }
 
-/********* Override Trestle ********/  
-input[type=checkbox] {
-  width : auto !important;
+/********* Override Trestle ********/
+input[type="checkbox"] {
+  width: auto !important;
+}
+
+.btn-danger {
+  background: #e50914 !important;
+  border-color: #e50914 !important;
+  color: white !important;
+}
+
+.btn-warning {
+  background: #f3bd71 !important;
+  border-color: #f3bd71 !important;
+  color: #fff !important;
 }

@@ -13,12 +13,18 @@ module Ntn
             input('hidden', name, **, &)
           end
 
-          def text_input(name = nil, **, &)
+          def text_input(name = nil, rows: nil, **, &)
+            return textarea_input(name, **, &) if rows && rows > 1
+
             input('text', name, **, &)
           end
 
           def datetime_input(name = nil, **, &)
             input('datetime-local', name, **, &)
+          end
+
+          def date_input(name = nil, **, &)
+            input('date', name, **, &)
           end
 
           def textarea_input(name = nil, **, &)
@@ -37,8 +43,16 @@ module Ntn
             input('list', name, **, &)
           end
 
+          def select_input(name = nil, **, &)
+            input('list', name, **, &)
+          end
+
           def checkbox_input(name = nil, **, &)
             input('checkbox', name, **, &)
+          end
+
+          def radio_input(name = nil, **, &)
+            input('radio', name, **, &)
           end
 
           def search_input(name = nil, **, &)

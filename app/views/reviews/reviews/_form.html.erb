@@ -5,11 +5,7 @@
     url:, 
     method: method,
     buttons: [reset_button, save_button]
-  ) do |form| %>
-    <%= 
-      build [
-        #form.text_field(:id, disabled: true),
-      ] 
-    %>
-  <% end 
+  ) do |form|
+    build review_form(@review, form)
+  end 
 %>

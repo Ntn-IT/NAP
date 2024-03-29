@@ -1,0 +1,103 @@
+@import "./variables";
+@import "./questions/question";
+
+
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+.review {
+  input { 
+    margin-bottom:  0;
+  }
+
+  header {
+    > .logo {
+      width: 100px;
+      float: left;
+    }
+    > .title {
+      text-align: center;
+      line-height: 100px;
+      margin-bottom: 0;
+    }
+    > .description {
+      padding-top: 1em;
+      font-style: italic;
+    }
+    > .date {
+      margin-bottom: $margin;
+      margin-top: $margin;
+      padding: $padding;
+      border: $border;
+      background: $bg-blue;
+      input{ 
+        width: auto;
+        display: inline;
+      } 
+      .label {
+        font-weight: bold;
+      }
+    }
+    > .box {
+      > .title {
+      margin-top: 0;
+      background: $bg-gray;
+      padding: $padding;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    }
+  }
+
+  .box {
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.11);
+
+    
+    > .title {
+      margin-top: $margin;
+      background: $bg-gray;
+      padding: $padding;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    > .body {
+      padding: $padding;
+    }
+  }
+
+  .question-container {
+    padding: $padding;
+    border: $border;
+  }
+
+  .label {
+    font-weight: bold;
+  }
+}
+
+.review-page {
+  input, textarea, input:disabled, textarea:disabled {
+    border: none;
+    background: transparent;
+    text-shadow: none;
+    color: #333;
+  }
+
+  [type="checkbox"]:disabled {
+    background-color: initial;
+  }
+
+
+  input[type="date"]::-webkit-inner-spin-button,
+  input[type="date"]::-webkit-calendar-picker-indicator {
+      display: none;
+      -webkit-appearance: none;
+  }
+
+  textarea:disabled { resize: none; }
+}

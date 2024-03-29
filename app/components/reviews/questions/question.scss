@@ -1,0 +1,16 @@
+@import "../variables";
+@import "./question_notation";
+@import "./question_text";
+@import "./question_table";
+
+.question {
+  margin: $margin;
+  .title {
+    font-weight: bold;
+  }
+
+  .description {
+    font-style: italic;
+  }
+
+}

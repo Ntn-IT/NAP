@@ -1,18 +1,15 @@
 # frozen_string_literal: true
 
 class Service
-
   def self.call(...)
-    self.new(...).call_with_error_handelr
+    new(...).call_with_error_handler
   end
 
-  def call_with_error_handelr
-    begin 
-      call
-    rescue StandardError => e
-      BugNotifierService.call(e)
+  def call_with_error_handler
+    call
+  # rescue StandardError => e
+  #   BugNotifierService.call(e)
 
-      raise
-    end
+  #   raise
   end
 end

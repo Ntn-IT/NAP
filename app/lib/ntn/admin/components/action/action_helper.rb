@@ -53,15 +53,15 @@ module Ntn
             action(css_factory: 'btn btn-dark', **, &)
           end
 
-          def submit_button(text: 'Submit', **, &)
+          def submit_button(text: 'Envoyer', **, &)
             primary_button(text:, type: 'submit', **, &)
           end
 
-          def save_button(text: 'Save', **, &)
+          def save_button(text: 'Enregistrer', **, &)
             submit_button(text:, **, &)
           end
 
-          def reset_button(text: 'Reset', **, &)
+          def reset_button(text: 'Annuler', **, &)
             secondary_button(text:, type: 'reset', **, &)
           end
 
@@ -69,33 +69,37 @@ module Ntn
             link(
               text: record && text_attribute ? record.send(text_attribute) : nil,
               url: build_model_url(record&.class, params: record&.id),
+              policy: [record, :show?],
               **,
               &
             )
           end
 
-          def new_record_button(model, text: '+ New', **, &)
+          def new_record_button(model, text: '+ Nouveau', **, &)
             primary_button(
               text:,
               url: build_model_url(model, action: :new),
+              policy: [model, :new?],
               **,
               &
             )
           end
 
-          def edit_record_button(record, text: 'Edit', **, &)
+          def edit_record_button(record, text: 'Modifier', **, &)
             secondary_button(
               text:,
               url: build_model_url(record&.try(:klass) || record&.class, action: :edit, params: record&.id),
+              policy: [record, :edit?],
               **,
               &
             )
           end
 
-          def delete_record_button(record, text: 'Delete', **, &)
+          def delete_record_button(record, text: 'Supprimer', **, &)
             danger_button(
               text:,
               url: build_model_url(record&.try(:klass) || record&.class, params: record&.id),
+              policy: [record, :destroy?],
               method: :delete,
               **,
               &

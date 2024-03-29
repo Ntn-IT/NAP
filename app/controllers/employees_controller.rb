@@ -9,12 +9,12 @@ class EmployeesController < ApplicationController
 
   def index_search_scopes
     {
-      names_mathrs: proc do |query, value| 
+      names_mathrs: proc do |query, value|
         query.where(
-          "(fname ILIKE :search OR lname ILIKE :search OR id ILIKE :search)", 
-          search: "%#{ sanitize_sql_like(value) }%"
-        ) 
-      end,
+          '(fname ILIKE :search OR lname ILIKE :search OR id ILIKE :search)',
+          search: "%#{sanitize_sql_like(value)}%"
+        )
+      end
     }
   end
 
@@ -29,7 +29,7 @@ class EmployeesController < ApplicationController
   def index_sort_scopes
     {
       created_at: ->(query, order) { query.order(created_at: order) },
-      cname: ->(query, order) { query.order(cname: order) },
+      cname: ->(query, order) { query.order(cname: order) }
     }
   end
 

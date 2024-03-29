@@ -1,0 +1,20 @@
+<table class="question question-text">
+  <tr>
+    <td>
+      <div class="title"><%= question.title %></div>
+
+      <% if question.description %>
+        <div class="description"><%= question.description %></div>
+      <% end %>
+    </td>
+  <tr>
+  <tr class="answer-line">
+    <td>
+      <%= 
+        build(
+          form.text_input(:answer, rows: question.lines, disabled:)
+        )  
+      %>
+    </td>
+  <tr>
+</table>

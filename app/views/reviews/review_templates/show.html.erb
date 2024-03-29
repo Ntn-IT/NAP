@@ -1,0 +1,15 @@
+<%= 
+  build app_frame(
+    title: t("Modèle d'entretien"),
+    notice:,
+    bind_to: @review_template,
+    actions: [
+      :edit_record_button
+    ]
+  ) do 
+    build table_attributes(
+      bind_to: @review_template,
+      attributes: reviews.review_template_context.table_attributes
+    ) 
+  end 
+%>

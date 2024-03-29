@@ -2,7 +2,6 @@
 
 module Ntn
   class HelperContext
-
     TABLE_ATTRIBUTE_KEYS = %i[key name value]
     FIELD_ATTRIBUTE_KEYS = %i[key label field]
 
@@ -10,7 +9,7 @@ module Ntn
     class_attribute :context_attributes, default: {}
 
     def self.inherited(subclass)
-      subclass.context_attributes = self.context_attributes.dup
+      subclass.context_attributes = context_attributes.dup
     end
 
     def self.define_context_method(helper_module)
@@ -40,10 +39,10 @@ module Ntn
       ins_var = :"@#{key}"
 
       define_method(key) do
-        return instance_variable_get(ins_var) if instance_variable_defined?(ins_var) 
+        return instance_variable_get(ins_var) if instance_variable_defined?(ins_var)
 
         instance_variable_set(
-          ins_var, 
+          ins_var,
           ActiveSupport::Configurable::Configuration.new(context_attributes[key])
         )
       end
@@ -55,14 +54,10 @@ module Ntn
       init_value = config[:value]
       init_field = config[:field]
 
-      if init_value && init_value.is_a?(Proc)
-        config[:value] = proc { |vc, rec| init_value.call(vc, yield(rec)) }
-      end
-      
-      if init_field && init_field.is_a?(Proc)
-        config[:field] = proc { |vc, rec| init_field.call(vc, yield(rec)) } 
-      end
-  
+      config[:value] = proc { |vc, rec| init_value.call(vc, yield(rec)) } if init_value && init_value.is_a?(Proc)
+
+      config[:field] = proc { |vc, rec| init_field.call(vc, yield(rec)) } if init_field && init_field.is_a?(Proc)
+
       config
     end
 
@@ -80,7 +75,7 @@ module Ntn
     delegate_missing_to :view_context
 
     def table_attributes(*keys, except: [])
-      attrs = 
+      attrs =
         if keys.empty? && except.empty?
           context_attributes.values
         elsif except.empty?
@@ -93,7 +88,7 @@ module Ntn
     end
 
     def form_fields(form, *keys, except: [])
-      attrs = 
+      attrs =
         if keys.empty? && except.empty?
           context_attributes.values
         elsif except.empty?
@@ -102,9 +97,9 @@ module Ntn
           context_attributes.except(*except).values
         end
 
-      attrs.map do |att| 
-        proc do |vc| 
-          field = att[:field].call(vc, form) 
+      attrs.map do |att|
+        proc do |vc|
+          field = att[:field].call(vc, form)
           field.label = att[:name]
           field
         end
@@ -120,6 +115,5 @@ module Ntn
         end
       end
     end
-
   end
 end

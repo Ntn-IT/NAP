@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class ImportEmployeesService < Service
-  
   def initialize(file:)
     @file = file
   end

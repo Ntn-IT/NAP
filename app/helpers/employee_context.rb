@@ -58,16 +58,15 @@ class EmployeeContext < Ntn::HelperContext
     },
     subordinates: {
       name: t('Subordonnés'),
-      value: proc do |vc, rec| 
+      value: proc do |vc, rec|
         vc.list(
           rec.subordinates.map do |subordinate|
-            
             vc.employee_context.build_record_link(subordinate)
           end
         )
-        #vc.employee_context.build_record_link(rec.manager) 
+        # vc.employee_context.build_record_link(rec.manager)
       end
-    },
+    }
   )
 
   def build_record_link(rec)

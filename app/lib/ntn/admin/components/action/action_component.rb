@@ -52,12 +52,12 @@ module Ntn
           end
 
           def build_content
-            submit_btm = type == "submit" ? tag.input(type: "submit", class: "hidden") : nil
+            submit_btm = type == 'submit' ? tag.input(type: 'submit', class: 'hidden') : nil
 
             return [text, content, submit_btm] unless icon
 
-            tag.span(class: 'btn-label') do 
-              build([text, content,submit_btm ]) 
+            tag.span(class: 'btn-label') do
+              build([text, content, submit_btm])
             end
           end
 

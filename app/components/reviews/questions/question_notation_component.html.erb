@@ -1,0 +1,22 @@
+<div class="question question-notation">
+  <div class="title"><%= question.title %></div>
+
+  <% if question.description %>
+    <div class="description"><%= question.description %></div>
+  <% end %>
+
+  <div class="notation-container">
+    <span class="label">Pas satisfait</span>
+    
+    <% 11.times do |note| %>
+      <span class="rate">
+        <%= note %>
+        <%= build form.radio_input(:note, value: note, disabled:) %>
+      </span>
+    <% end %>
+
+    <span class="label">Très satisfait</span>
+  </div>
+  
+  <%= build form.textarea_field(:justification, label: "Pourquoi ?", rows: 2, disabled:)  %>
+</div>

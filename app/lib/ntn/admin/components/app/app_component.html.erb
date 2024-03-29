@@ -39,14 +39,14 @@
           <li>
             <%= build link(
               url: user_path(current_user), 
-              text: t("My account"), 
+              text: t("Mon compte"), 
               css: "dropdown-item"
             ) %>
           </li>
           <li>
             <%= build link(
               url: destroy_user_session_path, 
-              text: t("Logout"), 
+              text: t("Se déconnecter"), 
               method: :delete,
               css: "dropdown-item"
             ) %>

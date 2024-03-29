@@ -14,6 +14,7 @@ module Ntn
             value: nil,
             placeholder: nil,
             disabled: false,
+            readonly: false,
             step: nil,
             min: nil,
             max: nil,
@@ -31,6 +32,7 @@ module Ntn
 
             return build_hidden if type_str == 'hidden'
             return build_checkbox if type_str == 'checkbox'
+            return build_radio if type_str == 'radio'
             return build_list if type_str == 'list'
             return build_number if type_str == 'number'
             return build_textarea if type_str == 'textarea'
@@ -56,8 +58,25 @@ module Ntn
                 css: 'form-check-input',
                 id:,
                 name:,
-                checked:,
-                disabled:
+                checked: checkbox_checked,
+                value:,
+                disabled:,
+                readonly:
+              )
+            )
+          end
+
+          def build_radio
+            tag.input(
+              **merge_attributes(
+                type:,
+                css: 'form-control',
+                id:,
+                name:,
+                checked: radio_checked,
+                value:,
+                disabled:,
+                readonly:
               )
             )
           end
@@ -73,7 +92,8 @@ module Ntn
                 value:,
                 disabled:,
                 autocomplete:,
-                multiple:
+                multiple:,
+                readonly:
               )
             ) { build_list_options }
           end
@@ -115,6 +135,7 @@ module Ntn
                 placeholder:,
                 value:,
                 disabled:,
+                readonly:,
                 step:,
                 min:,
                 max:,
@@ -131,6 +152,7 @@ module Ntn
                 name:,
                 placeholder:,
                 disabled:,
+                readonly:,
                 autocomplete:,
                 rows:
               )
@@ -149,15 +171,22 @@ module Ntn
                 placeholder:,
                 value:,
                 disabled:,
+                readonly:,
                 autocomplete:
               )
             )
           end
 
-          def checked
+          def checkbox_checked
             return @checked if defined?(@checked)
 
             value == 'on' || value == 'true' || value == true || value == 1 || @value == '1'
+          end
+
+          def radio_checked
+            return @checked if defined?(@checked)
+
+            value == binded_value
           end
 
           def bound_attribute
@@ -171,10 +200,21 @@ module Ntn
           end
 
           def value
-            return @value if defined?(@value)
-            return @__value if defined?(@__value)
+            format_value(defined?(@value) ? @value : binded_value)
+          end
 
-            @__value = Ntn::Utils::ObjectUtil.lookup(bind_to, bound_attribute)
+          def binded_value
+            return @binded_value if defined?(@binded_value)
+
+            @binded_value = Ntn::Utils::ObjectUtil.lookup(bind_to, bound_attribute)
+          end
+
+          def format_value(value)
+            return unless value
+
+            return value.strftime('%F') if type == 'date'
+
+            value
           end
         end
       end

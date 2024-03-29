@@ -4,12 +4,11 @@ export default class extends Controller {
   static targets = ["form"];
 
   click(event) {
-    if(this.isConfirmCanceled()) {
-      return
+    if (this.isConfirmCanceled(event)) {
+      return;
     }
 
     if (this.hasFormTarget) {
-      console.log("okokook")
       this.submitForm(event, this.formTarget);
       return;
     }
@@ -37,14 +36,14 @@ export default class extends Controller {
   async reloadFrame() {
     this.element.closest("turbo-frame").src = window.location.href;
   }
-  
+
   isConfirmCanceled(event) {
     let confirm = this.element.dataset.confirm;
 
     if (confirm && !window.confirm(this.element.dataset.confirmText)) {
       event.preventDefault();
+      event.stopImmediatePropagation();
       return true;
     }
   }
-
 }

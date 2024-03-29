@@ -4,7 +4,7 @@ module Ntn
   module Admin
     module Components
       module Form
-        class Fieldset
+        class Scope
           DELEGATED_METHOD_SUFFIXES = %w[input field].freeze
 
           def initialize(form, bind_to, namespace)
@@ -15,16 +15,18 @@ module Ntn
 
           attr_reader :form, :bind_to, :namespace
 
-          def fieldset(nested_bind_to, nested_namespace)
-            new self.class(
-              self,
-              nested_bind_to,
-              namespace ? "#{namespace}[#{nested_namespace}]" : nested_namespace
-            )
+          def scope(bind_to, *paths, nested: true)
+            namespace = nested && @namespace ? @namespace : paths.shift
+            namespace += paths.map { "[#{_1}]" }.join
+
+            scope = Scope.new(self, bind_to, namespace)
+
+            build(yield(scope))
           end
 
-          def record_fieldset(nested_bind_to)
-            fieldset(nested_bind_to, nested_bind_to.class.name.underscore)
+          # ?? Si c'est une collection ? Pas sur que ca soit si pertient :/
+          def record_scope(bind_to, *paths, nested: true, &)
+            scope(bind_to, bind_to.class.name.underscore, *paths, reset:, &)
           end
 
           # rubocop:disable Style/MissingRespondToMissing

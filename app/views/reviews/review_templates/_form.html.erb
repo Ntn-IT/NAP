@@ -2,13 +2,13 @@
 <%= 
   # binding.pry
   build record_form(
-    @review_period, 
+    @review_template, 
     url:, 
     method: method,
     buttons: [reset_button, save_button]
   ) do |form| %>
     <%= 
-      build reviews.review_period_context.form_fields(form, :title)
+      build reviews.review_template_context.form_fields(form, :title, :application_filter, :json_document)
     %>
   <% end 
 %>
