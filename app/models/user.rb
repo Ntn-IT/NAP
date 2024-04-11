@@ -7,7 +7,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :ldap_authenticatable, :rememberable, :trackable
 
-  belongs_to :employee, class_name: 'Employee', foreign_key: :employee_id
+  belongs_to :employee, class_name: 'Employee', foreign_key: :employee_id , optional: true
 
   before_save :define_employee_id
 

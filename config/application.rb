@@ -18,6 +18,7 @@ module Ntnadmin
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w[assets tasks])
     config.active_job.queue_adapter = :sidekiq
+    Rails.autoloaders.main.ignore(Rails.root.join('/rails/NAP/app/lib/ntn/admin/controller/search_concern.rb'))
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
@@ -25,5 +26,6 @@ module Ntnadmin
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.autoloader = :classic
   end
 end

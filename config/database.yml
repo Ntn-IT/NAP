@@ -20,24 +20,25 @@
 # For details on connection pooling, see Rails configuration guide
 # https://guides.rubyonrails.org/configuring.html#database-pooling
 #  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-
 development:
   adapter: postgresql
   encoding: unicode
   database: DB_NAP_DEV
   pool: 10
-  username: postgres
-  password: ntntepcxxx
+  username: napostgre
+  password: RAjrQirNVc1LRY7PDCb0
   host: localhost #<%= ENV.fetch("DB_HOST", "localhost") %>
   port: 5432 #  password: ntntepcxxx
+
+
 
 production:
   adapter: postgresql
   encoding: unicode
   database: DB_NAP
   pool: 10
-  username: postgres
-  password: ntntepcxxx
+  username: napostgre
+  password: RAjrQirNVc1LRY7PDCb0
   host: localhost
   port: 5432
 #development:
