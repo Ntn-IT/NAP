@@ -22,24 +22,28 @@
         /*background: white !important;*/
       }
     </style>
+    
   </head>
+  
 
   <body>
-
   <%= build app_loader %>
-  
   <%= 
     build app(
       title: "NTN - Admin",
       env: "NTN",
       menu: [
         {
-          group: t("Entretiens"),
+          group: t("Entretiens "),
           items: [
             {
               url: build_model_url(Reviews::Review, index: true),
               icon: "fa fa-tachometer",
-              content: t("Entretiens"),
+              content: t("Entretiens Annuel"),
+            },
+            {
+              url: "",icon: "fa fa-tachometer",
+              content: t("Entretiens Professionnel"),
             },
             {
               url: build_model_url(Reviews::ReviewTemplate, index: true),
@@ -73,6 +77,5 @@
       yield 
     end
   %>
-  
   </body>
 </html>

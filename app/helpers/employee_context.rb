@@ -12,12 +12,16 @@ class EmployeeContext < Ntn::HelperContext
       name: t('Mathr'),
       value: proc { |vc, rec| vc.record_link(rec) }
     },
+    siteid: {
+      name: t('Site ID'),
+      value: proc { |_vc, rec| rec.siteid }
+    },
     fname: {
       name: t('Prénom'),
       value: proc { |_vc, rec| rec.fname }
     },
     lname: {
-      name: t('Nom famille'),
+      name: t('Nom de famille'),
       value: proc { |_vc, rec| rec.lname }
     },
     cname: {
@@ -49,7 +53,7 @@ class EmployeeContext < Ntn::HelperContext
       value: proc { |vc, rec| vc.employee_context.build_record_link(rec.manager) }
     },
     bdate: {
-      name: t('Date naissance'),
+      name: t('Date de naissance'),
       value: proc { |vc, rec| vc.date_format(rec.bdate) }
     },
     status: {

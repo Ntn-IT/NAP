@@ -18281,7 +18281,7 @@ body {
 }
 .app-header {
   align-items: center;
-  background: #fff;
+  background: #009adf;
   display: flex;
   flex: 0 0 50px;
   height: 50px;
@@ -18300,6 +18300,8 @@ body {
   }
 }
 .app-footer {
+  position: absolute;
+  bottom: 0;
   background: #f9f9f9;
   color: #888;
   display: flex;
@@ -18315,7 +18317,7 @@ body {
   }
 }
 .app-sidebar {
-  background: #222;
+  background: #1C2833;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -18684,7 +18686,7 @@ body {
   }
 }
 .content-header {
-  background: #fafafa;
+  background: #E9E9EA;
   display: flex;
   justify-content: space-between;
   padding: 20px;
@@ -18721,7 +18723,7 @@ body {
   margin-top: 8px;
 }
 .main-content-area {
-  margin: 20px;
+  margin: 10px;
 }
 .main-content-container {
   background: #fff;
@@ -18742,13 +18744,13 @@ body {
   justify-content: space-between;
 }
 .main-content-header {
-  background: #f9f9f9;
+  background: #E9E9EA;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   margin: -20px -20px 20px !important;
   padding: 12px 20px;
 }
 .main-content-footer {
-  background: #f9f9f9;
+  background: #E9E9EA;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   margin: 20px -20px -20px !important;
   padding: 12px 20px;
@@ -20197,4 +20199,73 @@ a.tag:hover {
       format("truetype"),
     url(/assets/trestle/fa-brands-400-effd4e273b1d4c0a8f825e6e7593f0442651935fb12c0c4781bc54205a054d34.svg#fontawesome)
       format("svg");
+}
+
+
+
+/*style.css*/
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+  background: #f3f3f3;
+  flex-direction: column;
+  margin: 0;
+}
+
+.main {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  transition: transform 0.2s;
+  width: 500px;
+  text-align: center;
+}
+
+h1 {
+  color: #005ca9;
+}
+
+label {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  text-align: left;
+  color: #555;
+  font-weight: bold;
+}
+
+
+input {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  background-color: #005ca9;
+  width: 100%;
+  font-size: 16px;
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

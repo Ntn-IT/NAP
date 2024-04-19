@@ -34,9 +34,7 @@ module Reviews
         )
 
         review.save(validate: false)
-      rescue
-        binding.pry 
-        raise
+
       end
     end
 

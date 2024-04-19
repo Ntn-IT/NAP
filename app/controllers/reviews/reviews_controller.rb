@@ -5,12 +5,16 @@ module Reviews
     layout 'print', only: %i[print]
     before_action :define_review, only: %i[show print edit update finish]
 
+
+
     def index_init_query
       query = Reviews::Review.all.joins(:employee, :manager, :review_campaign).includes(:employee, :manager, :review_campaign)
       query = query.where(review_campaigns: { status: "in_progress"} ) 
       query = query.where(manager: current_user.employee ) unless current_user.rh?
 
       query
+      
+
     end
 
     def index_search_scopes
@@ -35,6 +39,7 @@ module Reviews
       {
         created_at: ->(query, order) { query.order(created_at: order) }
       }
+      
     end
 
     def show

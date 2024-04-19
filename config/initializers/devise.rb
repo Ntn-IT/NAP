@@ -305,5 +305,5 @@ Devise.setup do |config|
 
   config.warden do |manager|
     manager.default_strategies(scope: :user).unshift :development
-  end
+  end if Rails.env.development?
 end

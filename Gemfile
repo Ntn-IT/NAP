@@ -93,3 +93,4 @@ gem 'rubocop-rspec', '~> 2.27'
 gem 'rubocop-performance', '~> 1.20'
 
 gem 'dry-struct', '~> 1.6'
+gem 'breadcrumbs'

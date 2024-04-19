@@ -6,7 +6,7 @@ module Reviews
     belongs_to :review_template
     belongs_to :manager, class_name: 'Employee', foreign_key: :manager_id
     belongs_to :employee, class_name: 'Employee', foreign_key: :employee_id
-
+  
     enum status: { in_progress: 'in_progress', finished: 'finished' }
 
     validates :date, presence: true

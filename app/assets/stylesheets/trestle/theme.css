@@ -553,7 +553,7 @@ body {
       rgba(57, 173, 219, 0.25) 0%,
       rgba(42, 60, 87, 0.4) 100%
     ),
-    linear-gradient(135deg, #670d10 0%, #092756 100%);
+    linear-gradient(135deg, #009adf 0%, #005ca9 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 );
 }
 .login {

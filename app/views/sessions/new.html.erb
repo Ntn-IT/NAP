@@ -1,15 +1,27 @@
-<div class="login">
-	<h1>NTN-AP</h1>
-  <%= build record_form(resource, url: session_path(resource_name)) do |f| %>
-
-    <%= build f.text_field :username, autofocus: true, autocomplete: "username" %>
-    <%= build f.password_field :password, autocomplete: "current-password" %>
-    <div style="padding-top: 10px;"></div>
-
-    <div>
-      <%= build submit_button(text: "Connexion", turbo: false) %>
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>NAP Registration</title>
+</head>
+ 
+<body>
+    <div class="main">
+        <h1>NTN Application Portail</h1>
+        <%= image_tag "Logo_NTNTE.png" %>
+        <%= build record_form(resource, url: session_path(resource_name)) do |f| %>
+        </div>
+        <form action="">
+            <%= build f.text_field :username, label: "Utilisateur", autofocus: true, autocomplete: "username" %>
+            <%= build f.password_field :password, label: "Mot de passe", autocomplete: "current-password" %>
+ 
+            <div class="wrap"> 
+            <button type="submit" onclick="solve()"> Entrer </button>
+            </div>
+        </form>
+        <% end %>
     </div>
-
-  <% end %>
-</div>
+</body>
+ 
+</html>
 

@@ -39,7 +39,7 @@ class User < ApplicationRecord
     return nil if Rails.env.development?
 
     employee_id = Devise::LDAP::Adapter.get_ldap_param(username, 'employeeID')
-    self.employeeid = employee_id.first.to_s unless employee_id.nil?
+    self.employee_id = employee_id.first.to_s unless employee_id.nil?
   end
 
   def validate_roles
