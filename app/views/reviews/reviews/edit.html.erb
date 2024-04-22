@@ -1,7 +1,12 @@
 <%= 
   build app_frame(
     title: t("Modifier l'entretien"),
-    notice:
+    notice:,
+    bind_to: @review,
+    actions: [
+      :edit_record_button,
+      reviews.review_context.review_help_button
+    ],
   ) do 
     render(partial: 'form', locals: { method: :put, url: build_model_url(Reviews::Review, params: @review) })
   end

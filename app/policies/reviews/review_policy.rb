@@ -31,5 +31,10 @@ module Reviews
     def finish?
       resource.in_progress?
     end
+
+    def help?
+      true
+    end
+    
   end
 end

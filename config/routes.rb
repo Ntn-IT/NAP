@@ -21,7 +21,9 @@ Rails.application.routes.draw do
     resources :reviews, only: %i[index show edit update] do
       get :print, to: 'reviews#print'
       put :finish, to: 'reviews#finish'
-      get :help, to: 'reviews#help'
+      collection do 
+        get :help, to: 'reviews#help'
+      end
     end
 
     resources :review_templates, only: %i[index show new create edit update]

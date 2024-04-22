@@ -71,7 +71,7 @@ module Reviews
     end
 
     def finish
-      handle_record_operation(redirect_message: "L'entretien a bien été cloturée") do
+      handle_record_operation(redirect_message: "L'entretien a bien été cloturé") do
         authorize(@review)
 
         @review.status = 'finished'
@@ -81,6 +81,9 @@ module Reviews
       end
     end
 
+    def help
+      authorize(Reviews::Review)
+    end
     private
 
     def define_review

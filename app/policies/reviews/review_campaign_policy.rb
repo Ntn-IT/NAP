@@ -30,7 +30,6 @@ module Reviews
       resource.draft?
     end
 
-
     def finish?
       resource.in_progress?
     end

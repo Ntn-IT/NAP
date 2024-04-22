@@ -46,6 +46,15 @@ module Reviews
       )
     end
 
+    def help_button()
+      info_button(
+        text: t("Afficher aide et critère"),
+        method: :put,
+        confirm: false,
+        url: help_reviews_reviews  
+      )
+    end
+
     def print_button(record)
       vc.primary_button(
         url: build_model_url(Reviews::Review, action: :print, params: record), 
