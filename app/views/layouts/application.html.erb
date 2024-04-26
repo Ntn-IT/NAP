@@ -11,10 +11,6 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     
-    <link rel='stylesheet' url='https://css.gg/css'>
-
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
     <style>
@@ -24,35 +20,36 @@
     </style>
     
   </head>
-  
 
   <body>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <%= build app_loader %>
   <%= 
     build app(
-      title: "NTN - Admin",
+      title: "NTN - Portail",
       env: "NTN",
       menu: [
         {
-          group: t("Entretiens "),
+          group: t("Entretiens"),
           items: [
             {
               url: build_model_url(Reviews::Review, index: true),
-              icon: "fa fa-tachometer",
-              content: t("Entretiens Annuel"),
+              icon: "fa-solid fa-comments",
+              content: t("QEntretiens Annuel"),
             },
             {
-              url: "",icon: "fa fa-tachometer",
+              url: "",
+              icon: "fa fa-tachometer",
               content: t("Entretiens Professionnel"),
             },
             {
               url: build_model_url(Reviews::ReviewTemplate, index: true),
-              icon: "fa fa-tachometer",
+              icon: "fa-regular fa-calendar-days",
               content: t("Modèles d'entretien"),
             },
             {
               url: build_model_url(Reviews::ReviewCampaign, index: true),
-              icon: "fa fa-tachometer",
+              icon: "fa-solid fa-gears",
               content: t("Campagne d'entretien"),
             },
           ]

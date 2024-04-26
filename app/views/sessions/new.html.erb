@@ -12,11 +12,11 @@
         <%= build record_form(resource, url: session_path(resource_name)) do |f| %>
         </div>
         <form action="">
-            <%= build f.text_field :username, label: "Utilisateur", autofocus: true, autocomplete: "username" %>
+            <%= build f.text_field :username, label: "Utilisateur (matricule windows)", autofocus: true, autocomplete: "username" %>
             <%= build f.password_field :password, label: "Mot de passe", autocomplete: "current-password" %>
  
             <div class="wrap"> 
-            <button type="submit" onclick="solve()"> Entrer </button>
+            <button type="submit" onclick="solve()"> Connexion </button>
             </div>
         </form>
         <% end %>

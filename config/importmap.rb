@@ -14,3 +14,4 @@ components_path.glob('**/*.js').each do |file|
   name = file.relative_path_from(components_path).to_s.remove(/\.js$/)
   pin "components/#{file.basename.to_s.gsub(/.js$/, '')}", to: name
 end
+pin '@fortawesome/fontawesome-free', to: 'https://ga.jspm.io/npm:@fortawesome/fontawesome-free@6.1.1/js/all.js'

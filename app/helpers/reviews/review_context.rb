@@ -49,9 +49,8 @@ module Reviews
     def help_button()
       info_button(
         text: t("Afficher aide et critère"),
-        method: :put,
-        confirm: false,
-        url: help_reviews_reviews  
+        url: "/reviews/reviews/help",
+        target: "_blank" 
       )
     end
 

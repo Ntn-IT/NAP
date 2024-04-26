@@ -5,10 +5,7 @@
     bind_to: @review,
     actions: [
       :edit_record_button,
-      info_button(
-        text: t("Afficher aide et critère"),
-        url: "/reviews/reviews/help" 
-      ),
+      reviews.review_context.help_button,
       reviews.review_context.finish_button(@review),
       reviews.review_context.print_button(@review)
     ],

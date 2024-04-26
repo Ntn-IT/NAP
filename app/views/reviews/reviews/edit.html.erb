@@ -4,8 +4,7 @@
     notice:,
     bind_to: @review,
     actions: [
-      :edit_record_button,
-      reviews.review_context.review_help_button
+      reviews.review_context.help_button
     ],
   ) do 
     render(partial: 'form', locals: { method: :put, url: build_model_url(Reviews::Review, params: @review) })
