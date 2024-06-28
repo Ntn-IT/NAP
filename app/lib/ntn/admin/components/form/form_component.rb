@@ -21,6 +21,7 @@ module Ntn
           def initial_scope
             Scope.new(self, bind_to, namespace)
           end
+          
         end
       end
     end

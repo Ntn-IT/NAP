@@ -27,7 +27,7 @@ module Ntn
                       [
                         tag.li(class: 'nav-header') do
                           build(
-                            link(text: item[:group], url: "##{anchor}")
+                            link(text: item[:group], url: "##{anchor}", policy: item[:policy])
                           )
                         end,
                         *build_menu(item[:items])
@@ -41,7 +41,7 @@ module Ntn
 
                 tag.li do
                   build(
-                    link(url: item[:url]) do
+                    link(url: item[:url], policy: item[:policy]) do
                       build(
                         [
                           tag.i(class: "nav-icon #{item[:icon]}"),

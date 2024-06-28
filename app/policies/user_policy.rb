@@ -6,18 +6,18 @@ class UserPolicy < ApplicationPolicy
   ]
 
   def show?
-    true
+    user.admin?
   end
 
   def index?
-    true
+    user.admin?
   end
 
   def edit?
-    true
+    user.admin?
   end
 
   def update?
-    true
+    user.admin?
   end
 end

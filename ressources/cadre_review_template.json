@@ -49,11 +49,30 @@
         {
           "type": "table",
           "title": "Rappel et évaluation des objectifs",
-          "lines": 5,
-          "questions": [
-            { "title": "Objectifs", "type": "text_input" },
-            { "title": "Commantaire", "type": "text_input" },
-            { "title": "Taux atteint", "type": "checkbox_input" }
+          "default_lines": 5,
+          "columns": [
+            {
+              "title": "Objectifs",
+              "width": "30%",
+              "input": "text"
+            },
+            {
+              "title": "Commentaire",
+              "width": "60%",
+              "input": "text"
+            },
+            {
+              "title": "Taux de réalisation ",
+              "width": "10%",
+              "input": "list",
+              "input_options": {
+                "options": [
+                  "Atteint",
+                  "En cours",
+                  "Non atteint"
+                ]
+              }
+            }
           ]
         }
       ]
@@ -63,12 +82,23 @@
       "description": "Se référer à la grille « Positionnement Professionnel » en Annexe. Ce positionnement est à compléter : cochez 1 des 4 propositions. Indiquer NC si non concerné",
       "questions": [
         {
-          "type": "table",
+          "type": "labeled_table",
           "title": "Reussite et axes d'amélioration",
-          "line_title": "Champs de compétences",
-          "questions": [
-            { "title": "Clés de réussite", "type": "text_input" },
-            { "title": "Axes d’amélioration", "type": "text_input" }
+          "columns": [
+            {
+              "title": "Champs de compétences",
+              "width": "33%"
+            },
+            {
+              "title": "Clés de réussite",
+              "width": "33%",
+              "input": "text"
+            },
+            {
+              "title": "Axes d’amélioration",
+              "width": "33%",
+              "input": "text"
+            }
           ],
           "labels": [
             "Techniques et professionnelles",
@@ -85,11 +115,23 @@
         {
           "type": "table",
           "title": "Récapitulatif des formations effectuées",
-          "lines": 5,
-          "questions": [
-            { "title": "Objectifs", "type": "text_input" },
-            { "title": "Indicateurs et  actions", "type": "text_input" },
-            { "title": "Délais", "type": "text_input" }
+          "default_lines": 5,
+          "columns": [
+            {
+              "title": "Objectifs",
+              "width": "33%",
+              "input": "text"
+            },
+            {
+              "title": "Indicateurs et actions",
+              "width": "33%",
+              "input": "text"
+            },
+            {
+              "title": "Délais",
+              "width": "33%",
+              "input": "text"
+            }
           ]
         }
       ]
@@ -101,14 +143,30 @@
         {
           "type": "table",
           "title": "Récapitulatif des formations effectuées",
-          "lines": 3,
-          "questions": [
+          "default_lines": 3,
+          "columns": [
             {
               "title": "Récapitulatif des formations effectuées",
-              "type": "text"
+              "width": "40%",
+              "input": "text"
             },
-            { "title": "Evaluation de leur efficacité", "type": "select_input" },
-            { "title": "Commentaires", "type": "text_input" }
+            {
+              "title": "Evaluation de leur efficacité",
+              "width": "20%",
+              "input": "list",
+              "input_options": {
+                "options": [
+                  "Inefficace",
+                  "Plutôt efficace",
+                  "Efficace"
+                ]
+              }
+            },
+            {
+              "title": "Commentaires",
+              "width": "40%",
+              "input": "text"
+            }
           ]
         }
       ]

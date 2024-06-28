@@ -13,7 +13,6 @@
     <%= csp_meta_tag %>
     
     <%= javascript_importmap_tags %>
-    <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 
     <style>
       body {
@@ -35,12 +34,13 @@
           group: t("Entretiens"),
           items: [
             {
-              url: "/reviews/reviews?kind=yearly",
+              url: build_model_url(Reviews::Review, index: true),
               icon: "fa-solid fa-comments",
               content: t("Entretiens Individuels Annuels"),
             },
             {
-              url: "/reviews/reviews?kind=individual",
+              url: "/reviews/reviews/pro",
+              target: "_blank",
               icon: "fa fa-tachometer",
               content: t("Entretiens Professionnels"),
             },
@@ -70,12 +70,6 @@
               url: build_model_url(Reviews::ReviewCampaign, index: true),
               icon: "fa-solid fa-gears",
               content: t("Campagne d'entretien"),
-            },
-            {
-              url: build_model_url(User, index: true),
-              policy: [current_user, :index?],
-              icon: "fa fa-user-lock",
-              content: t("Utilisateurs"),
             },
           ]
         }

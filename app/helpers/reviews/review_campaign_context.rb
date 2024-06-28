@@ -47,6 +47,18 @@ module Reviews
       status: {
         name: t('Statut de la campagne'),
         value: proc { |_vc, rec| rec.status }
+      },
+
+      kind: {
+        name: t('Type d\'entretien'),
+        value: proc { |_vc, rec| rec.kind },
+        field: proc do |_vc, form|
+          form.list_field(
+            :kind,
+            optional: false,
+            options:['individual','yearly']
+          )
+        end
       }
     )
 

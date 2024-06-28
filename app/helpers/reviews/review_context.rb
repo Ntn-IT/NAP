@@ -6,7 +6,7 @@ module Reviews
 
     attributes(
       title: {
-        name: t('Titre'),
+        name: t('Entretien (Cliquez sur le lien pour commencer)'),
         value: proc do |vc, rec|
           vc.record_link(
             rec,
@@ -18,12 +18,7 @@ module Reviews
       employee: EmployeeContext.bind_attribute(:link) { |rec| rec.employee },
       manager: EmployeeContext.bind_attribute(:link, name: t('Manager')) { |rec| rec.manager },
 
-      review_template: {
-        name: t('Modèle'),
-        value: proc do |vc, rec|
-          vc.record_link(rec.review_template, text: rec.review_template.title)
-        end
-      },
+
 
       status: {
         name: t('Statut'),
@@ -45,10 +40,20 @@ module Reviews
         )
       )
     end
+    
+    def print_button_watermark(record)
+      vc.primary_button(
+        url: build_model_url(Reviews::Review, action: :print, params: record),
+        policy: [record, :print_watermark?],
+        text: t("Imprimer entretien prérempli"),
+        turbo: false,
+        target: "_blank"
+      )
+    end
 
     def help_button()
       info_button(
-        text: t("Afficher aide et critère"),
+        text: t("Outils et supports"),
         url: "/reviews/reviews/help",
         target: "_blank" 
       )

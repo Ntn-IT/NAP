@@ -12,6 +12,11 @@ module Reviews
       true
     end
 
+    def print_watermark?
+      true
+      #resource.finished?
+    end
+
     def print?
       resource.finished?
     end
@@ -33,6 +38,10 @@ module Reviews
     end
 
     def help?
+      true
+    end
+
+    def pro?
       true
     end
     

@@ -96,3 +96,5 @@ gem 'dry-struct', '~> 1.6'
 gem 'breadcrumbs'
 gem 'font-awesome-rails'
 gem 'font_assets'
+gem 'chartkick'
+gem "groupdate"

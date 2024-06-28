@@ -9,6 +9,11 @@ module Ntn
             configure(
               grid: nil
             )
+            def build_extra_param_inputs
+              grid.query_params.except(:_method, :search).map do |(name, value)|
+                build input_hidden(name, value:)
+              end
+            end
           end
         end
       end

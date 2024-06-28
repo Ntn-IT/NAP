@@ -28,6 +28,7 @@ module Ntn
 
         def index_authorize!
           # x [self.class.controller_name.classify.underscore.to_sym],
+          #binding.pry
           authorize(
             [self.class.name.gsub(/Controller$/, '').classify.underscore.to_sym],
             :index?

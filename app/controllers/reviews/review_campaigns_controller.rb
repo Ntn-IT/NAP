@@ -61,7 +61,7 @@ module Reviews
     end
 
     def finish
-      handle_record_operation(redirect_message: "La campagne d'entretien a bien été cloturée") do
+      handle_record_operation(redirect_message: "La campagne d'entretien a bien été cloturé") do
         authorize(@review_campaign)
 
         @review_campaign.update!(status: 'finished')

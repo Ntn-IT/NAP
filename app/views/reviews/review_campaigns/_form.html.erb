@@ -1,14 +1,13 @@
 
 <%= 
-  # binding.pry
+
   build record_form(
     @review_campaign, 
     url:, 
-    method: method,
+    method:,
     buttons: [reset_button, save_button]
-  ) do |form| %>
-    <%= 
-      build reviews.review_campaign_context.form_fields(form, :title, :from_date, :to_date, :review_templates)
-    %>
-  <% end 
+  ) do |form| 
+      build reviews.review_campaign_context.form_fields(form, :title, :from_date, :to_date, :review_templates, :kind)
+    
+  end 
 %>

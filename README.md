@@ -28,8 +28,8 @@
 - [x] Route show des campagnes
 - [x] Renommer ReviewPeriod par ReviewCampaigns
 - [x] Ajouter le champ période d'évaluation
-- [ ] Problème d'affichage des icones du menu
-- [ ] Gestion des roles, voir avec les RHs quelles actions possibles par rôle (admin, viewer, editor, admin_rh, rh)
+- [x] Problème d'affichage des icones du menu
+- [x] Gestion des roles, voir avec les RHs quelles actions possibles par rôle (admin, viewer, editor, admin_rh, rh)
 - [x] Ajouter liste des templates dans campaigns
 - [ ] Pouvoir ajouter une ligne sur tableau simple 
 - [x] Ajouter filtre d'application sur template
@@ -38,6 +38,7 @@
 - [ ] Ajouter condition/filtre sur catégorie et question (comme pour les campagnes)
 - [x] Ajouter filtre sur l'employée/manager connecté dans les reviews
 - [ ] A la cloture de la campagne, cloturer aussi tous les reviews
+- [ ]  Gérer les paramtres initiaux de la recherche
 
 Manu, ce que tu fois faire en prio
 

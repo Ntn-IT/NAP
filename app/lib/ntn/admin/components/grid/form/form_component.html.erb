@@ -15,7 +15,10 @@
         submit_button(text: "Rechercher")
       ]
     ) do |fiedset|
-      content(fiedset) 
+      build([
+        build_extra_param_inputs,
+        content(fiedset) 
+      ]) 
     end 
   %>
 </div>

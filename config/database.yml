@@ -31,7 +31,6 @@ development:
   port: 5432 #  password: ntntepcxxx
 
 
-
 production:
   adapter: postgresql
   encoding: unicode

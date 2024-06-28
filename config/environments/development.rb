@@ -78,6 +78,7 @@ Rails.application.configure do
 
   config.importmap.cache_sweepers << Rails.root.join('app/lib/components')
   config.assets.debug = true
+  config.hosts.clear
   config.hosts << /[a-z0-9-.]+\.snr\.group/
   # config.action_view.preload_links_header = false
 end

@@ -9,10 +9,11 @@ module Reviews
 
     def index_init_query
       query = Reviews::Review.all.joins(:employee, :manager, :review_campaign).includes(:employee, :manager, :review_campaign)
-      query = query.where(review_campaigns: { status: "in_progress"} ) 
+      query = query.where(review_campaigns: { status: "in_progress"} )
+      query = query.where(review_campaigns: { kind: params[:kind]} )  
       query = query.where(manager: current_user.employee ) unless current_user.rh?
 
-      query
+     query
       
 
     end
@@ -84,6 +85,22 @@ module Reviews
     def help
       authorize(Reviews::Review)
     end
+    
+    def pro
+      authorize(Reviews::Review)
+    end
+
+    def kind
+      var = if @review
+        @review.review_campaign.kind
+      else
+        params[:kind] 
+      end
+      var == 'yearly' ? 'Annuel' : 'Professionnel'
+    end
+
+
+    helper_method(:kind)
     private
 
     def define_review

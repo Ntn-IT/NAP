@@ -23,6 +23,7 @@ Rails.application.routes.draw do
       put :finish, to: 'reviews#finish'
       collection do 
         get :help, to: 'reviews#help'
+        get :pro, to: 'reviews#pro'
       end
     end
 

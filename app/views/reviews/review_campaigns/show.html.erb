@@ -1,6 +1,6 @@
 <%= 
   build app_frame(
-    title: t("Campagne d'entretien"),
+    title: t("Campagne d'entretien",),
     notice:,
     bind_to: @review_campaign,
     actions: [
@@ -14,5 +14,55 @@
       bind_to: @review_campaign,
       attributes: reviews.review_campaign_context.table_attributes
     ) 
-  end 
+  end
+  
 %>
+
+<%= build app_frame(
+   title: t("Statistisques campagne"),
+   notice:
+) do %>
+
+</head>
+
+  <%= build main_content_header do %>
+
+  <% end %>
+  <%= pie_chart Reviews::Review.group(:status).where(review_campaign_id: request.original_url.last(2)).count(),refresh: 5, title: "Taux de réalisation Terminé/En cours"%>
+  <%= column_chart  Reviews::Review.group_by_day(:date).where(review_campaign_id: request.original_url.last(2), status: 'finished').count(:status),refresh: 5, title: "Historique des passations"%>  <%sum=0%>
+  <%= area_chart Reviews::Review.group_by_day(:date).where(review_campaign_id: request.original_url.last(2), status: 'finished')
+  .count.to_a.sort{|x,y| x[0] <=> y[0]}.map { |x,y| { x => (sum += y)} }.reduce({}, :merge), refresh: 5, title: "Courbe de progression",min: 0, max: Reviews::Review.where(review_campaign_id: request.original_url.last(2)).sum(:employee_seniority) %>
+  
+  
+  
+  <% who=Reviews::Review.where(review_campaign_id: request.original_url.last(2),status: 'finished').pluck(:employee_fname,:employee_lname).map%>
+  <% who1=Reviews::Review.where(review_campaign_id: request.original_url.last(2),status: 'finished').pluck(:date,:employee_lname)%>
+  <%= puts(who.each) %> 
+  <!DOCTYPE html>
+<html>
+<p>
+<table>
+  <thead>
+    <tr>
+      <th>Entretiens réalisés</th>
+    </tr>
+  </thead> 
+  <tbody> 
+  <% who.each do |e| %>
+    <tr>
+      <td><%=e%></td>
+    </tr> 
+    <% end %>
+    
+  </tbody>         
+</table>
+</html>
+
+  
+  
+  
+  <%= build main_content_footer do %>
+
+  <% end %>
+
+<% end %>

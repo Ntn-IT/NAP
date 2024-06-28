@@ -5,7 +5,7 @@ class UserContext < Ntn::HelperContext
 
   attributes(
     username: {
-      name: t('Utilisateur'),
+      name: t('Utilisateurs'),
       value: proc { |vc, rec| vc.record_link(rec, :username) },
       field: proc { |_vc, form| form.text_field(:username, disabled: true) }
     },

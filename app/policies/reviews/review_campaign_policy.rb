@@ -3,7 +3,7 @@
 module Reviews
   class ReviewCampaignPolicy < ApplicationPolicy
     self.permitted_attributes = [
-      :title, :from_date, :to_date, { review_template_ids: [] }
+      :title, :from_date, :to_date, :kind, { review_template_ids: [] }
     ]
 
     def show?
