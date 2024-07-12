@@ -31,10 +31,11 @@
             <td style="width:<%= column.width %>">
               <%= 
                 build row_form.send(
-                  :"#{column.input.to_sym}_input", 
+                  :"#{column.input == "text" ? "textarea" : column.input  }_input", 
                   labeled_table? ? j - 1 : j, 
                   disabled:, 
                   options: [],
+                  rows: 2,
                   **column.input_options
                 ) 
               %>

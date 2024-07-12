@@ -1,8 +1,14 @@
+<style> 
+.print-form {
+  width: 100%;
+}
+</style> 
 <%= 
   build record_form(
     @review, 
     url: nil, 
-    method: nil
+    method: nil,
+    css: "print-form"
   ) do |form|
     build review_page(@review, form)
   end 

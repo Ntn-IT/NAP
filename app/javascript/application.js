@@ -5,11 +5,7 @@ import { Application } from "@hotwired/stimulus";
 import { eagerLoadControllersFrom } from "@hotwired/stimulus-loading";
 import "trestle/admin";
 import "@fortawesome/fontawesome-free";
-import "chartkick"
-import "Chart.bundle"
-import "chartkick/chart.js"
-//= require chartkick
-//= require Chart.bundle
+
 const application = Application.start();
 
 // Configure Stimulus development experience

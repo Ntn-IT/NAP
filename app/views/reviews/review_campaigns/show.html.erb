@@ -28,16 +28,37 @@
   <%= build main_content_header do %>
 
   <% end %>
-  <%= pie_chart Reviews::Review.group(:status).where(review_campaign_id: request.original_url.last(2)).count(),refresh: 5, title: "Taux de réalisation Terminé/En cours"%>
-  <%= column_chart  Reviews::Review.group_by_day(:date).where(review_campaign_id: request.original_url.last(2), status: 'finished').count(:status),refresh: 5, title: "Historique des passations"%>  <%sum=0%>
-  <%= area_chart Reviews::Review.group_by_day(:date).where(review_campaign_id: request.original_url.last(2), status: 'finished')
-  .count.to_a.sort{|x,y| x[0] <=> y[0]}.map { |x,y| { x => (sum += y)} }.reduce({}, :merge), refresh: 5, title: "Courbe de progression",min: 0, max: Reviews::Review.where(review_campaign_id: request.original_url.last(2)).sum(:employee_seniority) %>
+    <%=
+     pie_chart(
+      Reviews::Review.group(:status).where(review_campaign_id: @review_campaign.id).count(),
+      refresh: 5,
+      title: "Taux de réalisation Terminé/En cours"
+     )
+    %>
+    <%= 
+      column_chart(
+        Reviews::Review.group_by_day(:date).where(review_campaign_id: @review_campaign.id, status: 'finished').count(:status),
+        refresh: 5,
+        title: "Historique des passations"
+      )
+      %>
+      
+      <%= 
+      sum=0
+      total=Reviews::Review.where(review_campaign_id: @review_campaign.id).count()
+      area_chart(
+        Reviews::Review.group_by_day(:date).where(review_campaign_id: @review_campaign.id, status: 'finished')
+        .count.to_a.sort{|x,y| x[0] <=> y[0]}.map { |x,y| { x => (sum += y)} }.reduce({}, :merge),
+        refresh: 5,
+        min: 0, max: total,
+
+        title: "Courbe de progression"
+      )
+      %>
   
   
-  
-  <% who=Reviews::Review.where(review_campaign_id: request.original_url.last(2),status: 'finished').pluck(:employee_fname,:employee_lname).map%>
-  <% who1=Reviews::Review.where(review_campaign_id: request.original_url.last(2),status: 'finished').pluck(:date,:employee_lname)%>
-  <%= puts(who.each) %> 
+  <% reviews_finished=Reviews::Review.where(review_campaign_id: @review_campaign.id,status: 'finished')%>
+
   <!DOCTYPE html>
 <html>
 <p>
@@ -48,9 +69,9 @@
     </tr>
   </thead> 
   <tbody> 
-  <% who.each do |e| %>
+  <% reviews_finished.each do |review_finished| %>
     <tr>
-      <td><%=e%></td>
+      <td><%="#{review_finished.employee_fname} #{review_finished. employee_lname}"%></td>
     </tr> 
     <% end %>
     
@@ -58,9 +79,6 @@
 </table>
 </html>
 
-  
-  
-  
   <%= build main_content_footer do %>
 
   <% end %>

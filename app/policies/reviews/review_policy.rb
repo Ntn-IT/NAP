@@ -18,7 +18,8 @@ module Reviews
     end
 
     def print?
-      resource.finished?
+      true
+      #resource.finished?
     end
 
     def index?
