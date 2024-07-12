@@ -38,7 +38,7 @@
 - [ ] Ajouter condition/filtre sur catégorie et question (comme pour les campagnes)
 - [x] Ajouter filtre sur l'employée/manager connecté dans les reviews
 - [ ] A la cloture de la campagne, cloturer aussi tous les reviews
-- [ ]  Gérer les paramtres initiaux de la recherche
+- [ ]  Gérer les parametres initiaux de la recherche
 
 Manu, ce que tu fois faire en prio
 
